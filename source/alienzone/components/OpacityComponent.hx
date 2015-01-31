@@ -1,6 +1,6 @@
 /**
  *--------------------------------------------------------------------+
- * LockComponent.hx
+ * OpacityComponent.hx
  *--------------------------------------------------------------------+
  * Copyright DarkOverlordOfData (c) 2014
  *--------------------------------------------------------------------+
@@ -16,12 +16,12 @@
 package alienzone.components;
 import hxE.Component;
 
-class LockComponent extends Component {
+class OpacityComponent extends Component {
 
-    public var value:Bool;
+    public var alpha:Float;
 
-    public function new(value:Bool) {
+    public function new(alpha:Float) {
         super();
-        this.value = value;
+        this.alpha = alpha;
     }
 }

@@ -1,6 +1,6 @@
 /**
  *--------------------------------------------------------------------+
- * LockComponent.hx
+ * TextComponent.hx
  *--------------------------------------------------------------------+
  * Copyright DarkOverlordOfData (c) 2014
  *--------------------------------------------------------------------+
@@ -16,12 +16,18 @@
 package alienzone.components;
 import hxE.Component;
 
-class LockComponent extends Component {
+class TextComponent extends Component {
 
-    public var value:Bool;
+    public var value:String;
+    public var font:String;
+    public var fill:Int;
+    public var align:String;
 
-    public function new(value:Bool) {
+    public function new(value:String, font:String, fill:Int, align:String="center") {
         super();
         this.value = value;
+        this.font = font;
+        this.fill = fill;
+        this.align = align;
     }
 }

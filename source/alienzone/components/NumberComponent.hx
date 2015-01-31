@@ -1,6 +1,6 @@
 /**
  *--------------------------------------------------------------------+
- * LockComponent.hx
+ * NumberComponent.hx
  *--------------------------------------------------------------------+
  * Copyright DarkOverlordOfData (c) 2014
  *--------------------------------------------------------------------+
@@ -16,11 +16,11 @@
 package alienzone.components;
 import hxE.Component;
 
-class LockComponent extends Component {
+class NumberComponent extends Component {
 
-    public var value:Bool;
+    public var value:Int;
 
-    public function new(value:Bool) {
+    public function new(value:Int) {
         super();
         this.value = value;
     }

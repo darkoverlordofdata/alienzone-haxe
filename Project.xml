@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
+    <!--
 
-    <!-- Play Store settings -->
-    <!--<certificate path="YOUR_RELEASE_KEY.keystore" alias="YOUR_ALIAS" password="YOUR_PASSWORD" if="android" unless="debug"/>-->
-    <!--<icon path="assets/d16a.png" />-->
-    <!--<template path="config/AndroidManifest.xml" rename="AndroidManifest.xml" if="android"/>-->
+               _____  .__  .__                __________
+              /  _  \ |  | |__| ____   ____   \____    /____   ____   ____
+             /  /_\  \|  | |  |/ __ \ /    \    /     //  _ \ /    \_/ __ \
+            /    |    \  |_|  \  ___/|   |  \  /     /(  <_> )   |  \  ___/
+            \____|__  /____/__|\___  >___|  / /_______ \____/|___|  /\___  >
+                    \/             \/     \/          \/          \/     \/
+
+
+    -->
+
+    <!------------------------------ANDROID SETTINGS---------------------------->
+    
+    <meta title="AlienZone2"
+          package="com.darkoverlordofdata.alienzone2" 
+          version="0.0.1" 
+          company="Dark Overlord of Data" 
+            />
+    <template if="android"
+              path="assets/config/AndroidManifest.xml"
+              rename="AndroidManifest.xml" 
+            />
+    <icon path="assets/images/d16a.png" />
+    <include path="assets/config/certificate.xml" />
 
 	<!------------------------------APPLICATION SETTINGS---------------------------->
-	
-	<app title="AlienZone" file="AlienZone" main="Main" version="0.0.1" company="HaxeFlixel" />
+
+	<app title="AlienZone2" file="AlienZone" main="Main"  />
 	
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 	<!--or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"!-->
@@ -29,7 +49,7 @@
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" />
 	
 	<!--Mobile-specific-->
-	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" />
+	<window if="mobile" orientation="portrait" fullscreen="true" width="0" height="0" />
 	
 	<!--------------------------------PATHS SETTINGS-------------------------------->
 	

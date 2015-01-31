@@ -1,6 +1,6 @@
 /**
  *--------------------------------------------------------------------+
- * LockComponent.hx
+ * ActionComponent.hx
  *--------------------------------------------------------------------+
  * Copyright DarkOverlordOfData (c) 2014
  *--------------------------------------------------------------------+
@@ -16,12 +16,12 @@
 package alienzone.components;
 import hxE.Component;
 
-class LockComponent extends Component {
+class StateComponent extends Component {
 
-    public var value:Bool;
+    public var name:String;
 
-    public function new(value:Bool) {
+    public function new(name:String) {
         super();
-        this.value = value;
+        this.name = name;
     }
 }
