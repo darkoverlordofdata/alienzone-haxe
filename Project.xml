@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
+    <meta title="AlienZone2"
+          package="com.darkoverlordofdata.alienzone2"
+          version="0.0.1"
+          company="Dark Overlord of Data"
+            />
+
     <!--
 
                _____  .__  .__                __________
@@ -12,23 +18,9 @@
 
     -->
 
-    <!------------------------------ANDROID SETTINGS---------------------------->
-    
-    <meta title="AlienZone2"
-          package="com.darkoverlordofdata.alienzone2" 
-          version="0.0.1" 
-          company="Dark Overlord of Data" 
-            />
-    <template if="android"
-              path="assets/config/AndroidManifest.xml"
-              rename="AndroidManifest.xml" 
-            />
-    <icon path="assets/images/d16a.png" />
-    <include path="assets/config/certificate.xml" />
-
 	<!------------------------------APPLICATION SETTINGS---------------------------->
 
-	<app title="AlienZone2" file="AlienZone" main="Main"  />
+	<app title="AlienZone2" file="AlienZone" main="alienzone.Main"  />
 	
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 	<!--or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"!-->
@@ -41,31 +33,31 @@
 	
 	<!--These window settings apply to all targets-->
 	<window width="320" height="480" fps="60" background="#000000" hardware="true" vsync="true" />
-	
-	<!--Web-specific-->
+
+    <!--Web-specific-->
 	<window if="web" orientation="portrait"  />
 	
 	<!--Desktop-specific-->
-	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" />
+	<window if="desktop" orientation="portrait" fullscreen="false" resizable="true" />
 	
 	<!--Mobile-specific-->
 	<window if="mobile" orientation="portrait" fullscreen="true" width="0" height="0" />
 	
 	<!--------------------------------PATHS SETTINGS-------------------------------->
 	
-	<set name="BUILD_DIR" value="export" />
-	<classpath name="source" />
-	<assets path="assets" />
-    <assets path="assets/fonts" rename="fonts" />
-    <assets path="assets/images" rename="images" />
-    <assets path="assets/sounds/sfx" rename="sfx" />
-    <assets path="assets/config" rename="config" />
+	<set name="BUILD_DIR" value="bin" />
+	<classpath name="src" />
+    <assets path="res/fonts" rename="fonts" />
+    <assets path="res/images" rename="images" />
+    <assets path="res/sounds/sfx" rename="sfx" />
+    <assets path="res/config" rename="config" />
 
 	<!--------------------------------LIBRARIES------------------------------------->
 
-	<haxelib name="flixel"/>
-	
-	<!--In case you want to use the addons package-->
+    <haxelib name="flixel"/>
+
+
+    <!--In case you want to use the addons package-->
 	<!--haxelib name="flixel-addons" /-->
 	
 	<!--In case you want to use the ui package-->
@@ -73,9 +65,16 @@
 	
 	<!--In case you want to use nape with flixel-->
 	<!--haxelib name="nape" /-->
-	
+
+    <!-- From Zaphod's example -->
+    <!-- Allow this setting to be overridden on the command-line -->
+    <set name="RENDER_BLIT" if="flash || html5" unless="RENDER_TILE" />
+    <set name="RENDER_TILE" unless="RENDER_BLIT" />
+
+    <haxedef name="RENDER_BLIT" if="RENDER_BLIT" />
+    <haxedef name="RENDER_TILE" if="RENDER_TILE" />
 	<!--------------------------------HAXEDEFINES----------------------------------->
-	
+
 	<!--Enable the Flixel core recording system-->
 	<!--haxedef name="FLX_RECORD" /-->
 	
@@ -109,4 +108,20 @@
 	<!--------------------------------CUSTOM---------------------------------------->
 	
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
+
+    <!------------------------------ANDROID SETTINGS---------------------------->
+
+    <template path="templates/AndroidManifest.xml" rename="AndroidManifest.xml" if="android"/>
+    <template path="templates/res/values/ids.xml" rename="ids.xml" if="android"/>
+
+    <icon path="templates/icons/icon36.png" size="36" if="android" />
+    <icon path="templates/icons/icon48.png" size="48" if="android" />
+    <icon path="templates/icons/icon72.png" size="72" if="android" />
+    <icon path="templates/icons/icon96.png" size="96" if="android" />
+    <icon path="templates/icons/icon144.png" size="144" if="android" />
+    <icon path="templates/icons/icon192.png" size="192" if="android" />
+    <icon path="templates/icons/icon.png" />
+    <!--<include path="templates/certificate.xml" />-->
+
+
 </project>

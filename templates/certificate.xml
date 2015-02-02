@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+
+    <!------------------------------ANDROID SIGNING---------------------------->
+    
+    <certificate if="android" unless="debug"
+             alias="AlienZone2"
+             path="/home/bruce/apk/alienzone2.jks"
+             password=""
+        />
+</project>

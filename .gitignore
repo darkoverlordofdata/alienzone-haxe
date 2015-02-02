@@ -2,7 +2,6 @@
 
 # Build and Release Folders
 export
-
-
-assets/config/certificate.xml
-#bin
+bin
+# Android signing credentials
+android/certificate.xml
