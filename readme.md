@@ -8,7 +8,7 @@
 
 
 # Alien Zone - Space Crystal Match Game
-One More Time With Feeling (and Harmony...)
+one more time with feeling (and three part harmony...)
 
 ### Free and Open Source Game using:
 * HaxeFlixel

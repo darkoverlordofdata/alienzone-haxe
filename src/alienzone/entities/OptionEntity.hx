@@ -1,12 +1,12 @@
 package alienzone.entities;
-import alienzone.engine.AbstractEntity;
-import alienzone.components.ActionComponent;
-import alienzone.components.SpriteComponent;
+import alienzone.engine.BaseEntity;
+import alienzone.components.Action;
+import alienzone.components.Sprite;
 import flixel.FlxSprite;
 import hxE.EntityWorld;
 import hxE.Entity;
 
-class OptionEntity extends AbstractEntity {
+class OptionEntity extends BaseEntity {
 
     public var graphic:FlxSprite;
 
@@ -16,8 +16,8 @@ class OptionEntity extends AbstractEntity {
         var option:Entity = world.create();
         graphic = new FlxSprite(x, y, key);
 
-        option.addComponent(new SpriteComponent(x, y, key));
-        option.addComponent(new ActionComponent(action));
+        option.addComponent(new Sprite(x, y, key));
+        option.addComponent(new Action(action));
         option.update();
     }
 }

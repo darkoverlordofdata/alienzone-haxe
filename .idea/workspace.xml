@@ -1,183 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b23be74e-fb6e-4718-a6cc-7be1cd1893b8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/icons/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/icons/icon144.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/icons/icon192.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/icons/icon36.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/icons/icon48.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/icons/icon72.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/icons/icon96.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/fonts/opendyslexic_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/fonts/outlined_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/fonts/outlined_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/alienzone/AssetPaths.hx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/alienzone/MenuState.hx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/bitmapFont.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/certificate.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/fonts/fonts.bmfc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/ids.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/fonts/opendyslexic.fnt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/fonts/outlined.bmfc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/fonts/outlined.fnt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/yaml2.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/git.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hxE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/src.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/fonts/OpenDyslexic-Bold.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/fonts/OpenDyslexic-BoldItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/fonts/OpenDyslexic-Italic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/fonts/OpenDyslexic-Regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/fonts/OpenDyslexicAlta-Bold.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/fonts/OpenDyslexicAlta-BoldItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/fonts/OpenDyslexicAlta-Italic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/fonts/OpenDyslexicAlta-Regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/fonts/OpenDyslexicMono-Regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/alienzone/AssetPaths.hx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/alienzone/MenuState.hx" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/config/AndroidManifest.xml" afterPath="$PROJECT_DIR$/templates/AndroidManifest.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/config/config.yaml" afterPath="$PROJECT_DIR$/res/config/config.yaml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/data/data-goes-here.txt" afterPath="$PROJECT_DIR$/res/data/data-goes-here.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/09-red.png" afterPath="$PROJECT_DIR$/res/images/09-red.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/09-white.png" afterPath="$PROJECT_DIR$/res/images/09-white.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/achievement.png" afterPath="$PROJECT_DIR$/res/images/achievement.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/arrows/down.png" afterPath="$PROJECT_DIR$/res/images/arrows/down.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/arrows/left.png" afterPath="$PROJECT_DIR$/res/images/arrows/left.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/arrows/lrot.png" afterPath="$PROJECT_DIR$/res/images/arrows/lrot.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/arrows/right.png" afterPath="$PROJECT_DIR$/res/images/arrows/right.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/arrows/rrot.png" afterPath="$PROJECT_DIR$/res/images/arrows/rrot.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/bucky.png" afterPath="$PROJECT_DIR$/res/images/bucky.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/button.png" afterPath="$PROJECT_DIR$/res/images/button.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/button2.png" afterPath="$PROJECT_DIR$/res/images/button2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/button4.png" afterPath="$PROJECT_DIR$/res/images/button4.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/button5.png" afterPath="$PROJECT_DIR$/res/images/button5.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/d16a.png" afterPath="$PROJECT_DIR$/res/images/d16a.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/en_generic_rgb_wo_45.png" afterPath="$PROJECT_DIR$/res/images/en_generic_rgb_wo_45.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/games_achievements.png" afterPath="$PROJECT_DIR$/res/images/games_achievements.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/games_controller.png" afterPath="$PROJECT_DIR$/res/images/games_controller.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/games_leaderboards.png" afterPath="$PROJECT_DIR$/res/images/games_leaderboards.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/gems.png" afterPath="$PROJECT_DIR$/res/images/gems.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/icon.png" afterPath="$PROJECT_DIR$/res/images/icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/label.png" afterPath="$PROJECT_DIR$/res/images/label.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/legend.png" afterPath="$PROJECT_DIR$/res/images/legend.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/legend_board.png" afterPath="$PROJECT_DIR$/res/images/legend_board.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/loading.png" afterPath="$PROJECT_DIR$/res/images/loading.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/logo.png" afterPath="$PROJECT_DIR$/res/images/logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/music_option.png" afterPath="$PROJECT_DIR$/res/images/music_option.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/orientation.jpg" afterPath="$PROJECT_DIR$/res/images/orientation.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/scores.png" afterPath="$PROJECT_DIR$/res/images/scores.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/sfx_option.png" afterPath="$PROJECT_DIR$/res/images/sfx_option.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/slots.png" afterPath="$PROJECT_DIR$/res/images/slots.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/star17 (copy).png" afterPath="$PROJECT_DIR$/res/images/star17 (copy).png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/star17.png" afterPath="$PROJECT_DIR$/res/images/star17.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/music/music-goes-here.txt" afterPath="$PROJECT_DIR$/res/music/music-goes-here.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup10.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup10.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup10.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup10.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup11.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup11.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup11.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup11.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup12.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup12.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup12.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup12.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup13.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup13.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup13.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup13.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup14.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup14.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup14.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup14.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup15.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup15.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup15.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup15.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup16.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup16.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup16.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup16.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup17.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup17.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup17.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup17.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup18.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup18.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup18.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup18.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup19.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup19.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup19.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup19.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup2.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup2.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup2.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup2.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup20.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup20.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup20.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup20.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup3.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup3.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup3.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup3.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup4.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup4.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup4.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup4.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup5.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup5.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup5.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup5.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup6.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup6.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup6.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup6.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup7.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup7.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup7.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup7.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup8.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup8.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup8.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup8.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup9.m4a" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup9.m4a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sounds/sfx/Powerup9.ogg" afterPath="$PROJECT_DIR$/res/sounds/sfx/Powerup9.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/Main.hx" afterPath="$PROJECT_DIR$/src/alienzone/Main.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/FPS.hx" afterPath="$PROJECT_DIR$/src/alienzone/FPS.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/PlayState.hx" afterPath="$PROJECT_DIR$/src/alienzone/PlayState.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/Reg.hx" afterPath="$PROJECT_DIR$/src/alienzone/Reg.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/components/ActionComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/ActionComponent.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/components/BonusComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/BonusComponent.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/components/BounceComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/BounceComponent.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/components/CountComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/CountComponent.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/components/DirectionComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/DirectionComponent.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/components/DisplayComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/DisplayComponent.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/components/GravityComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/GravityComponent.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/components/LockComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/LockComponent.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/components/NumberComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/NumberComponent.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/components/OpacityComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/OpacityComponent.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/components/SpriteComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/SpriteComponent.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/components/StateComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/StateComponent.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/components/TargetComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/TargetComponent.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/components/TextComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/TextComponent.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/components/TransformComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/TransformComponent.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/components/VelocityComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/VelocityComponent.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/engine/AbstractEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/engine/AbstractEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/engine/EntityFactory.hx" afterPath="$PROJECT_DIR$/src/alienzone/engine/EntityFactory.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/entities/ButtonEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/entities/ButtonEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/entities/GemEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/entities/GemEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/entities/ImageEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/entities/ImageEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/entities/InputEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/entities/InputEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/entities/LegendEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/entities/LegendEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/entities/OptionEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/entities/OptionEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/entities/ScoreEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/entities/ScoreEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/entities/TextEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/entities/TextEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/alienzone/systems/DisplaySystem.hx" afterPath="$PROJECT_DIR$/src/alienzone/systems/DisplaySystem.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/Component.hx" afterPath="$PROJECT_DIR$/src/hxE/Component.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/ComponentContainer.hx" afterPath="$PROJECT_DIR$/src/hxE/ComponentContainer.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/ComponentContainerBase.hx" afterPath="$PROJECT_DIR$/src/hxE/ComponentContainerBase.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/ComponentManager.hx" afterPath="$PROJECT_DIR$/src/hxE/ComponentManager.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/ComponentType.hx" afterPath="$PROJECT_DIR$/src/hxE/ComponentType.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/ComponentTypeSlot.hx" afterPath="$PROJECT_DIR$/src/hxE/ComponentTypeSlot.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/Context.hx" afterPath="$PROJECT_DIR$/src/hxE/Context.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/Demand.hx" afterPath="$PROJECT_DIR$/src/hxE/Demand.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/Entity.hx" afterPath="$PROJECT_DIR$/src/hxE/Entity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/EntityManager.hx" afterPath="$PROJECT_DIR$/src/hxE/EntityManager.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/EntitySystem.hx" afterPath="$PROJECT_DIR$/src/hxE/EntitySystem.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/EntityWorld.hx" afterPath="$PROJECT_DIR$/src/hxE/EntityWorld.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/IComponentType.hx" afterPath="$PROJECT_DIR$/src/hxE/IComponentType.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/IComponentTypeSlot.hx" afterPath="$PROJECT_DIR$/src/hxE/IComponentTypeSlot.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/IEntitySystem.hx" afterPath="$PROJECT_DIR$/src/hxE/IEntitySystem.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/bits/BitSet.hx" afterPath="$PROJECT_DIR$/src/hxE/bits/BitSet.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/bits/DoubleBitSet.hx" afterPath="$PROJECT_DIR$/src/hxE/bits/DoubleBitSet.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/bits/DynamicBitSet.hx" afterPath="$PROJECT_DIR$/src/hxE/bits/DynamicBitSet.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/bits/IBitSet.hx" afterPath="$PROJECT_DIR$/src/hxE/bits/IBitSet.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/bits/LargeBitSet.hx" afterPath="$PROJECT_DIR$/src/hxE/bits/LargeBitSet.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/bits/SingleBitSet.hx" afterPath="$PROJECT_DIR$/src/hxE/bits/SingleBitSet.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/systems/EntityProcessingSystem.hx" afterPath="$PROJECT_DIR$/src/hxE/systems/EntityProcessingSystem.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/systems/IntervalProcessingSystem.hx" afterPath="$PROJECT_DIR$/src/hxE/systems/IntervalProcessingSystem.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/systems/IntervalSystem.hx" afterPath="$PROJECT_DIR$/src/hxE/systems/IntervalSystem.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/systems/VoidEntitySystem.hx" afterPath="$PROJECT_DIR$/src/hxE/systems/VoidEntitySystem.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/hxE/systems/VoidIntervalSystem.hx" afterPath="$PROJECT_DIR$/src/hxE/systems/VoidIntervalSystem.hx" />
+    <list default="true" id="33e74dff-cbda-447e-a773-699092e19a24" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AlienZone3.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/alienzone/entities/FpsEntity.hx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/alienzone/nodes/RenderNode.hx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/alienzone/systems/RenderSystem.hx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/ash_1_5_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/flixel_3_3_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/openfl.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/openfl_2_2_4.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/1_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/bitmapFont.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/yaml.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/yaml2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AlienZone.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alienzone/systems/DisplaySystem.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/Component.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/ComponentContainer.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/ComponentContainerBase.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/ComponentManager.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/ComponentType.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/ComponentTypeSlot.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/Context.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/Demand.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/Entity.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/EntityManager.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/EntitySystem.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/EntityWorld.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/IComponentType.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/IComponentTypeSlot.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/IEntitySystem.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/bits/BitSet.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/bits/DoubleBitSet.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/bits/DynamicBitSet.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/bits/IBitSet.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/bits/LargeBitSet.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/bits/SingleBitSet.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/systems/EntityProcessingSystem.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/systems/IntervalProcessingSystem.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/systems/IntervalSystem.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/systems/VoidEntitySystem.hx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hxE/systems/VoidIntervalSystem.hx" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/components/ActionComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/State.hx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/components/BonusComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Bonus.hx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/components/BounceComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Bounce.hx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/components/CountComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Count.hx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/components/DirectionComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Direction.hx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/components/DisplayComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Display.hx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/components/GravityComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Gravity.hx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/components/LockComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Lock.hx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/components/NumberComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Number.hx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/components/OpacityComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Opacity.hx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/components/SpriteComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Sprite.hx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/components/StateComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Action.hx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/components/TargetComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Target.hx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/components/TextComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Text.hx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/components/TransformComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Transform.hx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/components/VelocityComponent.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Velocity.hx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/engine/AbstractEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/engine/BaseEntity.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlienZone.iml" afterPath="$PROJECT_DIR$/AlienZone.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/entities/ButtonEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/entities/ButtonEntity.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/engine/EntityFactory.hx" afterPath="$PROJECT_DIR$/src/alienzone/engine/EntityFactory.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/entities/GemEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/entities/GemEntity.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/entities/ImageEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/entities/ImageEntity.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/entities/InputEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/entities/InputEntity.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/entities/LegendEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/entities/LegendEntity.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/entities/OptionEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/entities/OptionEntity.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/PlayState.hx" afterPath="$PROJECT_DIR$/src/alienzone/PlayState.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Project.xml" afterPath="$PROJECT_DIR$/Project.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/entities/ScoreEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/entities/ScoreEntity.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/entities/TextEntity.hx" afterPath="$PROJECT_DIR$/src/alienzone/entities/TextEntity.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/certificate.xml" afterPath="$PROJECT_DIR$/templates/certificate.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/haxe.xml" afterPath="$PROJECT_DIR$/.idea/haxe.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
-    <ignored path="AlienZone.iws" />
+    <ignored path="AlienZone3.iws" />
     <ignored path=".idea/workspace.xml" />
-    <ignored path="$PROJECT_DIR$/export/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -192,77 +101,27 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="DebuggerManager">
-    <ui_properties converted="true" />
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </breakpoint_any>
-    <breakpoint_rules converted="true" />
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="AlienZone" />
+    <favorites_list name="AlienZone3" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MenuState.hx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/alienzone/MenuState.hx">
+      <file leaf-file-name="RenderSystem.hx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/alienzone/systems/RenderSystem.hx">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="2538">
-              <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="1098">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Project.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Project.xml">
+      <file leaf-file-name="RenderNode.hx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/alienzone/nodes/RenderNode.hx">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55494505" vertical-offset="2030" max-vertical-offset="2394">
-              <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayState.hx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/alienzone/PlayState.hx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="1494">
-              <caret line="51" column="10" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.33421752" vertical-offset="0" max-vertical-offset="468">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -270,78 +129,38 @@
       </file>
     </leaf>
   </component>
-  <component name="FindManager">
-    <FindUsagesManager>
-      <setting name="OPEN_NEW_TAB" value="false" />
-    </FindUsagesManager>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/source/MenuState.hx" />
-        <option value="$PROJECT_DIR$/source/components/TransformComponent.hx" />
-        <option value="$PROJECT_DIR$/source/EntityFactory.hx" />
-        <option value="$PROJECT_DIR$/source/engine/AbstractEntity.hx" />
-        <option value="$PROJECT_DIR$/source/entities/ButtonEntity.hx" />
-        <option value="$PROJECT_DIR$/source/PlayState.hx" />
-        <option value="$PROJECT_DIR$/source/components/ActionComponent.hx" />
-        <option value="$PROJECT_DIR$/source/Main.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/engine/EntityFactory.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/engine/AbstractEntity.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/systems/DisplaySystem.hx" />
-        <option value="$PROJECT_DIR$/readme.md" />
-        <option value="$PROJECT_DIR$/source/alienzone/entities/ButtonEntity.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/entities/GemEntity.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/entities/LegendEntity.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/entities/OptionEntity.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/entities/InputEntity.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/entities/ImageEntity.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/entities/TextEntity.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/entities/ScoreEntity.hx" />
-        <option value="$PROJECT_DIR$/assets/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/certificate.xml" />
-        <option value="$PROJECT_DIR$/source/alienzone/AssetPaths.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/components/ActionComponent.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/components/BonusComponent.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/components/BounceComponent.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/components/CountComponent.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/components/DirectionComponent.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/components/GravityComponent.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/components/LockComponent.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/components/NumberComponent.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/components/OpacityComponent.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/components/SpriteComponent.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/components/StateComponent.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/components/TargetComponent.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/components/TextComponent.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/components/VelocityComponent.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/components/TransformComponent.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/components/DisplayComponent.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/FPS.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/Main.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/Reg.hx" />
-        <option value="$PROJECT_DIR$/export/html5/bin/index.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/android/ids.xml" />
-        <option value="$PROJECT_DIR$/android/res/values/ids.xml" />
-        <option value="$PROJECT_DIR$/source/alienzone/PlayState.hx" />
-        <option value="$PROJECT_DIR$/source/alienzone/MenuState.hx" />
-        <option value="$PROJECT_DIR$/bin/android/bin/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/templates/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/alienzone/engine/BaseEntity.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/engine/EntityFactory.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/PlayState.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/entities/ImageEntity.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/entities/TextEntity.hx" />
         <option value="$PROJECT_DIR$/Project.xml" />
+        <option value="$PROJECT_DIR$/src/alienzone/components/Action.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/components/Bonus.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/components/Bounce.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/components/CountComponent.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/components/Display.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/components/Lock.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/components/Number.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/components/Opacity.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/components/State.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/components/Text.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/nodes/RenderNode.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/systems/RenderSystem.hx" />
       </list>
     </option>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="width" value="1368" />
+    <option name="width" value="1366" />
     <option name="height" value="742" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -350,9 +169,6 @@
     <OptionsSetting value="true" id="Edit" />
     <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
-  </component>
-  <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -368,17 +184,22 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AlienZone" />
+              <option name="myItemId" value="AlienZone3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AlienZone" />
+              <option name="myItemId" value="AlienZone3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -388,35 +209,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AlienZone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="AlienZone3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AlienZone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AlienZone3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AlienZone" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -434,7 +227,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AlienZone" />
+              <option name="myItemId" value="AlienZone3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -442,85 +235,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alienzone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="systems" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="preferences.externalTools" />
-    <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="/usr/lib/haxe/lib/bitmapFont" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="FullScreen" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="last_opened_file_path" value="/usr/lib/haxe/lib/ash" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
   </component>
-  <component name="PublishConfig">
-    <servers>
-      <server id="5038dd3a-c0b7-4529-a67a-8feee4c069bd">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" />
-          </mappings>
-        </serverdata>
-      </server>
-      <server id="6a90b4d9-ea80-4c71-9ca0-3b7f3a688b2c">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" />
-          </mappings>
-        </serverdata>
-      </server>
-      <server id="c4c9764f-cd64-4a01-b740-d0421f05f321">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" />
-          </mappings>
-        </serverdata>
-      </server>
-    </servers>
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/assets/fonts" />
-      <recent name="$PROJECT_DIR$/android/icons" />
-      <recent name="$PROJECT_DIR$/android" />
-      <recent name="$PROJECT_DIR$/android/res/drawable-hdpi" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/android/res/values" />
-      <recent name="$PROJECT_DIR$/android/res" />
-      <recent name="$PROJECT_DIR$/android" />
-      <recent name="$PROJECT_DIR$/source/alienzone" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Haxe Application.Unnamed">
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Haxe Application.AlienZone">
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -532,14 +277,22 @@
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
+        <value defaultName="singleModule" />
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -564,7 +317,7 @@
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
@@ -574,10 +327,6 @@
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="HXCPPRemoteRunConfigurationType" factoryName="HXCPP Remote Debug">
-      <module name="" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -693,135 +442,58 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Hxcpp Debug" type="HXCPPRemoteRunConfigurationType" factoryName="HXCPP Remote Debug">
-      <module name="AlienZone" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unnamed" type="HaxeApplicationRunConfiguration" factoryName="Haxe Application">
-      <module name="AlienZone" />
+    <configuration default="false" name="AlienZone" type="HaxeApplicationRunConfiguration" factoryName="Haxe Application">
+      <module name="AlienZone3" />
       <option name="customExecutable" value="false" />
-      <option name="customExecutablePath" value="lime test neko" />
+      <option name="customExecutablePath" value="" />
       <option name="customFileToLaunch" value="false" />
       <option name="customFileToLaunchPath" value="" />
-      <option name="name" value="Unnamed" />
+      <option name="name" value="AlienZone" />
       <option name="saveOutputToFile" value="false" />
       <option name="showConsoleOnStdErr" value="false" />
       <option name="showConsoleOnStdOut" value="false" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
       <RunnerSettings RunnerId="HaxeRunner" />
-      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="HaxeRunner" />
       <method>
         <option name="Make" enabled="false" />
         <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_Haxe Test" />
       </method>
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="HXCPP Remote Debug.Hxcpp Debug" />
-      <item index="1" class="java.lang.String" itemvalue="Haxe Application.Unnamed" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Haxe Application.AlienZone" />
     </list>
-    <configuration default="true" type="HaxeApplicationRunConfiguration" factoryName="haXe Application">
-      <module name="" />
-      <option name="customExecutable" value="false" />
-      <option name="customExecutablePath" value="" />
-      <option name="customFileToLaunch" value="false" />
-      <option name="customFileToLaunchPath" value="" />
-      <option name="name" value="haXe Application" />
-      <option name="saveOutputToFile" value="false" />
-      <option name="showConsoleOnStdErr" value="false" />
-      <option name="showConsoleOnStdOut" value="false" />
-      <method />
-    </configuration>
-    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
-      <Host>localhost</Host>
-      <Port>5050</Port>
-    </configuration>
-    <configuration default="false" name="OpenFL" type="HaxeApplicationRunConfiguration" factoryName="haXe Application">
-      <module name="AlienZone" />
-      <option name="customExecutable" value="false" />
-      <option name="customExecutablePath" value="" />
-      <option name="customFileToLaunch" value="false" />
-      <option name="customFileToLaunchPath" value="" />
-      <option name="name" value="OpenFL" />
-      <option name="saveOutputToFile" value="false" />
-      <option name="showConsoleOnStdErr" value="false" />
-      <option name="showConsoleOnStdOut" value="false" />
-      <method />
-    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" myUseAcceleration="nothing" SSL_PROTOCOLS="sslv3">
+  <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b23be74e-fb6e-4718-a6cc-7be1cd1893b8" name="Default" comment="" />
-      <created>1378092715337</created>
+      <changelist id="33e74dff-cbda-447e-a773-699092e19a24" name="Default" comment="" />
+      <created>1422911410188</created>
       <option name="number" value="Default" />
-      <updated>1378092715337</updated>
-      <workItem from="1378092719697" duration="57000" />
-      <workItem from="1378092777558" duration="531000" />
-      <workItem from="1378102502259" duration="247000" />
+      <updated>1422911410188</updated>
     </task>
-    <task id="LOCAL-00001" summary="daily">
-      <created>1422677377994</created>
-      <option name="number" value="00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1422677377994</updated>
-    </task>
-    <task id="LOCAL-00002" summary="daily">
-      <created>1422690164863</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1422690164863</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="835000" />
-  </component>
-  <component name="TodoView" selected-index="0">
-    <todo-panel id="selected-file">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="default-changelist">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="false" />
-    </todo-panel>
-  </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1368" height="742" extended-state="6" />
+    <frame x="0" y="0" width="1366" height="742" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2439577" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -829,12 +501,8 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -849,356 +517,314 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="daily" />
-    <option name="LAST_COMMIT_MESSAGE" value="daily" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/alienzone/engine/EntityFactory.hx">
+    <entry file="file://$PROJECT_DIR$/src/alienzone/MenuState.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
-          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/systems/DisplaySystem.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.288" vertical-offset="0" max-vertical-offset="756">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/license.md">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="573">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/entities/GemEntity.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3857143" vertical-offset="0" max-vertical-offset="630">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/entities/ImageEntity.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5026178" vertical-offset="0" max-vertical-offset="573">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/entities/InputEntity.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40837696" vertical-offset="0" max-vertical-offset="573">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/entities/ButtonEntity.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45" vertical-offset="0" max-vertical-offset="594">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/entities/OptionEntity.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18848167" vertical-offset="0" max-vertical-offset="573">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/entities/LegendEntity.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5026178" vertical-offset="0" max-vertical-offset="573">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/entities/TextEntity.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54642856" vertical-offset="0" max-vertical-offset="560">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/entities/ScoreEntity.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25714287" vertical-offset="0" max-vertical-offset="560">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36397058" vertical-offset="0" max-vertical-offset="720">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hxE/Component.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="573">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/BonusComponent.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46596858" vertical-offset="3" max-vertical-offset="576">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/BounceComponent.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34554973" vertical-offset="0" max-vertical-offset="573">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/CountComponent.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71727747" vertical-offset="3" max-vertical-offset="576">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/DirectionComponent.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2827225" vertical-offset="0" max-vertical-offset="573">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/GravityComponent.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34554973" vertical-offset="0" max-vertical-offset="573">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/LockComponent.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71727747" vertical-offset="3" max-vertical-offset="576">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/NumberComponent.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7225131" vertical-offset="0" max-vertical-offset="576">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/OpacityComponent.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71727747" vertical-offset="3" max-vertical-offset="576">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/SpriteComponent.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2827225" vertical-offset="0" max-vertical-offset="573">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/StateComponent.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71727747" vertical-offset="3" max-vertical-offset="576">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/TargetComponent.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31413612" vertical-offset="0" max-vertical-offset="573">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/TextComponent.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7853403" vertical-offset="18" max-vertical-offset="684">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/VelocityComponent.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43979058" vertical-offset="0" max-vertical-offset="573">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/ActionComponent.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="576">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/DisplayComponent.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/TransformComponent.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25714287" vertical-offset="0" max-vertical-offset="560">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/AssetPaths.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28533334" vertical-offset="55" max-vertical-offset="432">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/Main.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1" vertical-offset="250" max-vertical-offset="1440">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/Reg.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08900524" vertical-offset="417" max-vertical-offset="1152">
-          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09424084" vertical-offset="0" max-vertical-offset="573">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ids.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09424084" vertical-offset="0" max-vertical-offset="573">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/fonts/opendyslexic_0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/fonts/outlined.fnt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3762">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/fonts/opendyslexic.fnt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14835165" vertical-offset="0" max-vertical-offset="3744">
-          <caret line="3" column="66" selection-start-line="3" selection-start-column="66" selection-end-line="3" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/fonts/outlined_1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/fonts/outlined.bmfc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1098">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/fonts/outlined_0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/FPS.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9469496" vertical-offset="93" max-vertical-offset="1224">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1332" max-vertical-offset="2538">
+          <caret line="74" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/alienzone/PlayState.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="793" max-vertical-offset="1494">
-          <caret line="51" column="10" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1044" max-vertical-offset="1530">
+          <caret line="58" column="44" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/engine/EntityFactory.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/entities/TextEntity.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="774">
+          <caret line="17" column="63" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/entities/ImageEntity.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="630">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/alienzone/MenuState.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="2538">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1332" max-vertical-offset="2538">
+          <caret line="74" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AlienZone.iml">
+    <entry file="file://$PROJECT_DIR$/src/alienzone/PlayState.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7161804" vertical-offset="0" max-vertical-offset="486">
-          <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1044" max-vertical-offset="1530">
+          <caret line="58" column="44" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/src/alienzone/engine/EntityFactory.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04945055" vertical-offset="0" max-vertical-offset="540">
-          <caret line="1" column="135" selection-start-line="1" selection-start-column="135" selection-end-line="1" selection-end-column="135" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/certificate.xml">
+    <entry file="file://$PROJECT_DIR$/src/alienzone/entities/TextEntity.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33421752" vertical-offset="0" max-vertical-offset="377">
-          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="774">
+          <caret line="17" column="63" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/entities/ImageEntity.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="630">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="575">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/engine/BaseEntity.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="377">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Project.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55494505" vertical-offset="2030" max-vertical-offset="2394">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.3773913" vertical-offset="667" max-vertical-offset="1242">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/PlayState.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15478261" vertical-offset="955" max-vertical-offset="1530">
+          <caret line="58" column="44" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/engine/EntityFactory.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25622776" vertical-offset="0" max-vertical-offset="756">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/entities/TextEntity.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16725978" vertical-offset="212" max-vertical-offset="774">
+          <caret line="17" column="63" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/entities/ImageEntity.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40521738" vertical-offset="55" max-vertical-offset="630">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Action.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5947826" vertical-offset="0" max-vertical-offset="575">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Bonus.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5008696" vertical-offset="0" max-vertical-offset="575">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Bounce.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37565216" vertical-offset="0" max-vertical-offset="575">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Count.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28" vertical-offset="1" max-vertical-offset="576">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Direction.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Gravity.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Lock.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0626087" vertical-offset="0" max-vertical-offset="576">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Number.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0626087" vertical-offset="0" max-vertical-offset="576">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Opacity.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0626087" vertical-offset="0" max-vertical-offset="576">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Sprite.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/State.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0626087" vertical-offset="0" max-vertical-offset="576">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Target.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Text.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24869566" vertical-offset="109" max-vertical-offset="684">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Velocity.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/Reg.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1152">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/Main.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.88967973" vertical-offset="500" max-vertical-offset="1440">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Display.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14323607" vertical-offset="0" max-vertical-offset="377">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/MenuState.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.198939" vertical-offset="613" max-vertical-offset="2538">
+          <caret line="122" column="35" selection-start-line="122" selection-start-column="35" selection-end-line="122" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Transform.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="562">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/systems/RenderSystem.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="1098">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/nodes/RenderNode.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33421752" vertical-offset="0" max-vertical-offset="468">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1256,7 +882,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>AlienZone</last-edited>
+          <last-edited>AlienZone3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1268,7 +894,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>yaml</last-edited>
+          <last-edited>ash 1,5,3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

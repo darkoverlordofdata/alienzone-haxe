@@ -1,14 +1,14 @@
 package alienzone.entities;
-import alienzone.engine.AbstractEntity;
-import alienzone.components.ActionComponent;
-import alienzone.components.SpriteComponent;
-import alienzone.components.TextComponent;
-import alienzone.components.TransformComponent;
+import alienzone.engine.BaseEntity;
+import alienzone.components.Action;
+import alienzone.components.Sprite;
+import alienzone.components.Text;
+import alienzone.components.Transform;
 import flixel.FlxSprite;
 import hxE.EntityWorld;
 import hxE.Entity;
 
-class ButtonEntity extends AbstractEntity {
+class ButtonEntity extends BaseEntity {
 
     public var graphic:FlxSprite;
 
@@ -18,10 +18,10 @@ class ButtonEntity extends AbstractEntity {
         var button:Entity = world.create();
         graphic = new FlxSprite(0, 0, key);
 
-        button.addComponent(new SpriteComponent(0, 0, key));
-        button.addComponent(new TransformComponent(x, y));
-        button.addComponent(new ActionComponent(action));
-        button.addComponent(new TextComponent(text, font, fill));
+        button.addComponent(new Sprite(0, 0, key));
+        button.addComponent(new Transform(x, y));
+        button.addComponent(new Action(action));
+        button.addComponent(new Text(text, font, fill));
         button.update();
     }
 }

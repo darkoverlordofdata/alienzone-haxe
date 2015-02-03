@@ -1,23 +1,29 @@
 package alienzone.entities;
-import alienzone.engine.AbstractEntity;
-import alienzone.components.OpacityComponent;
-import alienzone.components.SpriteComponent;
+import alienzone.components.Transform;
+import alienzone.components.Display;
+import alienzone.engine.BaseEntity;
+import alienzone.components.Opacity;
+import alienzone.components.Sprite;
 import flixel.FlxSprite;
 import hxE.EntityWorld;
 import hxE.Entity;
 
-class ImageEntity extends AbstractEntity {
+class ImageEntity extends BaseEntity {
 
-    public var graphic:FlxSprite;
+    private var image:Entity;
 
     public function new(world:EntityWorld, x:Int, y:Int, key:String, opacity:Float) {
         super(world);
 
-        var image:Entity = world.create();
-        graphic = new FlxSprite(x, y, key);
+        graphic = new FlxSprite(0, 0, key);
+        entity = world.create();
+        entity.addComponent(new Sprite(0, 0, key));
+        entity.addComponent(new Opacity(opacity));
+        entity.addComponent(new Display(graphic));
+        entity.addComponent(new Transform(x, y));
+        entity.update();
 
-        image.addComponent(new SpriteComponent(x, y, key));
-        image.addComponent(new OpacityComponent(opacity));
-        image.update();
+        
+        
     }
 }

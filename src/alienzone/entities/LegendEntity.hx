@@ -1,12 +1,12 @@
 package alienzone.entities;
-import alienzone.engine.AbstractEntity;
-import alienzone.components.OpacityComponent;
-import alienzone.components.SpriteComponent;
+import alienzone.engine.BaseEntity;
+import alienzone.components.Opacity;
+import alienzone.components.Sprite;
 import flixel.FlxSprite;
 import hxE.EntityWorld;
 import hxE.Entity;
 
-class LegendEntity extends AbstractEntity {
+class LegendEntity extends BaseEntity {
 
     public var graphic:FlxSprite;
 
@@ -16,8 +16,8 @@ class LegendEntity extends AbstractEntity {
         var legend:Entity = world.create();
         graphic = new FlxSprite(0, 0, key);
 
-        legend.addComponent(new SpriteComponent(x, y, key));
-        legend.addComponent(new OpacityComponent(opacity));
+        legend.addComponent(new Sprite(x, y, key));
+        legend.addComponent(new Opacity(opacity));
         legend.update();
     }
 }

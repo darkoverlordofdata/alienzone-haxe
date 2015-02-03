@@ -3,7 +3,7 @@
 
     <!------------------------------ANDROID SIGNING---------------------------->
     
-    <certificate if="android" unless="debug"
+    <certificate if="release-sign"
              alias="AlienZone2"
              path="/home/bruce/apk/alienzone2.jks"
              password=""

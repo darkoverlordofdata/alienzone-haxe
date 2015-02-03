@@ -4,4 +4,4 @@
 export
 bin
 # Android signing credentials
-android/certificate.xml
+templates/certificate.xml

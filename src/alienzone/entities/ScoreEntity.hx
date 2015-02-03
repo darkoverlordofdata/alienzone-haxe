@@ -1,12 +1,12 @@
 package alienzone.entities;
-import alienzone.engine.AbstractEntity;
-import alienzone.components.TextComponent;
-import alienzone.components.SpriteComponent;
+import alienzone.engine.BaseEntity;
+import alienzone.components.Text;
+import alienzone.components.Sprite;
 import flixel.text.FlxText;
 import hxE.EntityWorld;
 import hxE.Entity;
 
-class ScoreEntity extends AbstractEntity {
+class ScoreEntity extends BaseEntity {
 
     public var graphic:FlxText;
 
@@ -16,8 +16,8 @@ class ScoreEntity extends AbstractEntity {
         var score:Entity = world.create();
         graphic = new FlxText(x, y, text);
 
-        score.addComponent(new SpriteComponent(x, y, text));
-        score.addComponent(new TextComponent(name, font, fill, align));
+        score.addComponent(new Sprite(x, y, text));
+        score.addComponent(new Text(name, font, fill, align));
         score.addComponent(new CountComponent(0));
         score.update();
     }

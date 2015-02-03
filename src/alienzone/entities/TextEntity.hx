@@ -1,23 +1,37 @@
 package alienzone.entities;
-import alienzone.engine.AbstractEntity;
-import alienzone.components.TextComponent;
-import alienzone.components.SpriteComponent;
+import alienzone.components.Display;
+import alienzone.components.Transform;
+import alienzone.engine.BaseEntity;
+import alienzone.components.Text;
+import alienzone.components.Sprite;
 import flixel.text.FlxText;
 import hxE.EntityWorld;
 import hxE.Entity;
 
-class TextEntity extends AbstractEntity {
+class TextEntity extends BaseEntity {
 
-    public var graphic:FlxText;
-
-    public function new(world:EntityWorld, x:Int, y:Int, name:String, font:String="", fill:Int=0x000000, align:String="left") {
+    public function new(world:EntityWorld, x:Int, y:Int, text:String, font:String="", fill:Int=0x000000, align:String="left") {
         super(world);
 
-        var text:Entity = world.create();
-        graphic = new FlxText(x, y, name);
+        graphic = new FlxText(0, 0, text);
 
-        text.addComponent(new SpriteComponent(x, y, name));
-        text.addComponent(new TextComponent(name, font, fill, align));
-        text.update();
+//        var title:FlxBitmapTextField = new FlxBitmapTextField(font0);
+//        title.x = x;
+//        title.y = y;
+//        title.fixedWidth = true;
+//        title.color = FlxColor.YELLOW;
+//        title.useTextColor = false;
+//        title.text = text;
+//        title.outlineColor = FlxColor.RED;
+//        title.width = 320;
+//        title.alignment = PxTextAlign.CENTER;
+//        title.fontScale = 2.2;
+
+        var entity:Entity = world.create();
+        entity.addComponent(new Sprite(0, 0, key));
+        entity.addComponent(new Text(text, font, fill, align));
+        entity.addComponent(new Display(graphic));
+        entity.addComponent(new Transform(x, y));
+        entity.update();
     }
 }

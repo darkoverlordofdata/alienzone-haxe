@@ -1,15 +1,15 @@
 package alienzone.entities;
-import alienzone.engine.AbstractEntity;
-import alienzone.components.BounceComponent;
-import alienzone.components.NumberComponent;
-import alienzone.components.GravityComponent;
-import alienzone.components.SpriteComponent;
-import alienzone.components.TransformComponent;
+import alienzone.engine.BaseEntity;
+import alienzone.components.Bounce;
+import alienzone.components.Number;
+import alienzone.components.Gravity;
+import alienzone.components.Sprite;
+import alienzone.components.Transform;
 import flixel.FlxSprite;
 import hxE.EntityWorld;
 import hxE.Entity;
 
-class GemEntity extends AbstractEntity {
+class GemEntity extends BaseEntity {
 
     public var graphic:FlxSprite;
 
@@ -19,11 +19,11 @@ class GemEntity extends AbstractEntity {
         var gem:Entity = world.create();
         graphic = new FlxSprite(0, 0, key);
 
-        gem.addComponent(new SpriteComponent(0, 0, key, frame));
-        gem.addComponent(new TransformComponent(x, y));
-        gem.addComponent(new NumberComponent(frame));
-        gem.addComponent(new GravityComponent(0, 300));
-        gem.addComponent(new BounceComponent(0, 0.7+(Math.random()*(1.0 / 2147483647)) * 0.2));
+        gem.addComponent(new Sprite(0, 0, key, frame));
+        gem.addComponent(new Transform(x, y));
+        gem.addComponent(new Number(frame));
+        gem.addComponent(new Gravity(0, 300));
+        gem.addComponent(new Bounce(0, 0.7+(Math.random()*(1.0 / 2147483647)) * 0.2));
         gem.update();
     }
 }

@@ -1,34 +1,36 @@
 package alienzone.engine;
-import alienzone.components.TransformComponent;
-import alienzone.components.TransformComponent;
-import alienzone.components.DisplayComponent;
-import hxE.Entity;
+import alienzone.entities.TextEntity;
+import alienzone.entities.ImageEntity;
+import flixel.text.pxText.PxBitmapFont;
 import hxE.EntityWorld;
-import flixel.FlxSprite;
+import openfl.Assets;
 
 class EntityFactory {
 
-    private var world:EntityWorld;
+    public var world:EntityWorld;
+    private var fontNormal:PxBitmapFont;
+    private var fontTitle:PxBitmapFont;
 
     public function new(world:EntityWorld) {
         this.world = world;
+        var fntNormal = Xml.parse(Assets.getText("fonts/opendyslexic.fnt"));
+        var fntTitle = Xml.parse(Assets.getText("fonts/outlined.fnt"));
+        fontNormal = new PxBitmapFont().loadAngelCode(Assets.getBitmapData("fonts/opendyslexic_0.png"), fntNormal);
+        fontTitle = new PxBitmapFont().loadAngelCode(Assets.getBitmapData("fonts/outlined_0.png"), fntTitle);
     }
 
-    public function sprite(x:Int, y:Int, path:String):FlxSprite {
+    /**
+     * Create a Text
+     */
+    public function text(x:Int, y:Int, text:String) {
+        return new TextEntity(world, x, y, text);
+    }
 
-        var e:Entity = world.create();
-        var graphic:FlxSprite = new FlxSprite(0, 0, "images/d16a.png");
-
-        var display:DisplayComponent = new DisplayComponent(graphic);
-        var transform:TransformComponent = new TransformComponent(50, 100);
-
-        e.addComponent(display);
-        e.addComponent(transform);
-        e.update();
-
-        return graphic;
-
-
+    /**
+     * Create an image
+     */
+    public function image(x:Int, y:Int, path:String, opacity:Float=1.0):ImageEntity {
+        return new ImageEntity(world, x, y, path, opacity);
     }
 
 }

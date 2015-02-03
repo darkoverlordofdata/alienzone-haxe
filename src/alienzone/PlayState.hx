@@ -55,7 +55,9 @@ class PlayState extends FlxState {
 
         world.addSystem(displaySystem);
 
-        add(entities.sprite(50, 100, "images/d16a.png"));
+        //add(entities.fps(0, 0, 0x000000).graphic);
+        add(entities.text(0, 50, "Alien Zone").graphic);
+        add(entities.image(50, 300, "images/d16a.png").graphic);
 
 
     }
