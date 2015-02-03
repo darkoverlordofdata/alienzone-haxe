@@ -1,4 +1,4 @@
-package alienzone.entities;
+package
 import alienzone.engine.BaseEntity;
 import alienzone.components.Bounce;
 import alienzone.components.Number;

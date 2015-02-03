@@ -12,7 +12,7 @@ one more time with feeling (and three part harmony...)
 
 ### Free and Open Source Game using:
 * HaxeFlixel
-* hxE (Haxe port of Artemis ECS)
+* Ash
 
 # GPLv3 License
 

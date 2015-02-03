@@ -1,4 +1,4 @@
-package alienzone.entities;
+package
 import alienzone.components.Display;
 import alienzone.components.Transform;
 import alienzone.engine.BaseEntity;

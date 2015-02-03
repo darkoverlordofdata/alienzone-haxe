@@ -8,12 +8,12 @@ import flixel.FlxObject;
 
 class RenderNode extends Node<RenderNode> {
 
-    public var transform:Transform;
     private var display:Display;
 
-    public var graphic(get_displayObject, never):FlxObject;
+    public var transform:Transform;
+    public var graphic(get_graphic, never):FlxObject;
 
-    private inline function get_displayObject():FlxObject {
+    private inline function get_graphic():FlxObject {
         return display.graphic;
     }
 

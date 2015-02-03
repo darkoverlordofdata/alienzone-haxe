@@ -15,11 +15,14 @@
  */
 package alienzone;
 
-import alienzone.engine.EntityFactory;
-import alienzone.systems.DisplaySystem;
-import hxE.EntityWorld;
+import alienzone.systems.RenderSystem;
+import alienzone.systems.SystemPriorities;
+import ash.tick.ITickProvider;
+import ash.core.Engine;
+import flixel.group.FlxGroup;
 import flixel.FlxG;
 import flixel.FlxState;
+
 
 enum GameType {
     Infinity;
@@ -32,16 +35,15 @@ enum GameType {
 class PlayState extends FlxState {
 
     private var gameType:GameType;
-    private var world:EntityWorld;
-    private var displaySystem:DisplaySystem;
-    private var entities:EntityFactory;
+    private var container:FlxGroup;
+    private var engine:Engine;
+    private var tickProvider:ITickProvider;
+    private var factory:EntityFactory;
 
 
     public function new(gameType:GameType) {
         super();
         this.gameType = gameType;
-        world = new EntityWorld();
-        entities = new EntityFactory(world);
     }
 
 	/**
@@ -49,17 +51,18 @@ class PlayState extends FlxState {
 	 */
 	override public function create():Void {
 		super.create();
+        
+        // Set up the Ash engine
+        engine = new Engine();
+        engine.addSystem(new RenderSystem(this), SystemPriorities.render);
+        
+        // Add the entities
+        factory = new EntityFactory(engine);
+        factory.image(50, 200, "images/d16a.png");
+        factory.title(0,50,"AlienZone");
+        factory.start();
         //add(new FPS());
-
-        displaySystem = new DisplaySystem();
-
-        world.addSystem(displaySystem);
-
-        //add(entities.fps(0, 0, 0x000000).graphic);
-        add(entities.text(0, 50, "Alien Zone").graphic);
-        add(entities.image(50, 300, "images/d16a.png").graphic);
-
-
+        
     }
 	
 	/**
@@ -75,6 +78,6 @@ class PlayState extends FlxState {
 	 */
 	override public function update():Void {
 		super.update();
-        world.updateSystems(FlxG.elapsed);
+        engine.update(FlxG.elapsed);
 	}
 }

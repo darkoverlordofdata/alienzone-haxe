@@ -30,21 +30,21 @@ class RenderSystem extends System {
     }
 
     private function addToDisplay(node:RenderNode):Void {
-        container.add(node.displayObject);
+        container.add(node.graphic);
     }
 
     private function removeFromDisplay(node:RenderNode):Void {
-        container.removeChild(node.graphic);
+        container.remove(node.graphic);
     }
 
     override public function update(time:Float):Void {
         for (node in nodes) {
-            var graphic:Display = node.graphic;
+            var graphic:FlxObject = node.graphic;
             var transform:Transform = node.transform;
 
             graphic.x = transform.x;
             graphic.y = transform.y;
-            graphic.rotation = transform.rotation * 180 / Math.PI;
+            //graphic.rotation = transform.rotation * 180 / Math.PI;
         }
     }
 
