@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33e74dff-cbda-447e-a773-699092e19a24" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/alienzone/EntityFactory.hx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/alienzone/components/GameState.hx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/alienzone/systems/SystemPriorities.hx" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alienzone/engine/BaseEntity.hx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alienzone/engine/EntityFactory.hx" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/entities/ButtonEntity.hx" afterPath="$PROJECT_DIR$/entities/ButtonEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/entities/FpsEntity.hx" afterPath="$PROJECT_DIR$/entities/FpsEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/entities/GemEntity.hx" afterPath="$PROJECT_DIR$/entities/GemEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/entities/ImageEntity.hx" afterPath="$PROJECT_DIR$/entities/ImageEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/entities/InputEntity.hx" afterPath="$PROJECT_DIR$/entities/InputEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/entities/LegendEntity.hx" afterPath="$PROJECT_DIR$/entities/LegendEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/entities/OptionEntity.hx" afterPath="$PROJECT_DIR$/entities/OptionEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/entities/ScoreEntity.hx" afterPath="$PROJECT_DIR$/entities/ScoreEntity.hx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/alienzone/entities/TextEntity.hx" afterPath="$PROJECT_DIR$/entities/TextEntity.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/EntityFactory.hx" afterPath="$PROJECT_DIR$/src/alienzone/EntityFactory.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/MenuState.hx" afterPath="$PROJECT_DIR$/src/alienzone/MenuState.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/PlayState.hx" afterPath="$PROJECT_DIR$/src/alienzone/PlayState.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/nodes/RenderNode.hx" afterPath="$PROJECT_DIR$/src/alienzone/nodes/RenderNode.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/systems/RenderSystem.hx" afterPath="$PROJECT_DIR$/src/alienzone/systems/RenderSystem.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AlienZone3.iws" />
@@ -42,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PlayState.hx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayState.hx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/alienzone/PlayState.hx">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.472">
-              <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="96" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -56,17 +40,17 @@
         <entry file="file://$PROJECT_DIR$/src/alienzone/EntityFactory.hx">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+              <caret line="104" column="30" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuState.hx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MenuState.hx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/alienzone/MenuState.hx">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            <state vertical-scroll-proportion="1.192">
+              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -113,9 +97,10 @@
         <option value="$PROJECT_DIR$/src/alienzone/components/GameState.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/systems/RenderSystem.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/nodes/RenderNode.hx" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/alienzone/EntityFactory.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/PlayState.hx" />
-        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/alienzone/MenuState.hx" />
       </list>
     </option>
   </component>
@@ -410,7 +395,13 @@
       <option name="project" value="LOCAL" />
       <updated>1422948146475</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="daily">
+      <created>1422995555802</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1422995555802</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -419,6 +410,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -436,7 +428,6 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -770,22 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/EntityFactory.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/MenuState.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -794,10 +769,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/EntityFactory.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="104" column="30" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/alienzone/PlayState.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.472">
-          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="96" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/MenuState.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.192">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding />
         </state>
       </provider>

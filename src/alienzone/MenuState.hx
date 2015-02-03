@@ -16,18 +16,13 @@
 package alienzone;
 
 import alienzone.PlayState.GameType;
-import flixel.util.FlxColor;
+import alienzone.systems.RenderSystem;
+import alienzone.systems.SystemPriorities;
+import ash.tick.ITickProvider;
+import ash.core.Engine;
+import flixel.group.FlxGroup;
 import flixel.FlxG;
 import flixel.FlxState;
-import flixel.text.FlxText;
-import flixel.ui.FlxButton;
-
-import flixel.text.FlxBitmapTextField;
-import flixel.text.pxText.PxBitmapFont;
-import flixel.text.pxText.PxTextAlign;
-import openfl.Assets;
-
-import alienzone.FPS;
 
 
 /**
@@ -35,72 +30,30 @@ import alienzone.FPS;
  */
 class MenuState extends FlxState {
 
-    private var font:PxBitmapFont;
-    private var font0:PxBitmapFont;
+    private var gameType:GameType;
+    private var container:FlxGroup;
+    private var engine:Engine;
+    private var tickProvider:ITickProvider;
+    private var factory:EntityFactory;
 
     /**
 	 * Function that is called up when to state is created to set it up. 
 	 */
 	override public function create() {
 		super.create();
+        // Set up the Ash engine
+        engine = new Engine();
+        engine.addSystem(new RenderSystem(this), SystemPriorities.render);
 
-        var XMLData = Xml.parse(Assets.getText("fonts/opendyslexic.fnt"));
-        var XMLData0 = Xml.parse(Assets.getText("fonts/outlined.fnt"));
-        font = new PxBitmapFont().loadAngelCode(Assets.getBitmapData("fonts/opendyslexic_0.png"), XMLData);
-        font0 = new PxBitmapFont().loadAngelCode(Assets.getBitmapData("fonts/outlined_0.png"), XMLData0);
+        // Add the entities
+        factory = new EntityFactory(engine);
+        factory.title(0,50,"AlienZone");
+        factory.button(80, 150, "Infinity", onInfinity);
+        factory.button(80, 250, "FTL", onFTL);
+        factory.start();
+        //add(new FPS());
 
-        title(0, 50, "AlienZone");
-        button(80, 150, "Infinity", onInfinity);
-        button(80, 250, "FTL", onFTL);
-//        add(new FPS());
 
-    }
-
-    /**
-	 * Display the game title
-	 */
-    private function title(x:Int, y:Int, text:String) {
-        
-        var title:FlxBitmapTextField = new FlxBitmapTextField(font0);
-        title.x = x;
-        title.y = y;
-        title.fixedWidth = true;
-        title.color = FlxColor.YELLOW;
-        title.useTextColor = false;
-        title.text = text;
-        title.outlineColor = FlxColor.RED;
-        title.width = 320;
-        title.alignment = PxTextAlign.CENTER;
-        title.fontScale = 2.2;
-        add(title);
-    }
-
-    /**
-	 * Display a menu button
-	 */
-    private function button(x:Int, y:Int, text:String, callback:Void->Void) {
-
-        var btn = new FlxButton(x, y, "", callback);
-        btn.loadGraphic("images/button5.png");
-        add(btn);
-
-        var txt:FlxBitmapTextField = new FlxBitmapTextField(font);
-        txt.x = x;
-        txt.y = y+10;
-        txt.fixedWidth = true;
-        txt.color = FlxColor.BLACK;
-        txt.useTextColor = false;
-        txt.text = text;
-        txt.width = 150;
-        txt.alignment = PxTextAlign.CENTER;
-        txt.fontScale = 1.2;
-        add(txt);
-
-//        var txt = new FlxText(x, y+15, 150);
-//        txt.text = text;
-//        txt.setFormat(Reg.font, 30, FlxColor.BLACK, "center");
-//        add(txt);
-    
     }
 
     /**
@@ -132,5 +85,6 @@ class MenuState extends FlxState {
 	 */
 	override public function update() {
 		super.update();
-	}	
+        engine.update(FlxG.elapsed);
+	}
 }

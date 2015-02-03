@@ -1,5 +1,7 @@
 package alienzone;
 
+import flixel.ui.FlxButton;
+import flixel.group.FlxTypedSpriteGroup;
 import ash.core.Entity;
 import ash.core.Engine;
 import ash.fsm.EntityStateMachine;
@@ -68,22 +70,52 @@ class EntityFactory {
         return image;
     }
 
-    public function title(x:Int, y:Int, str:String) {
+    /**
+     * Title
+     */
+    public function title(x:Int, y:Int, text:String):Entity {
     
-        var text:FlxBitmapTextField = new FlxBitmapTextField(fontTitle);
-        text.fixedWidth = true;
-        text.color = FlxColor.YELLOW;
-        text.useTextColor = false;
-        text.text = str;
-        text.outlineColor = FlxColor.RED;
-        text.width = 320;
-        text.alignment = PxTextAlign.CENTER;
-        text.fontScale = 2.2;
+        var label:FlxBitmapTextField = new FlxBitmapTextField(fontTitle);
+        label.fixedWidth = true;
+        label.color = FlxColor.YELLOW;
+        label.useTextColor = false;
+        label.text = text;
+        label.outlineColor = FlxColor.RED;
+        label.width = 320;
+        label.alignment = PxTextAlign.CENTER;
+        label.fontScale = 2.2;
         
         var title:Entity = new Entity()
-        .add(new Display(text))
+        .add(new Display(label))
         .add(new Transform(x, y));
         engine.addEntity(title);
         return title;
+    }
+
+    public function button(x:Int, y:Int, text:String, callback):Entity {
+
+        var group:FlxTypedSpriteGroup<FlxSprite> = new FlxTypedSpriteGroup<FlxSprite>();
+        var btn:FlxButton = new FlxButton(0, 0, "", callback);
+        btn.loadGraphic("images/button5.png");
+        group.add(btn);
+
+        var txt:FlxBitmapTextField = new FlxBitmapTextField(fontNormal);
+        txt.x = 0;
+        txt.y = 10;
+        txt.fixedWidth = true;
+        txt.color = FlxColor.BLACK;
+        txt.useTextColor = false;
+        txt.text = text;
+        txt.width = 150;
+        txt.alignment = PxTextAlign.CENTER;
+        txt.fontScale = 1.2;
+        group.add(txt);
+
+        var button:Entity = new Entity()
+        .add(new Display(group))
+        .add(new Transform(x, y));
+        engine.addEntity(button);
+        return button;
+
     }
 }
