@@ -13,9 +13,8 @@
  *--------------------------------------------------------------------+
  *
  */
-package alienzone;
+package alienzone.renderables;
 
-import alienzone.Reg;
 import flixel.FlxG;
 import flixel.text.FlxText;
 
@@ -34,7 +33,6 @@ class FPS extends FlxText {
      */
     public function new(x:Float = 10.0, y:Float = 10.0, color:Int = 0x000000) {
         super(x, y, 0, "[??]", 12, true);
-        font = Reg.font;
     }
 
     /**

@@ -58,29 +58,22 @@ class PlayState extends FlxState {
         
         // Add the entities
         factory = new EntityFactory(engine);
-        factory.title(0,50,"AlienZed");
-        factory.button(80, 150, "Infinity", onInfinity);
-        factory.button(80, 250, "FTL", onFTL);
+        factory.fps(0,0);
+        factory.image(0, 0, "images/slots.png", 0.3);
+        factory.button(100, 0, "Back", onBack);
         factory.start();
-        //add(new FPS());
         
     }
 
     /**
 	 * Run the Infinity game
 	 */
-    private function onInfinity() {
-        trace("onInfinity");
+    private function onBack() {
+        var menuState:MenuState = new MenuState();
+        FlxG.switchState(menuState);
     }
 
     /**
-	 * Run the FTL game
-	 */
-    private function onFTL() {
-        trace("onFTL");
-    }
-
-/**
 	 * Function that is called when this state is destroyed - you might want to 
 	 * consider setting all objects this state uses to null to help garbage collection.
 	 */

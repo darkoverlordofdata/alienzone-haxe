@@ -47,13 +47,10 @@ class MenuState extends FlxState {
 
         // Add the entities
         factory = new EntityFactory(engine);
+        factory.fps(0,0);
         factory.title(0,50,"AlienZone");
         factory.button(80, 150, "Infinity", onInfinity);
         factory.button(80, 250, "FTL", onFTL);
-        factory.start();
-        //add(new FPS());
-
-
     }
 
     /**

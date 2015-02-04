@@ -1,18 +1,10 @@
 package alienzone;
 
-import flixel.ui.FlxButton;
-import flixel.group.FlxTypedSpriteGroup;
 import ash.core.Entity;
 import ash.core.Engine;
 import ash.fsm.EntityStateMachine;
 import ash.tools.ComponentPool;
-import flixel.text.pxText.PxBitmapFont;
-import flixel.text.FlxBitmapTextField;
-import flixel.text.pxText.PxTextAlign;
-import flixel.util.FlxColor;
-import flixel.FlxObject;
 import flixel.FlxSprite;
-import openfl.Assets;
 
 import alienzone.components.Action;
 import alienzone.components.Bonus;
@@ -32,18 +24,17 @@ import alienzone.components.Text;
 import alienzone.components.Transform;
 import alienzone.components.Velocity;
 
+import alienzone.renderables.Button;
+import alienzone.renderables.FPS;
+import alienzone.renderables.Title;
+
+
 class EntityFactory {
 
     private var engine:Engine;
-    private var fontNormal:PxBitmapFont;
-    private var fontTitle:PxBitmapFont;
 
     public function new(engine:Engine) {
         this.engine = engine;
-        var fntNormal = Xml.parse(Assets.getText("fonts/opendyslexic.fnt"));
-        var fntTitle = Xml.parse(Assets.getText("fonts/outlined.fnt"));
-        fontNormal = new PxBitmapFont().loadAngelCode(Assets.getBitmapData("fonts/opendyslexic_0.png"), fntNormal);
-        fontTitle = new PxBitmapFont().loadAngelCode(Assets.getBitmapData("fonts/outlined_0.png"), fntTitle);
     }
 
     /**
@@ -59,12 +50,19 @@ class EntityFactory {
     
     /**
      * Image
+     *
+     * @param x
+     * @param y 
+     * @param path
+     * @param callback
+     * @return opacity
      */
     public function image(x:Int, y:Int, path:String, opacity:Float=1.0):Entity {
+        var sprite:FlxSprite = new FlxSprite(0, 0, path);
+        sprite.alpha = opacity;
         var image:Entity = new Entity()
-        .add(new Sprite(0, 0, path))
         .add(new Opacity(opacity))
-        .add(new Display(new FlxSprite(0, 0, path)))
+        .add(new Display(sprite))
         .add(new Transform(x, y));
         engine.addEntity(image);
         return image;
@@ -72,50 +70,121 @@ class EntityFactory {
 
     /**
      * Title
+     *
+     * @param x
+     * @param y
+     * @param text
+     * @return Entity
      */
     public function title(x:Int, y:Int, text:String):Entity {
-    
-        var label:FlxBitmapTextField = new FlxBitmapTextField(fontTitle);
-        label.fixedWidth = true;
-        label.color = FlxColor.YELLOW;
-        label.useTextColor = false;
-        label.text = text;
-        label.outlineColor = FlxColor.RED;
-        label.width = 320;
-        label.alignment = PxTextAlign.CENTER;
-        label.fontScale = 2.2;
-        
         var title:Entity = new Entity()
-        .add(new Display(label))
+        .add(new Display(new Title(0, 0, text)))
         .add(new Transform(x, y));
         engine.addEntity(title);
         return title;
     }
 
+    /**
+     * Button
+     * 
+     * @param x
+     * @param y 
+     * @param text 
+     * @param callback
+     * @return Entity
+     */
     public function button(x:Int, y:Int, text:String, callback):Entity {
-
-        var group:FlxTypedSpriteGroup<FlxSprite> = new FlxTypedSpriteGroup<FlxSprite>();
-        var btn:FlxButton = new FlxButton(0, 0, "", callback);
-        btn.loadGraphic("images/button5.png");
-        group.add(btn);
-
-        var txt:FlxBitmapTextField = new FlxBitmapTextField(fontNormal);
-        txt.x = 0;
-        txt.y = 10;
-        txt.fixedWidth = true;
-        txt.color = FlxColor.BLACK;
-        txt.useTextColor = false;
-        txt.text = text;
-        txt.width = 150;
-        txt.alignment = PxTextAlign.CENTER;
-        txt.fontScale = 1.2;
-        group.add(txt);
-
         var button:Entity = new Entity()
-        .add(new Display(group))
+        .add(new Display(new Button(0, 0, text, callback)))
         .add(new Transform(x, y));
         engine.addEntity(button);
         return button;
 
+    }
+
+    /**
+     * FPS
+     * 
+     * @param x
+     * @param y 
+     * @return Entity
+     */
+    public function fps(x:Int, y:Int):Entity {
+        var fps:Entity = new Entity()
+        .add(new Display(new FPS()))
+        .add(new Transform(x, y));
+        engine.addEntity(fps);
+        return fps;
+    }
+
+    /**
+     * Gem
+     *
+     * @param x
+     * @param y
+     * @param text
+     * @param callback
+     * @return Entity
+     */
+    public function gem(x:Int, y:Int, text:String, callback):Entity {
+        var gem:Entity = new Entity();
+        return gem;
+    }
+
+    /**
+     * Input
+     *
+     * @param x
+     * @param y
+     * @param text
+     * @param callback
+     * @return Entity
+     */
+    public function input(x:Int, y:Int, text:String, callback):Entity {
+        var input:Entity = new Entity();
+        return input;
+    }
+
+    /**
+     * Legend
+     *
+     * @param x
+     * @param y
+     * @param text
+     * @param callback
+     * @return Entity
+     */
+    public function legend(x:Int, y:Int, text:String, callback):Entity {
+        var legend:Entity = new Entity();
+        return legend;
+    }
+
+    /**
+     * Option
+     *
+     * @param x
+     * @param y
+     * @param text
+     * @param callback
+     * @return Entity
+     */
+    public function option(x:Int, y:Int, text:String, callback):Entity {
+        var option:Entity = new Entity();
+        return option;
+    }
+
+
+    /**
+     * Score
+     *
+     * @param x
+     * @param y
+     * @param text
+     * @param callback
+     * @return Entity
+     */
+    public function score(x:Int, y:Int, text:String, callback):Entity {
+        var score:Entity = new Entity();
+        return score;
     }
 }
