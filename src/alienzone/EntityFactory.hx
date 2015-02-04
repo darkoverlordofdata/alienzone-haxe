@@ -40,11 +40,11 @@ class EntityFactory {
     /**
      * Start
      */
-    public function start() {
+    public function start(level:Int = 0, lives:Int = 3, points:Int = 0):EntityFactory {
         var gameState:Entity = new Entity()
-        .add(new GameState());
+        .add(new GameState(level, lives, points));
         engine.addEntity(gameState);
-        return gameState;
+        return this;
 
     }
     
@@ -57,7 +57,7 @@ class EntityFactory {
      * @param callback
      * @return opacity
      */
-    public function image(x:Int, y:Int, path:String, opacity:Float=1.0):Entity {
+    public function image(x:Int, y:Int, path:String, opacity:Float=1.0):EntityFactory {
         var sprite:FlxSprite = new FlxSprite(0, 0, path);
         sprite.alpha = opacity;
         var image:Entity = new Entity()
@@ -65,7 +65,7 @@ class EntityFactory {
         .add(new Display(sprite))
         .add(new Transform(x, y));
         engine.addEntity(image);
-        return image;
+        return this;
     }
 
     /**
@@ -76,12 +76,12 @@ class EntityFactory {
      * @param text
      * @return Entity
      */
-    public function title(x:Int, y:Int, text:String):Entity {
+    public function title(x:Int, y:Int, text:String):EntityFactory {
         var title:Entity = new Entity()
         .add(new Display(new Title(0, 0, text)))
         .add(new Transform(x, y));
         engine.addEntity(title);
-        return title;
+        return this;
     }
 
     /**
@@ -93,12 +93,12 @@ class EntityFactory {
      * @param callback
      * @return Entity
      */
-    public function button(x:Int, y:Int, text:String, callback):Entity {
+    public function button(x:Int, y:Int, text:String, callback):EntityFactory {
         var button:Entity = new Entity()
         .add(new Display(new Button(0, 0, text, callback)))
         .add(new Transform(x, y));
         engine.addEntity(button);
-        return button;
+        return this;
 
     }
 
@@ -109,12 +109,12 @@ class EntityFactory {
      * @param y 
      * @return Entity
      */
-    public function fps(x:Int, y:Int):Entity {
+    public function fps(x:Int, y:Int):EntityFactory {
         var fps:Entity = new Entity()
         .add(new Display(new FPS()))
         .add(new Transform(x, y));
         engine.addEntity(fps);
-        return fps;
+        return this;
     }
 
     /**
@@ -126,9 +126,9 @@ class EntityFactory {
      * @param callback
      * @return Entity
      */
-    public function gem(x:Int, y:Int, text:String, callback):Entity {
+    public function gem(x:Int, y:Int, text:String, callback):EntityFactory {
         var gem:Entity = new Entity();
-        return gem;
+        return this;
     }
 
     /**
@@ -140,9 +140,9 @@ class EntityFactory {
      * @param callback
      * @return Entity
      */
-    public function input(x:Int, y:Int, text:String, callback):Entity {
+    public function input(x:Int, y:Int, text:String, callback):EntityFactory {
         var input:Entity = new Entity();
-        return input;
+        return this;
     }
 
     /**
@@ -154,9 +154,9 @@ class EntityFactory {
      * @param callback
      * @return Entity
      */
-    public function legend(x:Int, y:Int, text:String, callback):Entity {
+    public function legend(x:Int, y:Int, text:String, callback):EntityFactory {
         var legend:Entity = new Entity();
-        return legend;
+        return this;
     }
 
     /**
@@ -168,9 +168,9 @@ class EntityFactory {
      * @param callback
      * @return Entity
      */
-    public function option(x:Int, y:Int, text:String, callback):Entity {
+    public function option(x:Int, y:Int, text:String, callback):EntityFactory {
         var option:Entity = new Entity();
-        return option;
+        return this;
     }
 
 
@@ -183,8 +183,8 @@ class EntityFactory {
      * @param callback
      * @return Entity
      */
-    public function score(x:Int, y:Int, text:String, callback):Entity {
+    public function score(x:Int, y:Int, text:String, callback):EntityFactory {
         var score:Entity = new Entity();
-        return score;
+        return this;
     }
 }

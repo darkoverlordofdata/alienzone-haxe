@@ -41,32 +41,22 @@ class MenuState extends FlxState {
 	 */
 	override public function create() {
 		super.create();
-        // Set up the Ash engine
+        // Set up the engine
         engine = new Engine();
         engine.addSystem(new RenderSystem(this), SystemPriorities.render);
 
         // Add the entities
-        factory = new EntityFactory(engine);
-        factory.fps(0,0);
-        factory.title(0,50,"AlienZone");
-        factory.button(80, 150, "Infinity", onInfinity);
-        factory.button(80, 250, "FTL", onFTL);
-    }
-
-    /**
-	 * Run the Infinity game
-	 */
-    private function onInfinity() {
-        var playState:PlayState = new PlayState(GameType.Infinity);
-        FlxG.switchState(playState);
-    }
-
-    /**
-	 * Run the FTL game
-	 */
-    private function onFTL() {
-        var playState:PlayState = new PlayState(GameType.FTL);
-        FlxG.switchState(playState);
+        factory = new EntityFactory(engine)
+        .fps(0, 0)
+        .title(0, 50, "AlienZone")
+        .button(80, 150, "Infinity", function() {
+            var playState:PlayState = new PlayState(GameType.Infinity);
+            FlxG.switchState(playState);
+        })
+        .button(80, 250, "FTL", function() {
+            var playState:PlayState = new PlayState(GameType.FTL);
+            FlxG.switchState(playState);
+        });
     }
 
 	/**

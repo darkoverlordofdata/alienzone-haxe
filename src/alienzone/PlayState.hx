@@ -57,11 +57,11 @@ class PlayState extends FlxState {
         engine.addSystem(new RenderSystem(this), SystemPriorities.render);
         
         // Add the entities
-        factory = new EntityFactory(engine);
-        factory.fps(0,0);
-        factory.image(0, 0, "images/slots.png", 0.3);
-        factory.button(100, 0, "Back", onBack);
-        factory.start();
+        factory = new EntityFactory(engine)
+        .fps(0, 0)
+        .image(0, 0, "images/slots.png", 0.2)
+        .button(100, 0, "Back", onBack)
+        .start(0, 3, 0);
         
     }
 

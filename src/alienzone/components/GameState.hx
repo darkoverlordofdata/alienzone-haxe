@@ -5,6 +5,9 @@ class GameState {
     public var level:Int = 0;
     public var points:Int = 0;
 
-    public function new() {
+    public inline function new(level:Int = 0, lives:Int = 3, points:Int = 0) {
+        this.level = level;
+        this.lives = lives;
+        this.points = points;
     }
 }
