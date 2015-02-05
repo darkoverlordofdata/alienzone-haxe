@@ -18,7 +18,6 @@ package alienzone;
 import alienzone.PlayState.GameType;
 import alienzone.systems.RenderSystem;
 import alienzone.systems.SystemPriorities;
-import ash.tick.ITickProvider;
 import ash.core.Engine;
 import flixel.group.FlxGroup;
 import flixel.FlxG;
@@ -31,9 +30,7 @@ import flixel.FlxState;
 class MenuState extends FlxState {
 
     private var gameType:GameType;
-    private var container:FlxGroup;
     private var engine:Engine;
-    private var tickProvider:ITickProvider;
     private var factory:EntityFactory;
 
     /**
@@ -50,13 +47,12 @@ class MenuState extends FlxState {
         .fps(0, 0)
         .title(0, 50, "AlienZone")
         .button(80, 150, "Infinity", function() {
-            var playState:PlayState = new PlayState(GameType.Infinity);
-            FlxG.switchState(playState);
+            FlxG.switchState(new PlayState(GameType.Infinity));
         })
         .button(80, 250, "FTL", function() {
-            var playState:PlayState = new PlayState(GameType.FTL);
-            FlxG.switchState(playState);
+            FlxG.switchState(new PlayState(GameType.FTL));
         });
+
     }
 
 	/**

@@ -23,6 +23,10 @@ import flixel.group.FlxGroup;
 import flixel.FlxG;
 import flixel.FlxState;
 
+import alienzone.match3.MatchObject;
+import alienzone.match3.Piece;
+import alienzone.match3.Grid;
+
 
 enum GameType {
     Infinity;
@@ -35,9 +39,7 @@ enum GameType {
 class PlayState extends FlxState {
 
     private var gameType:GameType;
-    private var container:FlxGroup;
     private var engine:Engine;
-    private var tickProvider:ITickProvider;
     private var factory:EntityFactory;
 
 

@@ -1,0 +1,37 @@
+unknownName: (Unknown)
+title: AlienZone
+gameover: High Scores
+leaderboards: Leaderboard
+achievements: Awards
+copyrightText: Copyright 2014 Dark Overlord of Data
+infinity: InfinitY
+ftl: FTL
+
+creditsText: |
+  SFX by Damaged Panda
+  Gems by Broos
+  Game by Dark Overlord of Data
+  Backgrounds http://www.nasa.gov
+
+playstore: https://play.google.com/store/apps/details?id=com.darkoverlordofdata.alienzone
+
+helplogin: |
+  To Login, for
+  leaderboard and achievements,
+  please install Alien Zone
+  from Google play
+
+
+howtoplay: |
+  Match 3 or more gems to score.
+  Use arrow keys to rotate and
+  move your gems, down key to drop.
+  Gems do not have to be in a
+  a straight line to match.
+
+  Timed (FTL) game will auto drop
+  your gems when time runs out.
+
+  Login to save scores and awards
+  with Google Play Games.
+

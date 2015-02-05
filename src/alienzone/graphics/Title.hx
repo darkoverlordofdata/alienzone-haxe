@@ -1,4 +1,4 @@
-package alienzone.renderables;
+package alienzone.graphics;
 import flixel.text.pxText.PxTextAlign;
 import flixel.util.FlxColor;
 import openfl.Assets;

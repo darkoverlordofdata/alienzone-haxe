@@ -24,9 +24,9 @@ import alienzone.components.Text;
 import alienzone.components.Transform;
 import alienzone.components.Velocity;
 
-import alienzone.renderables.Button;
-import alienzone.renderables.FPS;
-import alienzone.renderables.Title;
+import alienzone.graphics.Button;
+import alienzone.graphics.FPS;
+import alienzone.graphics.Title;
 
 
 class EntityFactory {

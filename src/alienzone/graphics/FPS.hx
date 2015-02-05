@@ -13,7 +13,7 @@
  *--------------------------------------------------------------------+
  *
  */
-package alienzone.renderables;
+package alienzone.graphics;
 
 import flixel.FlxG;
 import flixel.text.FlxText;
