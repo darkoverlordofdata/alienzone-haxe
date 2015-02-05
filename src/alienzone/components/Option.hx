@@ -1,6 +1,6 @@
 /**
  *--------------------------------------------------------------------+
- * MatchObject.hx
+ * components/Option.hx
  *--------------------------------------------------------------------+
  * Copyright DarkOverlordOfData (c) 2014
  *--------------------------------------------------------------------+
@@ -12,15 +12,16 @@
  *
  *--------------------------------------------------------------------+
  *
- *
- * @see https://github.com/hugeen/jmatch3
  */
-package alienzone.match3;
-class MatchObject {
+package alienzone.components;
 
-    public var type:String;
+class Option  {
 
-    public inline function new(type:String="__empty__") {
-        this.type = type;
+    public var name:String;
+    public var enabled:Bool;
+
+    public inline function new(name:String, enabled:Bool) {
+        this.name = name;
+        this.enabled = enabled;
     }
 }

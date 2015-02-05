@@ -16,5 +16,6 @@
     <orderEntry type="library" name="openfl 2,2,4" level="project" />
     <orderEntry type="library" name="flixel 3,3,6" level="project" />
     <orderEntry type="library" name="ash 1,5,3" level="project" />
+    <orderEntry type="library" name="flixel-addons 1,1,0" level="project" />
   </component>
 </module>

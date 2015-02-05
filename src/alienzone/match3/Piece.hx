@@ -1,10 +1,33 @@
+/**
+ *--------------------------------------------------------------------+
+ * Piece.hx
+ *--------------------------------------------------------------------+
+ * Copyright DarkOverlordOfData (c) 2014
+ *--------------------------------------------------------------------+
+ *
+ * This file is a part of Alien Zone
+ *
+ * Alien Zone is free software; you can copy, modify, and distribute
+ * it under the terms of the GPLv3 License
+ *
+ *--------------------------------------------------------------------+
+ *
+ *
+ * @see https://github.com/hugeen/jmatch3
+ */
 package alienzone.match3;
 
 class Piece extends Point {
 
     public var grid:Grid;
     public var object:MatchObject;
-    
+
+    /**
+     * Params:
+     * - grid
+     * - x
+     * - y
+     */
     public function new(grid:Grid, x:Int, y:Int) {
         super(x, y);
         this.grid = grid;

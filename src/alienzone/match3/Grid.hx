@@ -1,3 +1,20 @@
+/**
+ *--------------------------------------------------------------------+
+ * Grid.hx
+ *--------------------------------------------------------------------+
+ * Copyright DarkOverlordOfData (c) 2014
+ *--------------------------------------------------------------------+
+ *
+ * This file is a part of Alien Zone
+ *
+ * Alien Zone is free software; you can copy, modify, and distribute
+ * it under the terms of the GPLv3 License
+ *
+ *--------------------------------------------------------------------+
+ *
+ * 
+ * @see https://github.com/hugeen/jmatch3
+ */
 package alienzone.match3;
 
 class Grid {
@@ -16,6 +33,12 @@ class Grid {
     
     public static var emptyObject:MatchObject = new MatchObject();
 
+    /**
+     * options:
+     * - width (default 10)
+     * - height (default 10)
+     * - gravity (default false): "up", "right", "down", "left", or NONE
+     */
     public function new(gravity:String='NONE', height:Int=10, width:Int=10) {
 
         this.gravity = gravity;

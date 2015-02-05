@@ -15,6 +15,8 @@
  */
 package alienzone;
 
+import flixel.FlxSprite;
+import flixel.util.FlxSignal.FlxTypedSignal;
 import flixel.util.FlxSave;
 
 /**
@@ -29,7 +31,8 @@ class Reg {
 	 */
     public static var font:String = "opendyslexic";
 
-
+		
+	public static var signalAction = new FlxTypedSignal<String->FlxSprite->Void>();
 
 	/**
 	 * Generic levels Array that can be used for cross-state stuff.

@@ -1,13 +1,13 @@
 package alienzone.components;
 
-import flixel.FlxObject;
+import flixel.FlxSprite;
 
 
 class Display {
 
-    public var graphic(default, null):FlxObject;
+    public var graphic(default, null):FlxSprite;
 
-    public inline function new(graphic:FlxObject) {
+    public inline function new(graphic:FlxSprite) {
         this.graphic = graphic;
     }
 }

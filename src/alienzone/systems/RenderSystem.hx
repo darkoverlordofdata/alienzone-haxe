@@ -1,5 +1,7 @@
 package alienzone.systems;
 
+import flixel.FlxSprite;
+import flixel.FlxSprite;
 import ash.core.Engine;
 import ash.core.NodeList;
 import ash.core.System;
@@ -12,12 +14,14 @@ import flixel.FlxObject;
 
 class RenderSystem extends System {
 
-    public var container:FlxGroup;
     private var nodes:NodeList<RenderNode>;
+    public var container:FlxGroup;
+    public var factory:EntityFactory;
 
 
-    public function new(container:FlxGroup) {
+    public function new(container:FlxGroup, factory:EntityFactory) {
         super();
+        this.factory = factory;
         this.container = container;
     }
 
@@ -39,7 +43,7 @@ class RenderSystem extends System {
 
     override public function update(time:Float):Void {
         for (node in nodes) {
-            var graphic:FlxObject = node.graphic;
+            var graphic:FlxSprite = node.graphic;
             var transform:Transform = node.transform;
 
             graphic.x = transform.x;
