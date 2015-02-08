@@ -1,6 +1,6 @@
 /**
  *--------------------------------------------------------------------+
- * components/Text.hx
+ * components/Level.hx
  *--------------------------------------------------------------------+
  * Copyright DarkOverlordOfData (c) 2014
  *--------------------------------------------------------------------+
@@ -16,11 +16,11 @@
 package alienzone.components;
 
 
-class Text {
+class Level {
 
-    public var value:String;
+    public var value:Int;
 
-    public inline function new(value:String) {
+    public inline function new(value:Int) {
         this.value = value;
     }
 }

@@ -13,17 +13,16 @@
  *--------------------------------------------------------------------+
  *
  */
-package alienzone;
+package alienzone.states;
 
+import alienzone.states.PlayState.GameType;
 import alienzone.systems.OptionSystem;
-import alienzone.PlayState.GameType;
 import alienzone.systems.RenderSystem;
 import alienzone.systems.SystemPriorities;
 import ash.core.Engine;
-import flixel.group.FlxGroup;
 import flixel.FlxG;
+import flash.display.StageQuality;
 import flixel.FlxState;
-import alienzone.graphics.Button.ButtonStyle;
 
 /**
  * A FlxState which can be used for the game's menu.
@@ -39,34 +38,40 @@ class MenuState extends FlxState {
 	 */
 	override public function create() {
 		super.create();
+        FlxG.stage.quality = StageQuality.BEST;
+        FlxG.camera.antialiasing = true;
+
         /**
          *  Create the engine
          */
         engine = new Engine();
         factory = new EntityFactory(engine);
-        engine.addSystem(new RenderSystem(this, factory), SystemPriorities.render);
-        engine.addSystem(new OptionSystem(this, factory), SystemPriorities.animate);
-
 
         /**
          *  Initialize the entities
          */
         factory
+        .image(10, 10, 'title')
+        .button(80, 150, 'infinity')
+        .button(80, 250, 'ftl')
+        .option(10, 400, 'music', true)
+        .button(105, 410, 'help')
+        .option(250, 400, 'sfx', true)
         .fps(0, 0)
-        .title(0, 50, "AlienZone")
-        .button(80, 150, "Infinity", ButtonBig, function() {
-            FlxG.switchState(new PlayState(GameType.Infinity));
-        })
-        .button(80, 250, "FTL", ButtonBig, function() {
-            FlxG.switchState(new PlayState(GameType.FTL));
-        })
-        .option(10, 400, 'images/music_option.png', 47, 57, 'music', true)
-        .button(105, 410, 'how to play', ButtonThin, function() {
-            FlxG.switchState(new HelpState());
-        })
-        .option(250, 400, 'images/sfx_option.png', 70, 61, 'sfx', true)
-        ;
+        .onclick.add(function(action:String) {
+            switch (action) {
+                case 'infinity':    FlxG.switchState(new PlayState(GameType.Infinity));
+                case 'ftl':         FlxG.switchState(new PlayState(GameType.FTL));
+                case 'hrlp':        FlxG.switchState(new HelpState());
 
+            }
+        });
+
+        /**
+         *  Run the systems
+         */
+        engine.addSystem(new RenderSystem(this, factory), SystemPriorities.render);
+        engine.addSystem(new OptionSystem(this, factory), SystemPriorities.animate);
 
     }
 

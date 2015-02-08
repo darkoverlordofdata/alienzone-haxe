@@ -15,7 +15,7 @@
  */
 package alienzone;
 
-import alienzone.MenuState;
+import alienzone.states.MenuState;
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.Lib;

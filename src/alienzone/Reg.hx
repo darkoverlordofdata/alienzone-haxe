@@ -26,14 +26,16 @@ import flixel.util.FlxSave;
  */
 class Reg {
 
-    /**
-	 * Fonts used
-	 */
-    public static var font:String = "opendyslexic";
-
+	public static var SHOW_FPS:Bool = true;
 		
 	public static var signalAction = new FlxTypedSignal<String->FlxSprite->Void>();
 
+	public static var legend:Int = 3;
+
+	public static function updateScore(points:Int) {
+	
+	}
+	
 	/**
 	 * Generic levels Array that can be used for cross-state stuff.
 	 * Example usage: Storing the levels of a platformer.

@@ -13,24 +13,22 @@
  *--------------------------------------------------------------------+
  *
  */
-package alienzone;
+package alienzone.states;
+
+import flash.display.StageQuality;
 
 import alienzone.systems.OptionSystem;
-import alienzone.PlayState.GameType;
 import alienzone.systems.RenderSystem;
 import alienzone.systems.SystemPriorities;
 import ash.core.Engine;
-import flixel.group.FlxGroup;
 import flixel.FlxG;
 import flixel.FlxState;
-import alienzone.graphics.Button.ButtonStyle;
 
 /**
  * A FlxState which can be used for the game's menu.
  */
 class HelpState extends FlxState {
 
-    private var gameType:GameType;
     private var engine:Engine;
     private var factory:EntityFactory;
     private var instructions:String = "
@@ -52,28 +50,34 @@ with Google Play Games.
 	 */
 	override public function create() {
 		super.create();
+        FlxG.stage.quality = StageQuality.BEST;
+        FlxG.camera.antialiasing = true;
+        
         /**
          *  Create the engine
          */
         engine = new Engine();
         factory = new EntityFactory(engine);
-        engine.addSystem(new RenderSystem(this, factory), SystemPriorities.render);
-        engine.addSystem(new OptionSystem(this, factory), SystemPriorities.animate);
-
 
         /**
          *  Initialize the entities
          */
         factory
-        .fps(0, 0)
-        .button(260, 20, "Back", ButtonSmall, function() {
-            FlxG.switchState(new MenuState());
-        })
-        .image(15, 100, "images/scores.png", 0.5)
-        .image(10, 10, "images/d16a.png")
+        .image(15, 100, 'scores', 0.5)
+        .image(10, 10, 'logo')
         .help(0, 130, instructions)
-        .text(0, 400, '${String.fromCharCode(0xa9)}2014 Dark Overlord of Data')
-        ;
+        .text(0, 400, '${String.fromCharCode(0xa9)}2014 Dark Overlord of Data', 0.8)
+        .button(260, 20, 'back')
+        .fps(0, 0)
+        .onclick.add(function(action) {
+            FlxG.switchState(new MenuState());
+        });
+
+        /**
+         *  Run the systems
+         */
+        engine.addSystem(new RenderSystem(this, factory), SystemPriorities.render);
+        engine.addSystem(new OptionSystem(this, factory), SystemPriorities.animate);
 
     }
 

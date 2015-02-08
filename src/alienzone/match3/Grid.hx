@@ -39,7 +39,7 @@ class Grid {
      * - height (default 10)
      * - gravity (default false): "up", "right", "down", "left", or NONE
      */
-    public function new(gravity:String='NONE', height:Int=10, width:Int=10) {
+    public function new(width:Int=10, height:Int=10, gravity:String='NONE') {
 
         this.gravity = gravity;
         this.height = height;

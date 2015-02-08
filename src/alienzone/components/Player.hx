@@ -1,6 +1,6 @@
 /**
  *--------------------------------------------------------------------+
- * components/Text.hx
+ * components/Action.hx
  *--------------------------------------------------------------------+
  * Copyright DarkOverlordOfData (c) 2014
  *--------------------------------------------------------------------+
@@ -15,12 +15,11 @@
  */
 package alienzone.components;
 
+class Player  {
 
-class Text {
+    public var command:String;
 
-    public var value:String;
-
-    public inline function new(value:String) {
-        this.value = value;
+    public inline function new(command:String="") {
+        this.command = command;
     }
 }

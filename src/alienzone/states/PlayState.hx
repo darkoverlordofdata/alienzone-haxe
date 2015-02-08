@@ -13,20 +13,20 @@
  *--------------------------------------------------------------------+
  *
  */
-package alienzone;
+package alienzone.states;
 
+import alienzone.components.Player;
+import flash.display.StageQuality;
+import flixel.util.FlxColor;
+import alienzone.systems.LegendSystem;
+import alienzone.systems.PlayerSystem;
 import alienzone.systems.RenderSystem;
+import alienzone.systems.ScoreSystem;
 import alienzone.systems.SystemPriorities;
-import ash.tick.ITickProvider;
 import ash.core.Engine;
-import flixel.group.FlxGroup;
+import ash.core.Entity;
 import flixel.FlxG;
 import flixel.FlxState;
-import alienzone.graphics.Button.ButtonStyle;
-
-import alienzone.match3.MatchObject;
-import alienzone.match3.Piece;
-import alienzone.match3.Grid;
 
 
 enum GameType {
@@ -54,26 +54,51 @@ class PlayState extends FlxState {
 	 */
 	override public function create():Void {
 		super.create();
+        FlxG.stage.quality = StageQuality.BEST;
+        FlxG.camera.antialiasing = true;
 
         /**
          *  Create the engine
          */
         engine = new Engine();
         factory = new EntityFactory(engine);
-        engine.addSystem(new RenderSystem(this, factory), SystemPriorities.render);
 
         /**
          *  Initialize the entities
          */
-        factory
-        .fps(0, 0)
-        .image(0, 0, "images/slots.png", 0.2)
-        .button(260, 20, "Back", ButtonSmall, function() {
-            FlxG.switchState(new MenuState());
-        })
-        .start(0, 3, 0)
-        ;
+        var label:String = (gameType == GameType.Infinity) ? 'InfinitY' : 'FTL';
+        var player:Player = factory.player();
         
+        factory
+        .image(0, 0, 'slots', 0.2)
+        .text(0, 0, label, 1.4, FlxColor.YELLOW)
+        .score(0, 40, 'Score')
+        .legend(290, 100, 'legend', 0, 1.0)
+        .legend(290, 132, 'legend', 1, 1.0)
+        .legend(290, 164, 'legend', 2, 1.0)
+        .legend(290, 196, 'legend', 3, 0.3)
+        .legend(290, 228, 'legend', 4, 0.3)
+        .legend(290, 260, 'legend', 5, 0.3)
+        .legend(290, 292, 'legend', 6, 0.3)
+        .legend(290, 324, 'legend', 7, 0.3)
+        .input(000, 430, "left", player)
+        .input(050, 430, "down", player)
+        .input(100, 430, "right", player)
+        .input(220, 430, "lrot", player)
+        .input(270, 430, "rrot", player)
+        .button(260, 20, "back")        
+        .fps(0, 0)
+        .onclick.add(function(action) {
+            FlxG.switchState(new MenuState());
+        });
+
+        /**
+         *  Run the systems
+         */
+        engine.addSystem(new RenderSystem(this, factory), SystemPriorities.render);
+        engine.addSystem(new ScoreSystem(this, factory), SystemPriorities.animate);
+        engine.addSystem(new LegendSystem(this, factory), SystemPriorities.animate);
+        engine.addSystem(new PlayerSystem(this, factory), SystemPriorities.player);
     }
 
 

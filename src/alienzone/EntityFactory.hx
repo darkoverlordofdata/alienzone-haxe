@@ -1,5 +1,9 @@
 package alienzone;
 
+import flixel.util.FlxSignal.FlxTypedSignal;
+import alienzone.components.Player;
+import flixel.ui.FlxButton;
+import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
 import flixel.util.FlxColor;
 import flixel.text.pxText.PxTextAlign;
@@ -20,6 +24,7 @@ import alienzone.components.Direction;
 import alienzone.components.Display;
 import alienzone.components.GameState;
 import alienzone.components.Gravity;
+import alienzone.components.Level;
 import alienzone.components.Lock;
 import alienzone.components.Number;
 import alienzone.components.Opacity;
@@ -27,19 +32,21 @@ import alienzone.components.Option;
 import alienzone.components.Sprite;
 import alienzone.components.State;
 import alienzone.components.Target;
+import alienzone.components.Text;
 import alienzone.components.Transform;
 import alienzone.components.Velocity;
 
-import alienzone.graphics.Button;
-import alienzone.graphics.Button.ButtonStyle;
 import alienzone.graphics.FPS;
 
 
 class EntityFactory {
 
+    public var onclick:FlxTypedSignal<String->Void>;
+
     private var engine:Engine;
 
     public function new(engine:Engine) {
+        onclick = new FlxTypedSignal<String->Void>();
         this.engine = engine;
 
     }
@@ -48,13 +55,33 @@ class EntityFactory {
      * bitmapText helper
      *
      */
-    private function bitmapText(fontName:String):FlxBitmapTextField {
+    private function bitmapText(fontName:String, fontScale:Float=1.0):FlxBitmapTextField {
         var font:PxBitmapFont;
         var fnt = Xml.parse(Assets.getText('${fontName}.fnt'));
-        font = new PxBitmapFont().loadAngelCode(Assets.getBitmapData('${fontName}_0.png'), fnt);
-        return new FlxBitmapTextField(font);
+        font = new PxBitmapFont()
+        .loadAngelCode(Assets.getBitmapData('${fontName}_0.png'), fnt);
+        var bitmap:FlxBitmapTextField = new FlxBitmapTextField(font);
+        bitmap.width = 320;
+        bitmap.fixedWidth = true;
+        bitmap.useTextColor = false;
+        bitmap.alignment = PxTextAlign.CENTER;
+        bitmap.multiLine = false;
+        bitmap.fontScale = fontScale;
+        return bitmap;
     }
 
+    /**
+     * Player
+     *
+     * @return player component
+     */
+    public function player():Player {
+        var player = new Player();
+        var entity:Entity = new Entity()
+        .add(player);
+        engine.addEntity(entity);
+        return player;
+    }
 
     /**
      * Start new game:
@@ -69,7 +96,6 @@ class EntityFactory {
         .add(new GameState(level, lives, points));
         engine.addEntity(gameState);
         return this;
-
     }
     
     /**
@@ -81,9 +107,10 @@ class EntityFactory {
      * @param callback
      * @return opacity
      */
-    public function image(x:Int, y:Int, path:String, opacity:Float=1.0):EntityFactory {
-        var sprite:FlxSprite = new FlxSprite(0, 0, path);
+    public function image(x:Int, y:Int, key:String, opacity:Float=1.0):EntityFactory {
+        var sprite:FlxSprite = new FlxSprite(0, 0, Res.sprite[key].path);
         sprite.alpha = opacity;
+        sprite.antialiasing = true;
         var image:Entity = new Entity()
         .add(new Display(sprite))
         .add(new Transform(x, y, opacity));
@@ -101,12 +128,8 @@ class EntityFactory {
      */
     public function title(x:Int, y:Int, text:String):EntityFactory {
         var txt = bitmapText("fonts/outlined");
-        txt.fixedWidth = true;
         txt.color = FlxColor.YELLOW;
-        txt.useTextColor = false;
         txt.outlineColor = FlxColor.RED;
-        txt.width = 320;
-        txt.alignment = PxTextAlign.CENTER;
         txt.fontScale = 2.2;
         txt.text = text;
 
@@ -127,15 +150,11 @@ class EntityFactory {
      */
     public function help(x:Int, y:Int, text:String):EntityFactory {
         var txt = bitmapText("fonts/opendyslexic");
-        txt.fixedWidth = true;
         txt.color = 0x00ffff;
-        txt.useTextColor = false;
-        txt.width = 320;
-        txt.fontScale = 0.70;
-        txt.alignment = PxTextAlign.CENTER;
-        txt.text = text;
+        txt.fontScale = 0.75;
         txt.multiLine = true;
-        
+        txt.text = text;
+
         var entity:Entity = new Entity()
         .add(new Display(txt))
         .add(new Transform(x, y));
@@ -144,6 +163,28 @@ class EntityFactory {
     }
 
     /**
+     * Score
+     *
+     * @param x
+     * @param y
+     * @param text
+     * @return this for chaining
+     */
+    public function score(x:Int, y:Int, text:String):EntityFactory {
+        var txt = bitmapText("fonts/opendyslexic");
+        txt.color = FlxColor.BEIGE;
+        txt.fontScale = 1.5;
+        txt.text = text;
+
+        var score:Entity = new Entity()
+        .add(new GameState(0,3,0))
+        .add(new Display(txt))
+        .add(new Text(text))
+        .add(new Transform(x, y));
+        engine.addEntity(score);
+        return this;
+    }
+    /**
      * Text
      *
      * @param x
@@ -151,16 +192,11 @@ class EntityFactory {
      * @param text
      * @return this for chaining
      */
-    public function text(x:Int, y:Int, text:String):EntityFactory {
+    public function text(x:Int, y:Int, text:String, scale:Float=1.0, color:Int=0):EntityFactory {
         var txt = bitmapText("fonts/opendyslexic");
-        txt.fixedWidth = true;
-        txt.color = FlxColor.BLACK;
-        txt.useTextColor = false;
-        txt.width = 320;
-        txt.fontScale = 0.8;
-        txt.alignment = PxTextAlign.CENTER;
+        txt.color = color;
+        txt.fontScale = scale;
         txt.text = text;
-        txt.multiLine = false;
 
         var entity:Entity = new Entity()
         .add(new Display(txt))
@@ -178,13 +214,21 @@ class EntityFactory {
      * @param callback
      * @return this for chaining
      */
-    public function button(x:Int, y:Int, text:String, type:ButtonStyle, callback):EntityFactory {
+//    public function button(x:Int, y:Int, action:String, callback):EntityFactory {
+//        var btn:FlxButton = new FlxButton(0, 0, "", callback);
+
+    public function button(x:Int, y:Int, action:String):EntityFactory {
+        var btn:FlxButton = new FlxButton(0, 0, "", function() {
+            onclick.dispatch(action);
+        });
+        btn.loadGraphic(Res.sprite[action].path);
+        btn.antialiasing = true;
+        
         var button:Entity = new Entity()
-        .add(new Display(new Button(text, type, callback)))
+        .add(new Display(btn))
         .add(new Transform(x, y));
         engine.addEntity(button);
         return this;
-
     }
 
     /**
@@ -195,10 +239,12 @@ class EntityFactory {
      * @return this for chaining
      */
     public function fps(x:Int, y:Int):EntityFactory {
-        var fps:Entity = new Entity()
-        .add(new Display(new FPS()))
-        .add(new Transform(x, y));
-        engine.addEntity(fps);
+        if (Reg.SHOW_FPS) {
+            var fps:Entity = new Entity()
+            .add(new Display(new FPS()))
+            .add(new Transform(x, y));
+            engine.addEntity(fps);
+        }
         return this;
     }
 
@@ -211,7 +257,7 @@ class EntityFactory {
      * @param callback
      * @return this for chaining
      */
-    public function gem(x:Int, y:Int, text:String, callback):EntityFactory {
+    public function gem(x:Int, y:Int, path:String, frame:Int):EntityFactory {
         var gem:Entity = new Entity();
         return this;
     }
@@ -221,12 +267,22 @@ class EntityFactory {
      *
      * @param x
      * @param y
-     * @param text
-     * @param callback
+     * @param path image for this input
+     * @param action action associated with click
+     * @param player component
      * @return this for chaining
      */
-    public function input(x:Int, y:Int, text:String, callback):EntityFactory {
-        var input:Entity = new Entity();
+    public function input(x:Int, y:Int, action:String, player:Player):EntityFactory {
+        var sprite = new FlxSprite(0, 0, Res.sprite[action].path);
+        
+        MouseEventManager.add(sprite, function(s:FlxSprite) {
+            player.command = action;
+        });
+        
+        var input:Entity = new Entity()
+        .add(new Display(sprite))
+        .add(new Transform(x, y));
+        engine.addEntity(input);
         return this;
     }
 
@@ -239,8 +295,20 @@ class EntityFactory {
      * @param callback
      * @return this for chaining
      */
-    public function legend(x:Int, y:Int, text:String, callback):EntityFactory {
-        var legend:Entity = new Entity();
+    public function legend(x:Int, y:Int, key:String, level:Int, alpha:Float):EntityFactory {
+    
+        var sprite:FlxSprite = new FlxSprite(0,0);
+        sprite.loadGraphic(Res.sprite[key].path, true, Res.sprite[key].height, Res.sprite[key].width);
+        sprite.animation.add('level', [0, 1, 2, 3, 4, 5, 6, 7]);
+
+
+        var legend:Entity = new Entity()
+        .add(new Display(sprite))
+        .add(new Transform(x, y))
+        .add(new Level(level))
+        .add(new Opacity(alpha));
+        engine.addEntity(legend);
+
         return this;
     }
 
@@ -256,10 +324,10 @@ class EntityFactory {
      * @param value
      * @return this for chaining
      */
-    public function option(x:Int, y:Int, path:String, height:Int, width:Int, name:String, value:Bool=false):EntityFactory {
+    public function option(x:Int, y:Int, name:String, value:Bool=false):EntityFactory {
 
         var sprite:FlxSprite = new FlxSprite(0,0);
-        sprite.loadGraphic(path, true, height, width);
+        sprite.loadGraphic(Res.sprite[name].path, true, Res.sprite[name].width, Res.sprite[name].height);
         sprite.animation.add('off', [0]);
         sprite.animation.add('on', [1]);
 
@@ -280,17 +348,4 @@ class EntityFactory {
     }
 
 
-    /**
-     * Score
-     *
-     * @param x
-     * @param y
-     * @param text
-     * @param callback
-     * @return this for chaining
-     */
-    public function score(x:Int, y:Int, text:String, callback):EntityFactory {
-        var score:Entity = new Entity();
-        return this;
-    }
 }

@@ -25,17 +25,26 @@
 	
 	<!--------------------------------WINDOW SETTINGS------------------------------->
     <window orientation="portrait" fps="60" background="#000000" />
+    <window if="cpp" orientation="landscape" fullscreen="true" width="0" height="0" antialiasing="4" />
     <window width="320" height="480" if="desktop" />
-    <window width="0" height="0" if="html5" />
+    <window width="320" height="480" if="html5" />
+    <window hardware="true" allow-shaders="true" require-shaders="true" if="cpp"/>
+    <window vsync="true" antialiasing="4" if="cpp" />
 
     <!--------------------------------APPLICATION CODE------------------------------->
     <source path="src" />
-
     <haxelib name="ash"/>
     <haxelib name="flixel"/>
 
     <!--------------------------------ASSETS------------------------------->
     <icon path="res/images/icon.png" />
+    <icon path="res/icons/icon36.png" size="36" if="android" />
+    <icon path="res/icons/icon48.png" size="48" if="android" />
+    <icon path="res/icons/icon72.png" size="72" if="android" />
+    <icon path="res/icons/icon96.png" size="96" if="android" />
+    <icon path="res/icons/icon144.png" size="144" if="android" />
+    <icon path="res/icons/icon192.png" size="192" if="android" />
+
     <assets path="res/images" rename="images" include="*" exclude="icon.png" />
     <assets path="res/fonts" rename="fonts" />
     <assets path="res/sounds/sfx" rename="sfx" />
