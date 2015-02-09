@@ -21,6 +21,18 @@ package alienzone;
  */
 class Res {
 
+	public static var GEMSIZE:Int    = 48;          // Gem size constant in pixels
+	public static var GEMTYPES:Array<String> = [    // All gem types:
+	"blue",
+	"cyan",
+	"green",
+	"magenta",
+	"orange",
+	"pink",
+	"red",
+	"yellow"
+	];
+
 	public static var sprite = [
 	
 		'title' =>		{path: "images/title.png", 			width: 300,	height: 100},
@@ -38,7 +50,8 @@ class Res {
 		'rrot' => 		{path: "images/arrows/rrot.png", 	width: 48, 	height: 48},
 		'scores' =>		{path: "images/scores.png", 		width: 290, height: 350},
 		'logo' =>		{path: "images/d16a.png", 			width: 112, height: 115},
-		'back' =>		{path: "images/back.png", 			width: 51, 	height: 27}
+		'back' =>		{path: "images/back.png", 			width: 51, 	height: 27},
+		'gem' =>		{path: "images/gems.png",			width: 48,	height: 48}
 	
 	];
 }

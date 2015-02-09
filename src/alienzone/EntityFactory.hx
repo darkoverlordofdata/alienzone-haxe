@@ -1,7 +1,6 @@
 package alienzone;
 
 import flixel.util.FlxSignal.FlxTypedSignal;
-import alienzone.components.Player;
 import flixel.ui.FlxButton;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
@@ -16,30 +15,25 @@ import flixel.FlxSprite;
 import ash.core.Entity;
 import ash.core.Engine;
 
-import alienzone.components.Action;
-import alienzone.components.Bonus;
 import alienzone.components.Bounce;
-import alienzone.components.Count;
-import alienzone.components.Direction;
 import alienzone.components.Display;
 import alienzone.components.GameState;
 import alienzone.components.Gravity;
 import alienzone.components.Level;
-import alienzone.components.Lock;
-import alienzone.components.Number;
+import alienzone.components.Match;
 import alienzone.components.Opacity;
 import alienzone.components.Option;
-import alienzone.components.Sprite;
-import alienzone.components.State;
-import alienzone.components.Target;
+import alienzone.components.Player;
 import alienzone.components.Text;
 import alienzone.components.Transform;
-import alienzone.components.Velocity;
+
 
 import alienzone.graphics.FPS;
 
 
 class EntityFactory {
+
+    private static var INTMAX:Int = 2147483647;
 
     public var onclick:FlxTypedSignal<String->Void>;
 
@@ -92,6 +86,7 @@ class EntityFactory {
      *  
      */
     public function start(level:Int = 0, lives:Int = 3, points:Int = 0):EntityFactory {
+    
         var gameState:Entity = new Entity()
         .add(new GameState(level, lives, points));
         engine.addEntity(gameState);
@@ -108,9 +103,11 @@ class EntityFactory {
      * @return opacity
      */
     public function image(x:Int, y:Int, key:String, opacity:Float=1.0):EntityFactory {
+    
         var sprite:FlxSprite = new FlxSprite(0, 0, Res.sprite[key].path);
         sprite.alpha = opacity;
         sprite.antialiasing = true;
+        
         var image:Entity = new Entity()
         .add(new Display(sprite))
         .add(new Transform(x, y, opacity));
@@ -127,6 +124,7 @@ class EntityFactory {
      * @return this for chaining
      */
     public function title(x:Int, y:Int, text:String):EntityFactory {
+    
         var txt = bitmapText("fonts/outlined");
         txt.color = FlxColor.YELLOW;
         txt.outlineColor = FlxColor.RED;
@@ -149,6 +147,7 @@ class EntityFactory {
      * @return this for chaining
      */
     public function help(x:Int, y:Int, text:String):EntityFactory {
+    
         var txt = bitmapText("fonts/opendyslexic");
         txt.color = 0x00ffff;
         txt.fontScale = 0.75;
@@ -171,6 +170,7 @@ class EntityFactory {
      * @return this for chaining
      */
     public function score(x:Int, y:Int, text:String):EntityFactory {
+    
         var txt = bitmapText("fonts/opendyslexic");
         txt.color = FlxColor.BEIGE;
         txt.fontScale = 1.5;
@@ -193,6 +193,7 @@ class EntityFactory {
      * @return this for chaining
      */
     public function text(x:Int, y:Int, text:String, scale:Float=1.0, color:Int=0):EntityFactory {
+    
         var txt = bitmapText("fonts/opendyslexic");
         txt.color = color;
         txt.fontScale = scale;
@@ -214,10 +215,8 @@ class EntityFactory {
      * @param callback
      * @return this for chaining
      */
-//    public function button(x:Int, y:Int, action:String, callback):EntityFactory {
-//        var btn:FlxButton = new FlxButton(0, 0, "", callback);
-
     public function button(x:Int, y:Int, action:String):EntityFactory {
+    
         var btn:FlxButton = new FlxButton(0, 0, "", function() {
             onclick.dispatch(action);
         });
@@ -257,8 +256,20 @@ class EntityFactory {
      * @param callback
      * @return this for chaining
      */
-    public function gem(x:Int, y:Int, path:String, frame:Int):EntityFactory {
-        var gem:Entity = new Entity();
+    public function gem(col:Int, row:Int, key:String, frame:Int):EntityFactory {
+    
+        var sprite:FlxSprite = new FlxSprite(0,0);
+        sprite.loadGraphic(Res.sprite[key].path, true, Res.sprite[key].height, Res.sprite[key].width);
+        sprite.animation.add('gem', [0, 1, 2, 3, 4, 5, 6, 7]);
+        sprite.animation.frameIndex = frame;
+
+        var gem:Entity = new Entity()
+        .add(new Display(sprite))
+        .add(new Transform(col * Res.GEMSIZE, row * Res.GEMSIZE))
+        .add(new Match(Res.GEMTYPES[frame], col, row))
+        .add(new Gravity(0, 300))
+        .add(new Bounce(0, 0.7 + (Math.random()*(1.0/INTMAX)) * 0.2));
+        engine.addEntity(gem);
         return this;
     }
 
@@ -273,6 +284,7 @@ class EntityFactory {
      * @return this for chaining
      */
     public function input(x:Int, y:Int, action:String, player:Player):EntityFactory {
+    
         var sprite = new FlxSprite(0, 0, Res.sprite[action].path);
         
         MouseEventManager.add(sprite, function(s:FlxSprite) {
@@ -300,7 +312,6 @@ class EntityFactory {
         var sprite:FlxSprite = new FlxSprite(0,0);
         sprite.loadGraphic(Res.sprite[key].path, true, Res.sprite[key].height, Res.sprite[key].width);
         sprite.animation.add('level', [0, 1, 2, 3, 4, 5, 6, 7]);
-
 
         var legend:Entity = new Entity()
         .add(new Display(sprite))
@@ -336,7 +347,6 @@ class EntityFactory {
         MouseEventManager.add(sprite, function(s:FlxSprite) {
             option.enabled = !option.enabled;
         });
-
 
         var setting:Entity = new Entity()
         .add(new Display(sprite))

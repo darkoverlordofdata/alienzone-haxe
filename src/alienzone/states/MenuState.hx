@@ -23,6 +23,7 @@ import ash.core.Engine;
 import flixel.FlxG;
 import flash.display.StageQuality;
 import flixel.FlxState;
+import alienzone.Mersenne;
 
 /**
  * A FlxState which can be used for the game's menu.
@@ -40,7 +41,7 @@ class MenuState extends FlxState {
 		super.create();
         FlxG.stage.quality = StageQuality.BEST;
         FlxG.camera.antialiasing = true;
-
+        
         /**
          *  Create the engine
          */
@@ -51,19 +52,18 @@ class MenuState extends FlxState {
          *  Initialize the entities
          */
         factory
+        .fps(0, 0)
         .image(10, 10, 'title')
+        .option(10, 400, 'music', Reg.getPreference('music'))
+        .option(250, 400, 'sfx', Reg.getPreference('sfx'))
         .button(80, 150, 'infinity')
         .button(80, 250, 'ftl')
-        .option(10, 400, 'music', true)
         .button(105, 410, 'help')
-        .option(250, 400, 'sfx', true)
-        .fps(0, 0)
         .onclick.add(function(action:String) {
             switch (action) {
                 case 'infinity':    FlxG.switchState(new PlayState(GameType.Infinity));
                 case 'ftl':         FlxG.switchState(new PlayState(GameType.FTL));
-                case 'hrlp':        FlxG.switchState(new HelpState());
-
+                case 'help':        FlxG.switchState(new HelpState());
             }
         });
 
@@ -81,6 +81,7 @@ class MenuState extends FlxState {
 	 */
 	override public function destroy() {
 		super.destroy();
+        factory.onclick.removeAll();
 	}
 
 	/**

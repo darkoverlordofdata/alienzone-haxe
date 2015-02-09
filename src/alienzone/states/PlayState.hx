@@ -70,6 +70,7 @@ class PlayState extends FlxState {
         var player:Player = factory.player();
         
         factory
+        .fps(0, 0)
         .image(0, 0, 'slots', 0.2)
         .text(0, 0, label, 1.4, FlxColor.YELLOW)
         .score(0, 40, 'Score')
@@ -87,7 +88,6 @@ class PlayState extends FlxState {
         .input(220, 430, "lrot", player)
         .input(270, 430, "rrot", player)
         .button(260, 20, "back")        
-        .fps(0, 0)
         .onclick.add(function(action) {
             FlxG.switchState(new MenuState());
         });
@@ -108,6 +108,7 @@ class PlayState extends FlxState {
 	 */
 	override public function destroy():Void {
 		super.destroy();
+        factory.onclick.removeAll();
 	}
 
 	/**

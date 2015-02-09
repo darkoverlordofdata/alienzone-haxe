@@ -1,10 +1,10 @@
 package alienzone.systems;
 
+import ash.tools.ListIteratingSystem;
 import ash.core.Engine;
 import ash.core.NodeList;
 import ash.core.System;
 import alienzone.nodes.CommandNode;
-import alienzone.nodes.GemNode;
 import flixel.group.FlxGroup;
 import alienzone.match3.MatchObject;
 import alienzone.match3.Piece;
@@ -42,14 +42,11 @@ import alienzone.match3.Grid;
  *  +---+---+---+---+---+---+
  */
 
-class PlayerSystem extends System {
-
+class PlayerSystem2 extends ListIteratingSystem<CommandNode> {
     public var container:FlxGroup;              //  the container of this system
     public var factory:EntityFactory;           //  create entities
     public var puzzle:Grid;                     //  the 7 x 6 puzzle grid
-
-    private var player:NodeList<CommandNode>;   //  command input
-    private var gems:NodeList<GemNode>;        //  gem nodes
+    private var nodes:NodeList<CommandNode>;    //  command input
     private var rot:Int = 0;                    //  rotate frame (0-3)
     private var pos:Int = 0;                    //  horizontal cursor (0-4)
     private var offset:Int = 0;                 //  display offset
@@ -59,6 +56,7 @@ class PlayerSystem extends System {
     private var discovered:Int = 0;             //  we discover the remaining crystals
     private var dropping:Bool = false;          //  crystals being dropped?
     private var discoveredGems:Array<String>;   //  all the discovered crystals
+    private var gems:Array<Gem>;                //  group of crystals that move on the top board
     private var maps:Array<Array<Array<Array<Int>>>> = [    //  crystal rotation maps:
         [[[1,0],[0,0]], [[0,1],[0,0]], [[0,0],[0,1]], [[0,0],[1,0]]],
         [[[1,0],[2,0]], [[2,1],[0,0]], [[0,2],[0,1]], [[0,0],[1,2]]],
@@ -71,88 +69,73 @@ class PlayerSystem extends System {
      * Initialize the player gameboard
      */
     public function new(container:FlxGroup, factory:EntityFactory) {
-        super();
+        super(CommandNode, updateNode);
         this.factory = factory;
         this.container = container;
         discoveredGems = [];
-        for (i in 0...Res.GEMTYPES.length) {
+        for (i in 0...Gem.GEMTYPES.length) {
             if (i < (discovered+known)) {
-                discoveredGems.push(Res.GEMTYPES[i]);
+                discoveredGems.push(Gem.GEMTYPES[i]);
             }
         }
         puzzle = new Grid(6, 7, 'down');
         createGems();
         
     }
-    
-    override public function addToEngine(engine:Engine):Void {
-        player = engine.getNodeList(CommandNode);
-        gems = engine.getNodeList(GemNode);
-    }
-    
+
     /**
      * Respond to the player's command
      */
-    override public function update(time:Float):Void {
-        for (node in player) {
-            var command = node.command.command;
-            node.command.command = '';
-            switch (command) {
-                case 'left':    move(-1);
-                case 'down':    drop();
-                case 'right':   move(1);
-                case 'lrot':    rotate(-1);
-                case 'rrot':    rotate(1);
-            }
+    private function updateNode(node:CommandNode, time:Float):Void {
+        var command = node.command.command;
+        node.command.command = '';
+        switch (command) {
+            case 'left':    move(-1);
+            case 'down':    move(1);
+            case 'right':   drop();
+            case 'lrot':    rotate(-1);
+            case 'rrot':    rotate(1);
         }
     }
 
-    override public function removeFromEngine(engine:Engine):Void {
-        player = null;
-        gems = null;
-    }
-
-/**
+    /**
      * create a gem group
      */
     private function createGems():Void {
-        var i:Int = Std.int(Math.max(2, Std.int((count+Reg.legend)/2))-1);
+        var i:Int = Std.int(Math.max(2, ((count+Reg.legend)/2))-1);
         var cursor:Array<Array<Int>> = maps[i][0];
+        gems = [];
         rot = 0;
         pos = 0;
         offset = 0;
-        for (row in 0...2) {
-            for (col in 0...2) {
-                if (cursor[row][col] != 0) {
-                    var frame:Int = Reg.rnd.nextInt(discoveredGems.length);
-                    factory.gem(col, row, 'gem', frame);
-                }
+        for (row in [0,1,2]) {
+            for (col in [0,1,2]) {
+                var frame:Int = Std.int(Math.random() * discoveredGems.length);
+                factory.gem(col, row, 'gem', frame);
+                gems.push(new Gem(this, Gem.GEMTYPES[frame], col, row));
             }
         }
-    }
-    
-    private function move(dir:Int):Void {
-        for (gem in gems) {
-            gem.match.col = gem.match.col + dir;
-            if (gem.match.col < 0) gem.match.col = 0;
-            if (gem.match.col > 5) gem.match.col = 5;
-            gem.transform.x = gem.match.col * Res.GEMSIZE;
-        }
-    }
-
-    private function rotate(dir:Int):Void {
-    }
-
-    private function drop():Void {
-    }
-        
-    private function updateScore(matches:Array<Gem>, type:String) {
-        var points:Int = (Res.GEMTYPES.indexOf(type) + 1) * matches.length * (board+1);
-        Reg.updateScore(points);
+        updateGems();
     }
 
     public function gameOver() {
     }
 
+    private function move(dir:Int):Void {
+    }
+
+    private function drop():Void {
+    }
+
+    private function rotate(dir:Int):Void {
+    }
+
+    private function updateGems() {
+    }
+
+    private function updateScore(matches:Array<Gem>, type:String) {
+        var points:Int = (Gem.GEMTYPES.indexOf(type) + 1) * matches.length * (board+1);
+        Reg.updateScore(points);
+    }
 
 }

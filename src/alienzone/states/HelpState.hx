@@ -63,12 +63,12 @@ with Google Play Games.
          *  Initialize the entities
          */
         factory
+        .fps(0, 0)
         .image(15, 100, 'scores', 0.5)
         .image(10, 10, 'logo')
         .help(0, 130, instructions)
         .text(0, 400, '${String.fromCharCode(0xa9)}2014 Dark Overlord of Data', 0.8)
         .button(260, 20, 'back')
-        .fps(0, 0)
         .onclick.add(function(action) {
             FlxG.switchState(new MenuState());
         });
@@ -87,6 +87,7 @@ with Google Play Games.
 	 */
 	override public function destroy() {
 		super.destroy();
+        factory.onclick.removeAll();
 	}
 
 	/**
