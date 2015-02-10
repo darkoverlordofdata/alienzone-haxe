@@ -1,5 +1,7 @@
 package alienzone.systems;
 
+import alienzone.components.Transform;
+import ash.core.Entity;
 import ash.core.Engine;
 import ash.core.NodeList;
 import ash.core.System;
@@ -49,7 +51,8 @@ class PlayerSystem extends System {
     public var puzzle:Grid;                     //  the 7 x 6 puzzle grid
 
     private var player:NodeList<CommandNode>;   //  command input
-    private var gems:NodeList<GemNode>;        //  gem nodes
+    private var gemNodes:NodeList<GemNode>;     //  gem nodes
+    private var gems:Array<Entity>;             //  gem entities
     private var rot:Int = 0;                    //  rotate frame (0-3)
     private var pos:Int = 0;                    //  horizontal cursor (0-4)
     private var offset:Int = 0;                 //  display offset
@@ -81,13 +84,13 @@ class PlayerSystem extends System {
             }
         }
         puzzle = new Grid(6, 7, 'down');
-        createGems();
-        
+
     }
     
     override public function addToEngine(engine:Engine):Void {
         player = engine.getNodeList(CommandNode);
-        gems = engine.getNodeList(GemNode);
+        gemNodes = engine.getNodeList(GemNode);
+        createGems();
     }
     
     /**
@@ -109,30 +112,32 @@ class PlayerSystem extends System {
 
     override public function removeFromEngine(engine:Engine):Void {
         player = null;
-        gems = null;
+        gemNodes = null;
     }
 
-/**
+    /**
      * create a gem group
      */
     private function createGems():Void {
-        var i:Int = Std.int(Math.max(2, Std.int((count+Reg.legend)/2))-1);
+        var i:Int = Std.int(Math.max(2, (count+Reg.legend)/2)-1);
         var cursor:Array<Array<Int>> = maps[i][0];
         rot = 0;
         pos = 0;
         offset = 0;
+        gems = [];
         for (row in 0...2) {
             for (col in 0...2) {
                 if (cursor[row][col] != 0) {
                     var frame:Int = Reg.rnd.nextInt(discoveredGems.length);
-                    factory.gem(col, row, 'gem', frame);
+//                    var frame:Int = Std.int(Math.random() * discoveredGems.length);
+                    gems.push(factory.gem(col, row, 'gem', frame));
                 }
             }
         }
     }
     
-    private function move(dir:Int):Void {
-        for (gem in gems) {
+    private function move1(dir:Int):Void {
+        for (gem in gemNodes) {
             gem.match.col = gem.match.col + dir;
             if (gem.match.col < 0) gem.match.col = 0;
             if (gem.match.col > 5) gem.match.col = 5;
@@ -140,11 +145,63 @@ class PlayerSystem extends System {
         }
     }
 
-    private function rotate(dir:Int):Void {
+    private function move(dir:Int):Void {
+        if (pos+dir >= 0 && pos+dir <=5) {
+            pos += dir+offset;
+            offset = 0;
+            updateGems();
+            return;
+        }
+
+        if (pos+dir < 0) {
+            if (gems.length == 2 && rot == 2) {
+                offset = -1;
+                updateGems();
+                return;
+            }
+        }
     }
 
-    private function drop():Void {
+    private function rotate(dir:Int):Void {
+        if (offset == -1) return;
+        if (pos>=5) return;
+        rot += dir;
+        if (rot < 0) rot = 3;
+        if (rot > 3) rot = 0;
+        updateGems();
     }
+
+    private function updateGems():Void {
+
+        var cursor:Array<Array<Int>> = maps[gems.length-1][rot];
+        for (row in 0...2) {
+            for (col in 0...2) {
+                if (cursor[row][col] != 0) {
+                    var x:Int = Std.int(Math.max(0, Math.min(5, pos+col+offset)));
+                    var transform:Transform = gems[cursor[row][col]-1].get(Transform);
+                    transform.x = x * Res.GEMSIZE;
+                    transform.y = row * Res.GEMSIZE;
+                }            
+            }
+        }
+    }
+
+    /**
+     * Drop
+     *
+     * drop the gems onto the puzzle
+     */
+    private function drop():Void {
+        if (dropping) return;
+        dropping = true;
+        
+        var dropped:Int = 0;
+        var cursor:Array<Array<Int>> = maps[gems.length-1][rot];
+        
+        
+        
+    }
+    
         
     private function updateScore(matches:Array<Gem>, type:String) {
         var points:Int = (Res.GEMTYPES.indexOf(type) + 1) * matches.length * (board+1);

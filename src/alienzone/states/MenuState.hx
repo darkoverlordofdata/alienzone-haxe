@@ -15,6 +15,8 @@
  */
 package alienzone.states;
 
+import flixel.util.FlxColor;
+import flixel.util.FlxColor;
 import alienzone.states.PlayState.GameType;
 import alienzone.systems.OptionSystem;
 import alienzone.systems.RenderSystem;

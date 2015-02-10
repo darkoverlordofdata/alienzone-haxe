@@ -250,13 +250,13 @@ class EntityFactory {
     /**
      * Gem
      *
-     * @param x
-     * @param y
-     * @param text
-     * @param callback
-     * @return this for chaining
+     * @param col
+     * @param row
+     * @param key
+     * @param framr
+     * @return the gem entity
      */
-    public function gem(col:Int, row:Int, key:String, frame:Int):EntityFactory {
+    public function gem(col:Int, row:Int, key:String, frame:Int):Entity {
     
         var sprite:FlxSprite = new FlxSprite(0,0);
         sprite.loadGraphic(Res.sprite[key].path, true, Res.sprite[key].height, Res.sprite[key].width);
@@ -270,7 +270,7 @@ class EntityFactory {
         .add(new Gravity(0, 300))
         .add(new Bounce(0, 0.7 + (Math.random()*(1.0/INTMAX)) * 0.2));
         engine.addEntity(gem);
-        return this;
+        return gem;
     }
 
     /**

@@ -25,7 +25,6 @@ class Reg {
 	public static var SHOW_FPS:Bool = true;
 	public static var rnd:Mersenne = new Mersenne();
 
-
 	private static var _action = new FlxTypedSignal<String->FlxSprite->Void>();
 	private static var _pegged = new FlxTypedSignal<Int->Void>();
 	private static var _reset = new FlxTypedSignal<Void->Void>();
@@ -86,11 +85,11 @@ class Reg {
 			case 'music': 	
 				_music = value;
 				_save.data.music = value;
-				_save.flush(0);
+				_save.flush();
 			case 'sfx':
 				_sfx = value;
 				_save.data.sfx = value;
-				_save.flush(0);
+				_save.flush();
 		}
 	}
 
