@@ -46,9 +46,7 @@ package alienzone;
    Any feedback is very welcome.
    http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html
    email: m-mat @ math.sci.hiroshima-u.ac.jp (remove space)
-*/
-
-
+ */
 class Mersenne {
 
     /* Period parameters */
@@ -60,7 +58,6 @@ class Mersenne {
 
     var mt:Array<UInt> = [for (i in 0...N) 0];  /* the array for the state vector */
     var mti:Int = N+1;                          /* mti==N+1 means mt[N] is not initialized */
-
 
     public function new(?seed:Int, ?seed_array:Array<Int>) {
         

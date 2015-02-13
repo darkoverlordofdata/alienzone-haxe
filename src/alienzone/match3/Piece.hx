@@ -52,8 +52,9 @@ class Piece extends Point {
 
     public function matchingNeighbours():Array<Piece> {
         var matches:Array<Piece> = [];
+        var directions = neighbours();
 
-        for (neighbour in neighbours()) {
+        for (neighbour in directions) {
             if (neighbour != null) {
                 if (neighbour.object.type == object.type) {
                     matches.push(neighbour);

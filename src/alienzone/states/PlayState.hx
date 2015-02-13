@@ -18,8 +18,10 @@ package alienzone.states;
 import alienzone.components.Player;
 import flash.display.StageQuality;
 import flixel.util.FlxColor;
+import alienzone.systems.PuzzleSystem;
+import alienzone.systems.InputPanelSystem;
+import alienzone.systems.RenderGemSystem;
 import alienzone.systems.LegendSystem;
-import alienzone.systems.PlayerSystem;
 import alienzone.systems.RenderSystem;
 import alienzone.systems.ScoreSystem;
 import alienzone.systems.SystemPriorities;
@@ -96,9 +98,11 @@ class PlayState extends FlxState {
          *  Run the systems
          */
         engine.addSystem(new RenderSystem(this, factory), SystemPriorities.render);
+        engine.addSystem(new RenderGemSystem(this, factory), SystemPriorities.render);
         engine.addSystem(new ScoreSystem(this, factory), SystemPriorities.animate);
         engine.addSystem(new LegendSystem(this, factory), SystemPriorities.animate);
-        engine.addSystem(new PlayerSystem(this, factory), SystemPriorities.player);
+        engine.addSystem(new InputPanelSystem(this, factory), SystemPriorities.move);
+        engine.addSystem(new PuzzleSystem(this, factory), SystemPriorities.player);
     }
 
 
@@ -109,6 +113,8 @@ class PlayState extends FlxState {
 	override public function destroy():Void {
 		super.destroy();
         factory.onclick.removeAll();
+        factory = null;
+        engine = null;
 	}
 
 	/**

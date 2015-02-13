@@ -92,7 +92,7 @@ class Grid {
     public function neighboursOf(piece:Piece):Map<String,Piece> {
         var result:Map<String,Piece> = new Map();
         
-        for (directionName in ['up', 'down', 'left', 'right']) {
+        for (directionName in ['up', 'down', 'right', 'left']) {
             var direction:Point = directions[directionName];
             result.set(directionName, neighbourOf(piece, direction));
         }
@@ -104,11 +104,10 @@ class Grid {
      */
     public function forEachMatch(callback):Void {
         var matches:Array<Array<Piece>> = getMatches();
-        for (i in 0...matches.length) {
-            var match:Array<Piece> = matches[i];
+        for (match in matches) {
             callback(match, match[0].object.type);
         }
-}
+    }
 
     /**
      * Return an array of matches or false
@@ -117,8 +116,8 @@ class Grid {
         var checked:Array<Piece> = [];
         var matches:Array<Array<Piece>> = [];
 
-        for (pieces0 in pieces) {
-            for (piece in pieces0) {
+        for (pieces in this.pieces) {
+            for (piece in pieces) {
                 if (checked.indexOf(piece) == -1) {
                     var match:Array<Piece> = piece.deepMatchingNeighbours();
                     for (m in match) {
@@ -141,8 +140,8 @@ class Grid {
     public function getRow(row:Int, reverse:Bool):Array<Piece> {
         var pieces:Array<Piece> = [];
         
-        for (i in 0...pieces.length) {
-            pieces.push(this.pieces[i][row]);
+        for (piece in this.pieces) {
+            pieces.push(piece[row]);
         }
         if (reverse) {
             pieces.reverse();
@@ -156,7 +155,7 @@ class Grid {
     public function getColumn(column:Int, reverse:Bool):Array<Piece> {
         var pieces:Array<Piece> = [];
 
-        for (i in 0...pieces.length) {
+        for (i in 0...this.pieces[column].length) {
             pieces.push(this.pieces[column][i]);
         }
         if (reverse) {
@@ -174,10 +173,9 @@ class Grid {
         if (matches.length == 0) {
             return false;
         }
-        for (i in 0...matches.length) {
-            var pieces:Array<Piece> = matches[i];
-            for (p in 0...pieces.length) {
-                pieces[p].clear();
+        for (pieces in matches) {
+            for (p in pieces) {
+                p.clear();
             }
         }
         return true;
@@ -187,38 +185,45 @@ class Grid {
      * Swap 2 pieces object
      */
     public function swapPieces(piece1:Piece, piece2:Piece):Void {
-        var tmp:MatchObject = piece1.object;
-        piece1.object = piece2.object;
-        piece2.object = tmp;
-    }  
+        var tmp1 = piece1.object;
+        var tmp2 = piece2.object;
+        piece1.object = tmp2;
+        piece2.object = tmp1;
+    }
 
     /**
      * Return an Array of falling pieces
      */
-    public function applyGravity() {
+    public function applyGravity():Array<Piece> {
         var fallingPieces:Array<Piece> = [];
         var fallingPiecesWithoutEmpty:Array<Piece> = [];
         if (gravity == 'up' || gravity == 'down' || gravity == 'left' || gravity == 'right') {
 
-            var direction:Point = directions[this.gravity];
+            var direction:Point = directions[gravity];
             var horizontal:Bool = direction.x != 0;
             var reverse:Bool = horizontal ? direction.x == 1 : direction.y == 1;
+            var limit:Int = (horizontal) ? height : width;
+            var chunk:Array<Piece>;
         
-            for (i in 0...(horizontal ? this.height : this.width)) {
+            for (i in 0...limit) {
 
-                var chunk:Array<Piece> = horizontal ? getRow(i, reverse) : getColumn(i, reverse);
+                chunk = horizontal ? getRow(i, reverse) : getColumn(i, reverse);
+                
                 function applyGravity(grid:Grid):Void {
+                
                     var swaps:Int = 0;
-                    for (p in 0...chunk.length) {
-                        var piece:Piece = chunk[p];
+                    for (piece in chunk) {
+                    
                         var neighbour:Piece = piece.neighbour(direction);
-                        
-                        if (piece.object.type != emptyObject.type && neighbour.object.type == emptyObject.type) {
-                            grid.swapPieces(piece, neighbour);
-                            if (fallingPieces.indexOf(neighbour) == -1) {
-                                fallingPieces.push(neighbour);
+
+                        if (neighbour != null) {
+                            if (piece.object.type != emptyObject.type && neighbour.object.type == emptyObject.type) {
+                                grid.swapPieces(piece, neighbour);
+                                if (fallingPieces.indexOf(neighbour) == -1) {
+                                    fallingPieces.push(neighbour);
+                                }
+                                swaps++;
                             }
-                            swaps++;
                         }
                     }
                     if (swaps>0) {
@@ -227,8 +232,7 @@ class Grid {
                 }
                 applyGravity(this);
             }
-            for (i in 0...fallingPieces.length) {
-                var piece:Piece = fallingPieces[i];
+            for (piece in fallingPieces) {
                 if (piece.object.type != emptyObject.type) {
                     fallingPiecesWithoutEmpty.push(piece);
                 }

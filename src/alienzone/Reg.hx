@@ -15,9 +15,9 @@
  */
 package alienzone;
 
+import ash.core.Entity;
 import flixel.FlxSprite;
 import flixel.util.FlxSignal.FlxTypedSignal;
-import flixel.util.FlxSave;
 import flash.net.SharedObject;
 
 class Reg {
@@ -25,7 +25,9 @@ class Reg {
 	public static var SHOW_FPS:Bool = true;
 	public static var rnd:Mersenne = new Mersenne();
 
+	private static var _drop = new FlxTypedSignal<Array<Entity>->Void>();
 	private static var _action = new FlxTypedSignal<String->FlxSprite->Void>();
+	private static var _create = new FlxTypedSignal<Void->Void>();
 	private static var _pegged = new FlxTypedSignal<Int->Void>();
 	private static var _reset = new FlxTypedSignal<Void->Void>();
 	private static var _scored = new FlxTypedSignal<Int->Void>();
@@ -52,13 +54,25 @@ class Reg {
 
 	};
 	
-	public static var legend(get_legend, set_legend):Int;
+	public static var dropGem(get_dropGem, never):FlxTypedSignal<Array<Entity>->Void>;
 	
-	public static function get_legend():Int {
-		return _legend;
+	private static function get_dropGem():FlxTypedSignal<Array<Entity>->Void> {
+		return _drop;
 	}
 	
-	public static function set_legend(value:Int) {
+	public static var createGems(get_createGems, never):FlxTypedSignal<Void->Void>;
+	
+	private static function get_createGems():FlxTypedSignal<Void->Void> {
+		return _create;
+	}
+	
+	public static var legend(get_legend, set_legend):Int;
+	
+	private static function get_legend():Int {
+		return _legend;
+	}
+
+	private static function set_legend(value:Int) {
 		_legend = value;
 		_pegged.dispatch(value);
 		return value;

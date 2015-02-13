@@ -1,5 +1,6 @@
 package alienzone;
 
+import alienzone.components.Group;
 import flixel.util.FlxSignal.FlxTypedSignal;
 import flixel.ui.FlxButton;
 import flixel.ui.FlxButton;
@@ -250,13 +251,14 @@ class EntityFactory {
     /**
      * Gem
      *
-     * @param col
-     * @param row
-     * @param key
-     * @param framr
+     * @param id    id in current gen group
+     * @param col   column in grid
+     * @param row   row in grid
+     * @param key   gem sprite filename
+     * @param frame gem sprite frame
      * @return the gem entity
      */
-    public function gem(col:Int, row:Int, key:String, frame:Int):Entity {
+    public function gem(id:Int, index:Int, col:Int, row:Int, key:String, frame:Int):Entity {
     
         var sprite:FlxSprite = new FlxSprite(0,0);
         sprite.loadGraphic(Res.sprite[key].path, true, Res.sprite[key].height, Res.sprite[key].width);
@@ -264,11 +266,9 @@ class EntityFactory {
         sprite.animation.frameIndex = frame;
 
         var gem:Entity = new Entity()
+        .add(new Group(index))
         .add(new Display(sprite))
-        .add(new Transform(col * Res.GEMSIZE, row * Res.GEMSIZE))
-        .add(new Match(Res.GEMTYPES[frame], col, row))
-        .add(new Gravity(0, 300))
-        .add(new Bounce(0, 0.7 + (Math.random()*(1.0/INTMAX)) * 0.2));
+        .add(new Match(Res.GEMTYPES[frame], id, index, col, row));
         engine.addEntity(gem);
         return gem;
     }
