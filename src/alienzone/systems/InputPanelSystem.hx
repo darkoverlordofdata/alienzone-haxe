@@ -49,8 +49,6 @@ class InputPanelSystem extends System {
     private var gems:Array<Entity>;             //  gem entities
     private var rot:Int;                        //  rotate frame (0-3)
     private var pos:Int;                        //  horizontal cursor (0-4)
-    private var board:Int;                      //  level up board number
-    private var count:Int;                      //  # of crystals
     private var known:Int;                      //  start off with set of 3 crystals
     private var discovered:Int;                 //  we discover the remaining crystals
     private var dropping:Bool;                  //  crystals being dropped?
@@ -72,9 +70,7 @@ class InputPanelSystem extends System {
         uniqueId = 0;
         rot = 0;
         pos = 0;
-        board = 0;
-        count = 2;
-        known = 3;
+        known = 2;
         discovered = 0;
         dropping = false;
         Reg.discoveredGems = [];
@@ -83,6 +79,7 @@ class InputPanelSystem extends System {
                 Reg.discoveredGems.push(Res.GEMTYPES[i]);
             }
         }
+        Reg.legend = known;
         createGems();
     }
     
@@ -120,7 +117,7 @@ class InputPanelSystem extends System {
      * create a gem group
      */
     private function createGems():Void {
-        var i:Int = Std.int(Math.max(2, (count+Reg.legend)/2)-1);
+        var i:Int = Std.int(Math.max(2, (Reg.legend+2)/2)-1);
         var cursor:Array<Array<Int>> = maps[i][0];
         rot = 0;
         pos = 0;
@@ -141,19 +138,19 @@ class InputPanelSystem extends System {
      *  Move left or right
      */
     private function move(dir:Int):Void {
-        var l:Int = 5;
-        var r:Int = 0;
+        var left:Int = 5;
+        var right:Int = 0;
         
         for (gem in gems) {
             var match:Match = gem.get(Match);
-            if (match.col < l) l = match.col;
-            if (match.col > r) r = match.col;
+            if (match.col < left) left = match.col;
+            if (match.col > right) right = match.col;
         }
         
         if (dir == -1) {
-            if (l <= 0) return;
+            if (left <= 0) return;
         } else {
-            if (r >= 5) return;
+            if (right >= 5) return;
         }
         pos += dir;
         updateGems();

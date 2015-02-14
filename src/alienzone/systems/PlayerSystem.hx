@@ -355,6 +355,8 @@ class PlayerSystem extends System {
         for (type in piecesToUpgrade) {
             var upgradeIndex:Int = Res.GEMTYPES.indexOf(type) + 1;
             
+            trace()
+            
             if (upgradeIndex >= Res.GEMTYPES.length) {
             /**
              * Level Up...

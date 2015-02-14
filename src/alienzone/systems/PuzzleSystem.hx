@@ -128,11 +128,18 @@ class PuzzleSystem extends System {
         }
     }
 
+    /**
+     * Recursively process matching pieces
+     */
     private function handleMatches():Void {
 
         var piecesToUpgrade:Array<String>;
         var matches:Array<Array<Piece>> = Reg.puzzle.getMatches();
 
+        /**
+         * Add to score for all the matches, them
+         * delete the matching tiles.
+         */
         if (matches.length != 0) {
             piecesToUpgrade = [];
             Reg.puzzle.forEachMatch(function(matchingPieces:Array<Piece>, type:String){
@@ -146,15 +153,16 @@ class PuzzleSystem extends System {
                 }
             });
             Reg.puzzle.clearMatches();
-            handleUpgrade(piecesToUpgrade);
+            upgrade(piecesToUpgrade);
         }
-        /**
-         * Recursively:
-         * Apply gravity and get falling Pieces
-         */
+        
         var fallingPieces:Array<Piece> = Reg.puzzle.applyGravity();
         var hasFall:Int = 0;
 
+        /**
+         * Fill in the tiles that were opened up
+         * when we scored.
+         */
         if (fallingPieces.length > 0) {
             for (piece in fallingPieces) {
                 var match:Match = cast(piece.object, Match);
@@ -181,32 +189,33 @@ class PuzzleSystem extends System {
 
 
     /**
-     * Handle Upgrade
+     * Upgrade
      *
      * return none
      */
-    private function handleUpgrade(piecesToUpgrade:Array<String>) {
+    private function upgrade(piecesToUpgrade:Array<String>) {
 
         var levelUp:Bool = false;
         for (type in piecesToUpgrade) {
             var upgradeIndex:Int = Res.GEMTYPES.indexOf(type) + 1;
-
+            
             if (upgradeIndex >= Res.GEMTYPES.length) {
             /**
              * Level Up...
              */
             }
 
+            
             if (Reg.legend < upgradeIndex) {
                 levelUp = true;
+                Reg.legend = upgradeIndex;
             }
-
-            Reg.legend = upgradeIndex;
             var upgradedType:String = Res.GEMTYPES[upgradeIndex];
             if (upgradedType != null) {
                 if (Reg.discoveredGems.indexOf(upgradedType) == -1)
                     Reg.discoveredGems.push(upgradedType);
             }
+            //}
         }
         if (levelUp)
             board += 1;
