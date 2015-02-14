@@ -19,6 +19,7 @@ class ScoreSystem extends ListIteratingSystem<ScoreNode> {
 
     private function updateNode(node:ScoreNode, time:Float):Void {
         
+        node.score.points = Reg.score;
         var gui:FlxBitmapTextField = cast(node.graphic, FlxBitmapTextField);
         gui.text = '${node.text.value}: ${node.score.points}';
     }

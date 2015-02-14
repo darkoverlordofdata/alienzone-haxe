@@ -268,7 +268,7 @@ class EntityFactory {
         var gem:Entity = new Entity()
         .add(new Group(index))
         .add(new Display(sprite))
-        .add(new Match(Res.GEMTYPES[frame], id, index, col, row));
+        .add(new Match(id, Res.GEMTYPES[frame], Res.GEMSIZE, index, col, row));
         engine.addEntity(gem);
         return gem;
     }

@@ -15,6 +15,7 @@
  */
 package alienzone;
 
+import alienzone.match3.Grid;
 import ash.core.Entity;
 import flixel.FlxSprite;
 import flixel.util.FlxSignal.FlxTypedSignal;
@@ -24,6 +25,8 @@ class Reg {
 
 	public static var SHOW_FPS:Bool = true;
 	public static var rnd:Mersenne = new Mersenne();
+	public static var discoveredGems:Array<String>;   //  all the discovered crystals
+	public static var puzzle:Grid;                     //  the 7 x 6 puzzle grid
 
 	private static var _drop = new FlxTypedSignal<Array<Entity>->Void>();
 	private static var _action = new FlxTypedSignal<String->FlxSprite->Void>();
@@ -76,6 +79,12 @@ class Reg {
 		_legend = value;
 		_pegged.dispatch(value);
 		return value;
+	}
+
+	public static var score(get_score, never):Int;
+
+	private static function get_score():Int {
+		return _score;
 	}
 	
 	public static function updateScore(points:Int) {
