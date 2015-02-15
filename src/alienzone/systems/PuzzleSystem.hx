@@ -40,15 +40,6 @@ import flixel.tweens.FlxEase;
  *  |   |   |   |   |   |   | 6
  *  +---+---+---+---+---+---+
  *  
- *  Score
- *
- *	Sprite
- *	Match
- *		id
- *		x
- *		y
- *		col
- *		row
  *
  */
 class PuzzleSystem extends System {
@@ -61,7 +52,11 @@ class PuzzleSystem extends System {
     private var board:Int;                      //  level up board number
 
     /**
-     * Initialize the player gameboard
+     * Initialize the puzzle area
+     *
+     * @param [FlxGroup] container - top level gui container
+     * @param [EntityFactory] factory - entity factory
+     * @return new PuzzleSystem instance
      */
     public function new(container:FlxGroup, factory:EntityFactory) {
         super();
@@ -90,6 +85,9 @@ class PuzzleSystem extends System {
 
     /**
      * Recieve the dropped gems
+     *
+     * @param [Array] gems - array of gem entities
+     * @return none
      */
     private function dropped(gems:Array<Entity>) {
 
@@ -129,7 +127,10 @@ class PuzzleSystem extends System {
     }
 
     /**
-     * Recursively process matching pieces
+     * Handle Matches
+     * recursively process matching pieces
+     *
+     * @return none
      */
     private function handleMatches():Void {
 
@@ -191,7 +192,8 @@ class PuzzleSystem extends System {
     /**
      * Upgrade
      *
-     * return none
+     * @param [Array] piecesToUpgrade - array of oieces
+     * @return none
      */
     private function upgrade(piecesToUpgrade:Array<String>) {
 
@@ -206,9 +208,9 @@ class PuzzleSystem extends System {
             }
 
             
-            if (Reg.legend < upgradeIndex) {
+            if (Reg.level < upgradeIndex) {
                 levelUp = true;
-                Reg.legend = upgradeIndex;
+                Reg.level = upgradeIndex;
             }
             var upgradedType:String = Res.GEMTYPES[upgradeIndex];
             if (upgradedType != null) {
@@ -226,6 +228,7 @@ class PuzzleSystem extends System {
      *
      * @param [Array] matches - array of matching gems
      * @param [String] type - gem type name
+     * @return none
      */
     private function updateScore(matches:Array<Piece>, type:String):Void {
         var points:Int = (Res.GEMTYPES.indexOf(type) + 1) * matches.length * (board+1);

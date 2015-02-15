@@ -47,9 +47,30 @@
 
     <assets path="res/images" rename="images" include="*" exclude="icon.png" />
     <assets path="res/fonts" rename="fonts" />
-    <assets path="res/sounds/sfx" rename="sfx" />
     <assets path="res/config" rename="config" />
-
+    <assets path="res/sounds/sfx">
+        <sound path="Powerup.ogg" id="bonus1" />
+        <sound path="Powerup2.ogg" id="bonus2" />
+        <sound path="Powerup3.ogg" id="bonus3" />
+        <sound path="Powerup4.ogg" id="bonus4" />
+        <sound path="Powerup5.ogg" id="bonus5" />
+        <sound path="Powerup6.ogg" id="bonus6" />
+        <sound path="Powerup7.ogg" id="bonus7" />
+        <sound path="Powerup8.ogg" id="bonus8" />
+        <sound path="Powerup9.ogg" id="bonus9" />
+        <sound path="Powerup10.ogg" id="bonus10" />
+        <sound path="Powerup11.ogg" id="bonus11" />
+        <sound path="Powerup12.ogg" id="bonus12" />
+        <sound path="Powerup13.ogg" id="bonus13" />
+        <sound path="Powerup14.ogg" id="bonus14" />
+        <sound path="Powerup15.ogg" id="bonus15" />
+        <sound path="Powerup16.ogg" id="bonus16" />
+        <sound path="Powerup17.ogg" id="bonus17" />
+        <sound path="Powerup18.ogg" id="bonus18" />
+        <sound path="Powerup19.ogg" id="bonus19" />
+        <sound path="Powerup20.ogg" id="bonus20" />
+    </assets>
+    
     <!-- From Zaphod's example -->
     <!-- Allow this setting to be overridden on the command-line -->
     <set name="RENDER_BLIT" if="flash || html5" unless="RENDER_TILE" />

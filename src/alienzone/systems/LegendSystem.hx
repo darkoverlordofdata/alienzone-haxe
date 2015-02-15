@@ -10,7 +10,7 @@ class LegendSystem extends ListIteratingSystem<LegendNode> {
     public var container:FlxGroup;
     public var factory:EntityFactory;
     
-    private var level:Int = 2;
+    private var level:Int = 0;
 
     public function new(container:FlxGroup, factory:EntityFactory) {
         super(LegendNode, updateNode);
@@ -24,13 +24,13 @@ class LegendSystem extends ListIteratingSystem<LegendNode> {
     private function updateNode(node:LegendNode, time:Float):Void {
         
         if (node.level.value <= level) {
-            node.alpha.alpha = 1.0;
+            node.transform.alpha = 1.0;
         } else {
-            node.alpha.alpha = 0.2;
+            node.transform.alpha = 0.2;
         }
     
         node.graphic.animation.frameIndex = node.level.value;
-        node.graphic.alpha = node.alpha.alpha;
+        node.graphic.alpha = node.transform.alpha;
     
     }
 }

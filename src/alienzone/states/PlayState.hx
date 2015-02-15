@@ -16,8 +16,6 @@
 package alienzone.states;
 
 import alienzone.components.Player;
-import flash.display.StageQuality;
-import flixel.util.FlxColor;
 import alienzone.systems.PuzzleSystem;
 import alienzone.systems.InputPanelSystem;
 import alienzone.systems.RenderGemSystem;
@@ -27,8 +25,10 @@ import alienzone.systems.ScoreSystem;
 import alienzone.systems.SystemPriorities;
 import ash.core.Engine;
 import ash.core.Entity;
+import flash.display.StageQuality;
 import flixel.FlxG;
 import flixel.FlxState;
+import flixel.util.FlxColor;
 
 
 enum GameType {
@@ -55,9 +55,11 @@ class PlayState extends FlxState {
 	 * Function that is called up when to state is created to set it up. 
 	 */
 	override public function create():Void {
+        FlxG.camera.fade(FlxColor.BLACK, .33, true);
 		super.create();
         FlxG.stage.quality = StageQuality.BEST;
         FlxG.camera.antialiasing = true;
+
 
         /**
          *  Create the engine
@@ -70,28 +72,29 @@ class PlayState extends FlxState {
          */
         var label:String = (gameType == GameType.Infinity) ? 'InfinitY' : 'FTL';
         var player:Player = factory.player();
-        
-        factory
-        .fps(0, 0)
-        .image(0, 0, 'slots', 0.2)
-        .text(0, 0, label, 1.4, FlxColor.YELLOW)
-        .score(0, 40, 'Score')
-        .legend(290, 100, 'legend', 0, 1.0)
-        .legend(290, 132, 'legend', 1, 1.0)
-        .legend(290, 164, 'legend', 2, 1.0)
-        .legend(290, 196, 'legend', 3, 0.3)
-        .legend(290, 228, 'legend', 4, 0.3)
-        .legend(290, 260, 'legend', 5, 0.3)
-        .legend(290, 292, 'legend', 6, 0.3)
-        .legend(290, 324, 'legend', 7, 0.3)
-        .input(000, 430, "left", player)
-        .input(050, 430, "down", player)
-        .input(100, 430, "right", player)
-        .input(220, 430, "lrot", player)
-        .input(270, 430, "rrot", player)
-        .button(260, 20, "back")        
-        .onclick.add(function(action) {
-            FlxG.switchState(new MenuState());
+
+        factory.fps(0, 0);
+        factory.image(0, 0, 'slots', 0.2);
+        factory.text(0, 0, label, 1.4, FlxColor.YELLOW);
+        factory.score(0, 40, 'Score');
+        factory.legend(290, 100, 'legend', 0, 1.0);
+        factory.legend(290, 132, 'legend', 1, 1.0);
+        factory.legend(290, 164, 'legend', 2, 1.0);
+        factory.legend(290, 196, 'legend', 3, 0.3);
+        factory.legend(290, 228, 'legend', 4, 0.3);
+        factory.legend(290, 260, 'legend', 5, 0.3);
+        factory.legend(290, 292, 'legend', 6, 0.3);
+        factory.legend(290, 324, 'legend', 7, 0.3);
+        factory.input(000, 430, "left", player);
+        factory.input(050, 430, "down", player);
+        factory.input(100, 430, "right", player);
+        factory.input(220, 430, "lrot", player);
+        factory.input(270, 430, "rrot", player);
+        factory.button(260, 20, "back");
+        factory.onclick.add(function(action) {
+            FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
+                FlxG.switchState(new MenuState());
+            });
         });
 
         /**
@@ -113,6 +116,8 @@ class PlayState extends FlxState {
 	override public function destroy():Void {
 		super.destroy();
         factory.onclick.removeAll();
+        engine.removeAllEntities();
+        engine.removeAllSystems();
         factory = null;
         engine = null;
 	}

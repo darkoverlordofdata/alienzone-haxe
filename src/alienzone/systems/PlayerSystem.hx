@@ -134,7 +134,7 @@ class PlayerSystem extends System {
      * create a gem group
      */
     private function createGems():Void {
-        var i:Int = Std.int(Math.max(2, (count+Reg.legend)/2)-1);
+        var i:Int = Std.int(Math.max(2, (count+Reg.level)/2)-1);
         var cursor:Array<Array<Int>> = maps[i][0];
         rot = 0;
         pos = 0;
@@ -363,11 +363,11 @@ class PlayerSystem extends System {
              */
             }
             
-            if (Reg.legend < upgradeIndex) {
+            if (Reg.level < upgradeIndex) {
                 levelUp = true;
             }
 
-            Reg.legend = upgradeIndex;
+            Reg.level = upgradeIndex;
             var upgradedType:String = Res.GEMTYPES[upgradeIndex];
             if (upgradedType != null) {
                 if (discoveredGems.indexOf(upgradedType) == -1)

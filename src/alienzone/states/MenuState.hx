@@ -40,6 +40,7 @@ class MenuState extends FlxState {
 	 * Function that is called up when to state is created to set it up. 
 	 */
 	override public function create() {
+        FlxG.camera.fade(FlxColor.BLACK, .33, true);
 		super.create();
         FlxG.stage.quality = StageQuality.BEST;
         FlxG.camera.antialiasing = true;
@@ -53,21 +54,29 @@ class MenuState extends FlxState {
         /**
          *  Initialize the entities
          */
-        factory
-        .fps(0, 0)
-        .image(10, 10, 'title')
-        .option(10, 400, 'music', Reg.getPreference('music'))
-        .option(250, 400, 'sfx', Reg.getPreference('sfx'))
-        .button(80, 150, 'infinity')
-        .button(80, 250, 'ftl')
-        .button(105, 410, 'help')
-        .onclick.add(function(action:String) {
+        factory.fps(0, 0);
+        factory.image(10, 10, 'title');
+        factory.option(10, 400, 'music', Reg.getPreference('music'));
+        factory.option(250, 400, 'sfx', Reg.getPreference('sfx'));
+        factory.button(80, 150, 'infinity');
+        factory.button(80, 250, 'ftl');
+        factory.button(105, 410, 'help');
+        factory.onclick.add(function(action:String) {
             switch (action) {
-                case 'infinity':    FlxG.switchState(new PlayState(GameType.Infinity));
-                case 'ftl':         FlxG.switchState(new PlayState(GameType.FTL));
-                case 'help':        FlxG.switchState(new HelpState());
+                case 'infinity':	FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
+                                        FlxG.switchState(new PlayState(GameType.Infinity));
+                                    });
+
+                case 'ftl':         FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
+                                        FlxG.switchState(new PlayState(GameType.FTL));
+                                    });
+
+                case 'help':        FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
+                                        FlxG.switchState(new HelpState());
+                                    });
             }
         });
+
 
         /**
          *  Run the systems

@@ -5,11 +5,9 @@ import flixel.FlxSprite;
 import ash.core.Engine;
 import ash.core.NodeList;
 import ash.core.System;
-import alienzone.components.Display;
 import alienzone.components.Match;
 import alienzone.nodes.GroupNode;
 import flixel.group.FlxGroup;
-import flixel.FlxObject;
 
 
 class RenderGemSystem extends System {

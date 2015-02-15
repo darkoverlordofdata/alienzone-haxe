@@ -48,6 +48,7 @@ class RenderSystem extends System {
 
             graphic.x = transform.x;
             graphic.y = transform.y;
+            graphic.alpha = transform.alpha;
             //graphic.rotation = transform.rotation * 180 / Math.PI;
         }
     }

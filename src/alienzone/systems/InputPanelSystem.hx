@@ -30,11 +30,6 @@ import flixel.tweens.FlxTween;
  *  |   |   |   |   |   |   | 1
  *  +---+---+---+---+---+---+
  *
- *	CommandNode
- *	    Player
- *	RenderGemNode
- *	    Match
- *	    Graphic
  *
  */
 class InputPanelSystem extends System {
@@ -45,14 +40,12 @@ class InputPanelSystem extends System {
 
     private var player:NodeList<CommandNode>;   //  command input
     private var groupNodes:NodeList<GroupNode>; //  gem nodes
-    private var uniqueId:Int;                   //  unique id for each gem
+    private var uniqueId:Int = 0;               //  unique id for each gem
     private var gems:Array<Entity>;             //  gem entities
     private var rot:Int;                        //  rotate frame (0-3)
     private var pos:Int;                        //  horizontal cursor (0-4)
-    private var known:Int;                      //  start off with set of 3 crystals
-    private var discovered:Int;                 //  we discover the remaining crystals
     private var dropping:Bool;                  //  crystals being dropped?
-    private var maps:Array<Array<Array<Array<Int>>>> = [    //  crystal rotation maps:
+    private var cursors:Array<Array<Array<Array<Int>>>> = [    //  crystal rotation maps:
         [[[1,0],[0,0]], [[0,1],[0,0]], [[0,0],[0,1]], [[0,0],[1,0]]],
         [[[1,0],[2,0]], [[2,1],[0,0]], [[0,2],[0,1]], [[0,0],[1,2]]],
         [[[1,0],[2,3]], [[2,1],[3,0]], [[3,2],[0,1]], [[0,3],[1,2]]],
@@ -61,39 +54,47 @@ class InputPanelSystem extends System {
 
 
     /**
-     * Initialize the player gameboard
+     * Initialize the player input area
+     *
+     * @param [FlxGroup] container - top level gui container
+     * @param [EntityFactory] factory - entity factory
+     * @return new PuzzleSystem instance
      */
     public function new(container:FlxGroup, factory:EntityFactory) {
         super();
         this.factory = factory;
         this.container = container;
-        uniqueId = 0;
-        rot = 0;
-        pos = 0;
-        known = 2;
-        discovered = 0;
-        dropping = false;
+    }
+
+    override public function addToEngine(engine:Engine):Void {
+
+        /**
+         * allocate resources
+         */
+        player = engine.getNodeList(CommandNode);
+        groupNodes = engine.getNodeList(GroupNode);
+
+        /**
+         * initialize blackboard values
+         */
+        Reg.createGems.add(createGems);
         Reg.discoveredGems = [];
         for (i in 0...Res.GEMTYPES.length) {
-            if (i < (discovered+known)) {
+            if (i < 3) {
                 Reg.discoveredGems.push(Res.GEMTYPES[i]);
             }
         }
-        Reg.legend = known;
+        Reg.level = Reg.discoveredGems.length-1;
+        //Reg.createGems.dispatch();
         createGems();
+        
     }
-    
-    override public function addToEngine(engine:Engine):Void {
-        player = engine.getNodeList(CommandNode);
-        groupNodes = engine.getNodeList(GroupNode);
-        Reg.createGems.add(createGems);
-    }
-    
-    /**
-     * Respond to the player's command
-     */
+
     override public function update(time:Float):Void {
 
+        /**
+         * Respond to the player's input
+         */
         for (node in player) {
             var command = node.command.command;
             node.command.command = '';
@@ -108,6 +109,10 @@ class InputPanelSystem extends System {
     }
 
     override public function removeFromEngine(engine:Engine):Void {
+
+        /**
+         * dispoose the resources
+         */
         player = null;
         groupNodes = null;
         Reg.createGems.remove(createGems);
@@ -115,38 +120,43 @@ class InputPanelSystem extends System {
 
     /**
      * create a gem group
+     * of 2, 3, or 4 gems
+     *
+     * @return none
      */
     private function createGems():Void {
-        var i:Int = Std.int(Math.max(2, (Reg.legend+2)/2)-1);
-        var cursor:Array<Array<Int>> = maps[i][0];
+        var i:Int = Std.int(Math.max(2, (Reg.level+2)/2)-1);
+        var cursor:Array<Array<Int>> = cursors[i][0];
         rot = 0;
         pos = 0;
         gems = [];
         for (row in 0...2) {
             for (col in 0...2) {
                 if (cursor[row][col] != 0) {
-                    uniqueId += 1;
                     var frame:Int = Reg.rnd.nextInt(Reg.discoveredGems.length);
-                    gems.push(factory.gem(uniqueId, gems.length, col, row, 'gem', frame));
+                    gems.push(factory.gem(++uniqueId, gems.length, col, row, 'gem', frame));
                 }
             }
         }
         dropping = false;
     }
-    
+
     /**
      *  Move left or right
+     *
+     * @param [Int] dir -1 = left, +1 = right
+     * @return none
      */
     private function move(dir:Int):Void {
         var left:Int = 5;
         var right:Int = 0;
-        
+
         for (gem in gems) {
             var match:Match = gem.get(Match);
             if (match.col < left) left = match.col;
             if (match.col > right) right = match.col;
         }
-        
+
         if (dir == -1) {
             if (left <= 0) return;
         } else {
@@ -156,6 +166,12 @@ class InputPanelSystem extends System {
         updateGems();
     }
 
+    /**
+     *  Rotate left or right
+     *
+     * @param [Int] dir -1 = left, +1 = right
+     * @return none
+     */
     private function rotate(dir:Int):Void {
         if (pos>=5) return;
         rot += dir;
@@ -164,9 +180,14 @@ class InputPanelSystem extends System {
         updateGems();
     }
 
+    /**
+     *  update the gem group display
+     *
+     * @return none
+     */
     private function updateGems():Void {
 
-        var cursor:Array<Array<Int>> = maps[gems.length-1][rot];
+        var cursor:Array<Array<Int>> = cursors[gems.length-1][rot];
         for (row in 0...2) {
             for (col in 0...2) {
                 if (cursor[row][col] != 0) {
@@ -191,11 +212,12 @@ class InputPanelSystem extends System {
      * drop the gem group onto the puzzle
      * remove the group and add puzzle component
      * this moves the gems to the PuzzleSystem
-     *  
+     *
+     * @return none
      */
     private function drop():Void {
         if (dropping) return;
-        dropping = true;
+        dropping = true; // disable dropping until this group completes
 
         var cols:Array<Int> = [0,0,0,0,0,0];
         // check how much room is needed to drop the gems
@@ -213,7 +235,7 @@ class InputPanelSystem extends System {
                 }
                 if (k < cols[col]) {
                     dropping = false;
-                    // TODO: check if we lost - i.e., no valid moves left
+                    // TODO: check if player lost - i.e., has no valid moves
                     return;
                 }
             }

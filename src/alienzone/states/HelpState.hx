@@ -15,6 +15,7 @@
  */
 package alienzone.states;
 
+import flixel.util.FlxColor;
 import flash.display.StageQuality;
 
 import alienzone.systems.OptionSystem;
@@ -49,6 +50,7 @@ with Google Play Games.
 	 * Function that is called up when to state is created to set it up. 
 	 */
 	override public function create() {
+        FlxG.camera.fade(FlxColor.BLACK, .33, true);
 		super.create();
         FlxG.stage.quality = StageQuality.BEST;
         FlxG.camera.antialiasing = true;
@@ -62,15 +64,17 @@ with Google Play Games.
         /**
          *  Initialize the entities
          */
-        factory
-        .fps(0, 0)
-        .image(15, 100, 'scores', 0.5)
-        .image(10, 10, 'logo')
-        .help(0, 130, instructions)
-        .text(0, 400, '${String.fromCharCode(0xa9)}2014 Dark Overlord of Data', 0.8)
-        .button(260, 20, 'back')
-        .onclick.add(function(action) {
-            FlxG.switchState(new MenuState());
+
+        factory.fps(0, 0);
+        factory.image(15, 100, 'scores', 0.5);
+        factory.image(10, 10, 'logo');
+        factory.help(0, 130, instructions);
+        factory.text(0, 400, '${String.fromCharCode(0xa9)}2014 Dark Overlord of Data', 0.8);
+        factory.button(260, 20, 'back');
+        factory.onclick.add(function(action) {
+            FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
+                FlxG.switchState(new MenuState());
+            });
         });
 
         /**

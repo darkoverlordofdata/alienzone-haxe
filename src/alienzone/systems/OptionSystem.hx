@@ -19,11 +19,11 @@ class OptionSystem extends ListIteratingSystem<OptionNode> {
     private function updateNode(node:OptionNode, time:Float):Void {
         if (node.option.enabled) {
             node.graphic.animation.frameIndex = 1;
-            node.graphic.alpha = 1.0;
+            node.transform.alpha = 1.0;
             Reg.setPreference(node.option.name, true);
         } else {
             node.graphic.animation.frameIndex = 0;
-            node.graphic.alpha = 0.5;
+            node.transform.alpha = 0.5;
             Reg.setPreference(node.option.name, false);
         }
     }
