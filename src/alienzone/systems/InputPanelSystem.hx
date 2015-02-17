@@ -51,8 +51,10 @@ class InputPanelSystem extends System {
     private var gems:Array<Entity>;             //  gem entities
     private var rot:Int;                        //  rotate frame (0-3)
     private var pos:Int;                        //  horizontal cursor (0-4)
+    private var weight:Int = 0;
     private var dropping:Bool;                  //  crystals being dropped?
-    private var pips:Array<Int> = [1,1,1,1,1,2,2,3];
+    private var flourish:Bool = false;
+    private var flip:Bool = false;
     private var cursors:Array<Array<Array<Array<Int>>>> = [    //  crystal rotation maps:
         [[[1,0],[0,0]], [[0,1],[0,0]], [[0,0],[0,1]], [[0,0],[1,0]]],
         [[[1,0],[2,0]], [[2,1],[0,0]], [[0,2],[0,1]], [[0,0],[1,2]]],
@@ -94,6 +96,9 @@ class InputPanelSystem extends System {
         }
         Reg.level = Reg.discoveredGems.length-1;
         Reg.createGems.dispatch();
+        Reg.scored.add(function(points:Int){
+            flourish = true;
+        });
     }
 
     override public function update(time:Float):Void {
@@ -132,7 +137,51 @@ class InputPanelSystem extends System {
      */
     public function createGems() {
 
-        var i:Int = pips[Reg.level];
+        var i:Int = 1;
+        
+        switch (Reg.difficulty) {
+        
+            case 0:
+                var pips:Array<Int> = [1,2,1,2,1,2,1,2];
+                i = pips[Reg.level];
+                if (weight>1) {
+                    i -= 1;
+                }
+                weight -=1;
+
+            case 1:
+                var pips:Array<Int> = [1,1,1,1,1,2,2,3];
+                i = pips[Reg.level];
+                weight = (i>1) ? weight+1 : 0;
+                if (weight>2) i -= (Reg.rnd.nextBool()) ? 0 : 1;
+
+            case 2:
+                var pips:Array<Int> = [1,1,1,2,2,2,2,3];
+                i = pips[Reg.level];
+                if (weight>1) {
+                    i -= 1;
+                    weight -=1;
+                }
+
+            default:
+                var pips:Array<Int> = [1,1,1,1,2,2,3,0];
+                i = pips[Reg.level];
+                weight = (i>1) ? weight+1 : 0;
+                if (weight>2) i -= (Reg.rnd.nextBool()) ? 0 : 1;
+
+        }
+
+        if (i<0) i=0;
+        if (i>3) i=3;
+        if (flip) {
+            if (i == 1) {
+                i = 2;
+            } else if (i == 2) {
+                i = 1;
+            }
+        }
+        flip = !flip;
+        
         var cursor:Array<Array<Int>> = cursors[i][0];
         rot = 0;
         pos = 0;
@@ -148,11 +197,13 @@ class InputPanelSystem extends System {
         dropping = false;
         rot = 0;
         updateGems();
-        if (Reg.level > 2) {
+        if (flourish) {
+            var dir:Direction = (Reg.rnd.nextBool()) ? Direction.Left : Direction.Right;
             new FlxTimer(0.1, function(Timer:FlxTimer):Void {
-                    rotate(Direction.Right);
+                    rotate(dir);
                 }, 4);
         }
+        flourish = false;
     }
 
     /**
@@ -255,7 +306,7 @@ class InputPanelSystem extends System {
             }
         }
 
-        // Move the gems to the Puzzle
+        // Move the gems from Group to Puzzle
         for (gem in gems) {
             var match:Match = gem.get(Match);
             gem.remove(Group);

@@ -1,5 +1,6 @@
 package alienzone;
 
+import flixel.effects.particles.FlxEmitter;
 import flixel.util.FlxDestroyUtil;
 import flixel.util.FlxSignal.FlxTypedSignal;
 import flixel.ui.FlxButton;
@@ -141,6 +142,17 @@ class EntityFactory {
         return title;
     }
 
+    public function exploder(x:Int, y:Int, key:String, particles:Int):Entity {
+    
+        var explo:FlxEmitter = new FlxEmitter(0,0);
+        explo.makeParticles(key, particles, 0, true, 0);
+
+        var entity:Entity = new Entity()
+        .add(new Display(cast(explo, FlxSprite)))
+        .add(new Transform(x, y));
+        engine.addEntity(entity);
+        return entity;
+    }
     /**
      * Help text
      *

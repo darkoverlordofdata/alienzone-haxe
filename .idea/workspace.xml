@@ -1,36 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33e74dff-cbda-447e-a773-699092e19a24" name="Default" comment="daily">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup10.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup11.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup12.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup13.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup14.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup15.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup16.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup17.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup18.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup19.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup2.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup20.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup3.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup4.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup5.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup6.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup7.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup8.m4a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/sounds/sfx/Powerup9.m4a" afterPath="" />
+    <list default="true" id="33e74dff-cbda-447e-a773-699092e19a24" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/EntityFactory.hx" afterPath="$PROJECT_DIR$/src/alienzone/EntityFactory.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/states/HelpState.hx" afterPath="$PROJECT_DIR$/src/alienzone/states/HelpState.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/systems/InputPanelSystem.hx" afterPath="$PROJECT_DIR$/src/alienzone/systems/InputPanelSystem.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/states/MenuState.hx" afterPath="$PROJECT_DIR$/src/alienzone/states/MenuState.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/states/PlayState.hx" afterPath="$PROJECT_DIR$/src/alienzone/states/PlayState.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/systems/PuzzleSystem.hx" afterPath="$PROJECT_DIR$/src/alienzone/systems/PuzzleSystem.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/Reg.hx" afterPath="$PROJECT_DIR$/src/alienzone/Reg.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/Res.hx" afterPath="$PROJECT_DIR$/src/alienzone/Res.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/systems/ScoreSystem.hx" afterPath="$PROJECT_DIR$/src/alienzone/systems/ScoreSystem.hx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AlienZone3.iws" />
@@ -55,38 +29,18 @@
       <file leaf-file-name="InputPanelSystem.hx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/alienzone/systems/InputPanelSystem.hx">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.28533334">
-              <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+            <state vertical-scroll-proportion="2.2106667">
+              <caret line="258" column="27" selection-start-line="258" selection-start-column="27" selection-end-line="258" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuState.hx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/alienzone/states/MenuState.hx">
+      <file leaf-file-name="EntityFactory.hx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/alienzone/EntityFactory.hx">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayState.hx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/alienzone/states/PlayState.hx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="15" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Reg.hx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/alienzone/Reg.hx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="28" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="28" />
+              <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -96,17 +50,7 @@
         <entry file="file://$PROJECT_DIR$/src/alienzone/systems/ScoreSystem.hx">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PuzzleSystem.hx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/alienzone/systems/PuzzleSystem.hx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -132,7 +76,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/alienzone/nodes/ScoreNode.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/components/Level.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/Main.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/graphics/Button.hx" />
@@ -167,22 +110,23 @@
         <option value="$PROJECT_DIR$/src/alienzone/systems/OptionSystem.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/systems/PlayerSystem.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/systems/RenderSystem.hx" />
-        <option value="$PROJECT_DIR$/Project.xml" />
         <option value="$PROJECT_DIR$/src/alienzone/Res.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/systems/RenderGemSystem.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/states/HelpState.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/D16aSave.hx" />
         <option value="$PROJECT_DIR$/src/FlxSignal.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/FlxSignal.hx" />
-        <option value="$PROJECT_DIR$/src/alienzone/EntityFactory.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/states/PlayState.hx" />
-        <option value="$PROJECT_DIR$/src/alienzone/Reg.hx" />
-        <option value="$PROJECT_DIR$/src/alienzone/systems/ScoreSystem.hx" />
         <option value="/usr/lib/haxe/lib/flixel/3,3,6/flixel/util/FlxSignal.hx" />
         <option value="$PROJECT_DIR$/src/SignalTest.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/states/MenuState.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/systems/PuzzleSystem.hx" />
+        <option value="$PROJECT_DIR$/Project.xml" />
+        <option value="$PROJECT_DIR$/src/alienzone/Reg.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/systems/InputPanelSystem.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/components/Explosion.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/systems/ScoreSystem.hx" />
+        <option value="$PROJECT_DIR$/src/alienzone/EntityFactory.hx" />
       </list>
     </option>
   </component>
@@ -216,7 +160,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -227,6 +172,24 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="External Libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AlienZone3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flixel 3,3,6" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3,3,6" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -301,24 +264,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AlienZone3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AlienZone3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -338,10 +286,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/alienzone/components" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/alienzone" />
       <recent name="$PROJECT_DIR$/src/alienzone/nodes" />
-      <recent name="$PROJECT_DIR$/src/alienzone/components" />
       <recent name="$PROJECT_DIR$/src/alienzone/systems" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -635,7 +583,13 @@
       <option name="project" value="LOCAL" />
       <updated>1423990837548</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="daily">
+      <created>1424133479062</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1424133479062</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -664,7 +618,6 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32333332" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
@@ -675,7 +628,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32833335" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -683,9 +635,11 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32833335" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -713,18 +667,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/lib/haxe/lib/ash/1,5,3/ash/core/NodeList.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.989362">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/haxe/lib/ash/1,5,3/ash/ClassMap.hx">
+    <entry file="file://$PROJECT_DIR$/src/alienzone/EntityFactory.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -750,14 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Display.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14285715">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/haxe/lib/flixel/3,3,6/flixel/tweens/misc/VarTween.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.253913">
@@ -778,7 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -786,7 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.5968586">
           <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -794,7 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18997361">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,7 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15706806">
           <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -818,7 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -834,7 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18848167">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -842,7 +775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18848167">
           <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -858,7 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="55" column="31" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -874,7 +805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03141361">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -890,7 +820,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48812664">
           <caret line="14" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -898,23 +827,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18997361">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Transform.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18848167">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/haxe/lib/flixel/3,3,6/flixel/group/FlxTypedGroup.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.8918204">
-          <caret line="132" column="18" selection-start-line="132" selection-start-column="18" selection-end-line="132" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -962,7 +874,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31413612">
           <caret line="10" column="22" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -978,7 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -986,7 +896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.6544504">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -998,26 +907,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Project.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.99472296">
-          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/haxe/lib/flixel/3,3,6/flixel/util/FlxSave.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="42" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/EntityFactory.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.4240837">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1054,10 +947,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/haxe/lib/flixel/3,3,6/flixel/util/FlxSignal.hx">
+    <entry file="file://$PROJECT_DIR$/Project.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.23219">
-          <caret line="140" column="36" selection-start-line="140" selection-start-column="26" selection-end-line="140" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.33245382">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1070,26 +963,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/Reg.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="28" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/systems/ScoreSystem.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/alienzone/systems/PuzzleSystem.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <caret line="78" column="20" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/Reg.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28759894">
+          <caret line="160" column="5" selection-start-line="160" selection-start-column="5" selection-end-line="160" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1097,15 +982,79 @@
     <entry file="file://$PROJECT_DIR$/src/alienzone/states/PlayState.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="15" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
+          <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/images/particles.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Text.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Transform.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18848167">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/components/Display.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09424084">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/haxe/lib/flixel/3,3,6/flixel/util/FlxSignal.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.85340315">
+          <caret line="140" column="4" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/haxe/lib/flixel/3,3,6/CHANGELOG.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="18.679245">
+          <caret line="330" column="19" selection-start-line="330" selection-start-column="2" selection-end-line="330" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/systems/ScoreSystem.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/EntityFactory.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/alienzone/systems/InputPanelSystem.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.28533334">
-          <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+        <state vertical-scroll-proportion="2.2106667">
+          <caret line="258" column="27" selection-start-line="258" selection-start-column="27" selection-end-line="258" selection-end-column="27" />
           <folding />
         </state>
       </provider>

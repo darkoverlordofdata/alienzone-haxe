@@ -37,6 +37,7 @@ class Reg {
 	public static var SHOW_FPS:Bool = true;				//	display frames per second?
 	public static var discoveredGems:Array<String>;   	//  all the discovered crystals
 	public static var puzzle:Grid;                     	//  the 7 x 6 puzzle grid
+	public static var difficulty:Int = 0;
 
 	public static var createGems(get_createGems, never):FlxTypedSignal<Void->Void>;
 	public static var dropGem(get_dropGem, never):FlxTypedSignal<Array<Entity>->Void>;
@@ -162,6 +163,11 @@ class Reg {
 	public static function init(type:GameType, score:Int) {
 		_type = type;
 		_score = score;
+		if (score == 0) {
+			difficulty = 0;
+		} else {
+			difficulty += 1;
+		}
 	}
 
 	/**
