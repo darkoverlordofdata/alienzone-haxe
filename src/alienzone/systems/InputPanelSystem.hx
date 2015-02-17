@@ -1,5 +1,6 @@
 package alienzone.systems;
 
+import flixel.util.FlxTimer;
 import alienzone.match3.Piece;
 import alienzone.match3.Grid;
 import alienzone.components.Puzzle;
@@ -32,7 +33,13 @@ import flixel.tweens.FlxTween;
  *
  *
  */
+enum Direction {
+    Left;
+    Right;
+}
+
 class InputPanelSystem extends System {
+
 
     public var container:FlxGroup;              //  the container of this system
     public var factory:EntityFactory;           //  create entities
@@ -45,6 +52,7 @@ class InputPanelSystem extends System {
     private var rot:Int;                        //  rotate frame (0-3)
     private var pos:Int;                        //  horizontal cursor (0-4)
     private var dropping:Bool;                  //  crystals being dropped?
+    private var pips:Array<Int> = [1,1,1,1,1,2,2,3];
     private var cursors:Array<Array<Array<Array<Int>>>> = [    //  crystal rotation maps:
         [[[1,0],[0,0]], [[0,1],[0,0]], [[0,0],[0,1]], [[0,0],[1,0]]],
         [[[1,0],[2,0]], [[2,1],[0,0]], [[0,2],[0,1]], [[0,0],[1,2]]],
@@ -85,9 +93,7 @@ class InputPanelSystem extends System {
             }
         }
         Reg.level = Reg.discoveredGems.length-1;
-        //Reg.createGems.dispatch();
-        createGems();
-        
+        Reg.createGems.dispatch();
     }
 
     override public function update(time:Float):Void {
@@ -99,11 +105,11 @@ class InputPanelSystem extends System {
             var command = node.command.command;
             node.command.command = '';
             switch (command) {
-                case 'left':    move(-1);
+                case 'left':    move(Direction.Left);
                 case 'down':    drop();
-                case 'right':   move(1);
-                case 'lrot':    rotate(-1);
-                case 'rrot':    rotate(1);
+                case 'right':   move(Direction.Right);
+                case 'lrot':    rotate(Direction.Left);
+                case 'rrot':    rotate(Direction.Right);
             }
         }
     }
@@ -111,11 +117,11 @@ class InputPanelSystem extends System {
     override public function removeFromEngine(engine:Engine):Void {
 
         /**
-         * dispoose the resources
+         * dispose the resources
          */
+        Reg.createGems.removeAll();
         player = null;
         groupNodes = null;
-        Reg.createGems.remove(createGems);
     }
 
     /**
@@ -124,8 +130,9 @@ class InputPanelSystem extends System {
      *
      * @return none
      */
-    private function createGems():Void {
-        var i:Int = Std.int(Math.max(2, (Reg.level+2)/2)-1);
+    public function createGems() {
+
+        var i:Int = pips[Reg.level];
         var cursor:Array<Array<Int>> = cursors[i][0];
         rot = 0;
         pos = 0;
@@ -139,15 +146,22 @@ class InputPanelSystem extends System {
             }
         }
         dropping = false;
+        rot = 0;
+        updateGems();
+        if (Reg.level > 2) {
+            new FlxTimer(0.1, function(Timer:FlxTimer):Void {
+                    rotate(Direction.Right);
+                }, 4);
+        }
     }
 
     /**
      *  Move left or right
      *
-     * @param [Int] dir -1 = left, +1 = right
+     * @param [Direction] dir Left or Right
      * @return none
      */
-    private function move(dir:Int):Void {
+    private function move(dir:Direction):Void {
         var left:Int = 5;
         var right:Int = 0;
 
@@ -157,24 +171,24 @@ class InputPanelSystem extends System {
             if (match.col > right) right = match.col;
         }
 
-        if (dir == -1) {
+        if (dir == Direction.Left) {
             if (left <= 0) return;
         } else {
             if (right >= 5) return;
         }
-        pos += dir;
+        pos += (dir == Direction.Left) ? -1 : 1;
         updateGems();
     }
 
     /**
      *  Rotate left or right
      *
-     * @param [Int] dir -1 = left, +1 = right
+     * @param [Direction] dir Left or Right
      * @return none
      */
-    private function rotate(dir:Int):Void {
+    private function rotate(dir:Direction):Void {
         if (pos>=5) return;
-        rot += dir;
+        rot += (dir == Direction.Left) ? -1 : 1;
         if (rot < 0) rot = 3;
         if (rot > 3) rot = 0;
         updateGems();
@@ -249,6 +263,4 @@ class InputPanelSystem extends System {
         }
         Reg.dropGem.dispatch(gems);
     }
-    
-
 }

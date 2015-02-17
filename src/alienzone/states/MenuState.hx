@@ -15,7 +15,7 @@
  */
 package alienzone.states;
 
-import flixel.util.FlxColor;
+import flixel.util.FlxSave;
 import flixel.util.FlxColor;
 import alienzone.states.PlayState.GameType;
 import alienzone.systems.OptionSystem;
@@ -25,7 +25,6 @@ import ash.core.Engine;
 import flixel.FlxG;
 import flash.display.StageQuality;
 import flixel.FlxState;
-import alienzone.Mersenne;
 
 /**
  * A FlxState which can be used for the game's menu.
@@ -36,7 +35,7 @@ class MenuState extends FlxState {
     private var engine:Engine;
     private var factory:EntityFactory;
 
-    /**
+/**
 	 * Function that is called up when to state is created to set it up. 
 	 */
 	override public function create() {
@@ -44,7 +43,8 @@ class MenuState extends FlxState {
 		super.create();
         FlxG.stage.quality = StageQuality.BEST;
         FlxG.camera.antialiasing = true;
-        
+        Reg.save();
+
         /**
          *  Create the engine
          */

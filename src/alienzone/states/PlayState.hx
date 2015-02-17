@@ -15,6 +15,7 @@
  */
 package alienzone.states;
 
+import alienzone.match3.Grid;
 import alienzone.components.Player;
 import alienzone.systems.PuzzleSystem;
 import alienzone.systems.InputPanelSystem;
@@ -41,14 +42,13 @@ enum GameType {
  */
 class PlayState extends FlxState {
 
-    private var gameType:GameType;
     private var engine:Engine;
     private var factory:EntityFactory;
 
 
-    public function new(gameType:GameType) {
+    public function new(gameType:GameType, score:Int=0) {
         super();
-        this.gameType = gameType;
+        Reg.init(gameType, score);
     }
 
 	/**
@@ -60,7 +60,6 @@ class PlayState extends FlxState {
         FlxG.stage.quality = StageQuality.BEST;
         FlxG.camera.antialiasing = true;
 
-
         /**
          *  Create the engine
          */
@@ -70,8 +69,11 @@ class PlayState extends FlxState {
         /**
          *  Initialize the entities
          */
-        var label:String = (gameType == GameType.Infinity) ? 'InfinitY' : 'FTL';
+        var label:String = (Reg.type == GameType.Infinity) ? 'InfinitY' : 'FTL';
         var player:Player = factory.player();
+        
+        Reg.puzzle = new Grid(6, 7, 'down');
+        //Reg.initEvents();
 
         factory.fps(0, 0);
         factory.image(0, 0, 'slots', 0.2);
@@ -115,10 +117,10 @@ class PlayState extends FlxState {
 	 */
 	override public function destroy():Void {
 		super.destroy();
-        factory.onclick.removeAll();
+        factory.dispose();
+        factory = null;
         engine.removeAllEntities();
         engine.removeAllSystems();
-        factory = null;
         engine = null;
 	}
 

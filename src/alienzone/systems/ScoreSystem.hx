@@ -36,6 +36,11 @@ class ScoreSystem extends ListIteratingSystem<ScoreNode> {
         Reg.scored.add(scored);
     }
 
+    override public function removeFromEngine(engine:Engine):Void {
+        super.removeFromEngine(engine);
+        Reg.scored.removeAll();
+    }
+    
     private function updateNode(node:ScoreNode, time:Float):Void {
         node.score.points = Reg.score;
         var gui:FlxBitmapTextField = cast(node.graphic, FlxBitmapTextField);
@@ -49,7 +54,9 @@ class ScoreSystem extends ListIteratingSystem<ScoreNode> {
         
         var xform:Transform = text.get(Transform);
 
-        FlxG.sound.play('bonus${points % Res.SFX_COUNT}', Reg.volume);
+        if (Reg.sfx) {
+            FlxG.sound.play('bonus${points % Res.SFX_COUNT}', Reg.volume);
+        }
         FlxTween.tween(xform, {alpha:0}, 0.75, {
             type: FlxTween.ONESHOT,
             startDelay: 0.5,

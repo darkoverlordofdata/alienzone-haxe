@@ -15,11 +15,15 @@
  */
 package alienzone;
 
+import alienzone.states.PlayState.GameType;
 import alienzone.match3.Grid;
 import ash.core.Entity;
-import flixel.FlxSprite;
-import flixel.util.FlxSignal.FlxTypedSignal;
 import flash.net.SharedObject;
+import flixel.FlxSprite;
+import flixel.util.FlxSave;
+import flixel.util.FlxSignal.FlxTypedSignal;
+import flixel.util.FlxSignal;
+import flixel.util.FlxDestroyUtil;
 
 /**
  * Static Blackboard
@@ -34,89 +38,80 @@ class Reg {
 	public static var discoveredGems:Array<String>;   	//  all the discovered crystals
 	public static var puzzle:Grid;                     	//  the 7 x 6 puzzle grid
 
-
+	public static var createGems(get_createGems, never):FlxTypedSignal<Void->Void>;
+	public static var dropGem(get_dropGem, never):FlxTypedSignal<Array<Entity>->Void>;
+	public static var level(get_level, set_level):Int;
+	public static var music(get_music, never):Bool;
+	public static var rnd(get_rnd, never):Mersenne;
+	public static var score(get_score, never):Int;
+	public static var scored(get_scored, never):FlxTypedSignal<Int->Void>;
+	public static var sfx(get_sfx, never):Bool;
+	public static var type(get_type, never):GameType;
+	public static var upgrade(get_upgrade, never):FlxTypedSignal<Int->Void>;
+	public static var volume(get_volume, never):Float;
+	
 	/**
 	 * event bank
 	 */
-	private static var _drop 	= new FlxTypedSignal<Array<Entity>->Void>();
-	private static var _action 	= new FlxTypedSignal<String->FlxSprite->Void>();
-	private static var _create 	= new FlxTypedSignal<Void->Void>();
-	private static var _upgrade = new FlxTypedSignal<Int->Void>();
-	private static var _reset 	= new FlxTypedSignal<Void->Void>();
-	private static var _scored 	= new FlxTypedSignal<Int->Void>();
+	private static var _action:FlxTypedSignal<String->FlxSprite->Void> 	= new FlxTypedSignal<String->FlxSprite->Void>();
+	private static var _create:FlxSignal 	= new FlxSignal();
+	private static var _drop:FlxTypedSignal<Array<Entity>->Void> 	= new FlxTypedSignal<Array<Entity>->Void>();
+	private static var _reset:FlxTypedSignal<Void->Void> 	= new FlxTypedSignal<Void->Void>();
+	private static var _scored:FlxTypedSignal<Int->Void> 	= new FlxTypedSignal<Int->Void>();
+	private static var _upgrade:FlxTypedSignal<Int->Void> 	= new FlxTypedSignal<Int->Void>();
 
+	private static var _magic:Int = 0xd16a;
+	private static var _id:String = "alienzone";
 
 	/**
 	 * data
 	 */
-	private static var _rnd:Mersenne = new Mersenne();
-	private static var _score:Int = 0;
 	private static var _level:Int = 0;
 	private static var _music:Bool = true;
+	private static var _rnd:Mersenne = new Mersenne();
+	private static var _score:Int = 0;
 	private static var _sfx:Bool = true;
+	private static var _store:FlxSave;
 	private static var _storeName:String = "alienzone";
-	private static var _store:SharedObject;
+	private static var _type:GameType;
 
-	/**
-	 *	static initializer for saved state
-	 */
-	private static var _initialize = (function(magic:Int):Bool {
 
-		_store = SharedObject.getLocal(_storeName);
-//		_store = new FlxSave();
-//		_store.bind("alienzone");
-
-		if (_store.data.format != magic) {
-			_store.data.format = magic;
-			_store.data.music = _music = true;
-			_store.data.sfx = _sfx = true;
-		} else {
-			_music = _store.data.music;
-			_sfx = _store.data.sfx;
-		}
-		return true;
-
-	})(0xd16a);
-
-	public static var volume(get_volume, never):Float;
+	private static function get_type():GameType {
+		return _type;
+	}
 	
 	private static function get_volume():Float {
 		return _sfx ? Res.VOLUME_ON : Res.VOLUME_OFF;
 	}
 
-	public static var scored(get_scored, never):FlxTypedSignal<Int->Void>;
+	private static function get_sfx():Bool {
+		return _sfx;
+	}
+
+	private static function get_music():Bool {
+		return _music;
+	}
 
 	private static function get_scored():FlxTypedSignal<Int->Void> {
 		return _scored;
 	}
 
-	public static var upgrade(get_upgrade, never):FlxTypedSignal<Int->Void>;
-
 	private static function get_upgrade():FlxTypedSignal<Int->Void> {
 		return _upgrade;
 	}
 
-
-	public static var dropGem(get_dropGem, never):FlxTypedSignal<Array<Entity>->Void>;
-	
 	private static function get_dropGem():FlxTypedSignal<Array<Entity>->Void> {
 		return _drop;
 	}
-	
-	public static var createGems(get_createGems, never):FlxTypedSignal<Void->Void>;
-	
+
 	private static function get_createGems():FlxTypedSignal<Void->Void> {
 		return _create;
 	}
 
-	public static var rnd(get_rnd, never):Mersenne;
-	
 	private static function get_rnd():Mersenne {
 		return _rnd;
 	}
 
-	public static var level(get_level, set_level):Int;
-	
 	private static function get_level():Int {
 		return _level;
 	}
@@ -127,17 +122,59 @@ class Reg {
 		return value;
 	}
 
-	public static var score(get_score, never):Int;
-
 	private static function get_score():Int {
 		return _score;
 	}
+
+	/**
+	 * Init
+	 * 
+	 * Make sure we're initialized
+	 *
+	 * Note: This must be called from an instance method
+	 *
+	 */
+	public static function save():FlxSave {
+		if (_store == null) {
+			_store = new FlxSave();
+			_store.bind(_id);
+
+			/**
+			 * format the data store
+			 */
+			if (_store.data.format != _magic) {
+				_store.data.format = _magic;
+				_store.data.music = true;
+				_store.data.sfx = true;
+				_store.data.id = _id;
+				_store.flush();
+			}
+			
+			/**
+			 * load persisted values
+			 */
+			_music = _store.data.music;
+			_sfx = _store.data.sfx;
+		}
+		return _store;
+	}
 	
+	public static function init(type:GameType, score:Int) {
+		_type = type;
+		_score = score;
+	}
+
+	/**
+	 * Add points to the score
+	 */
 	public static function updateScore(points:Int) {
 		_score += points;
 		_scored.dispatch(points);
 	}
-	
+
+	/**
+	 * Get the option preference
+	 */
 	public static function getPreference(id:String):Bool {
 		switch (id) {
 			case 'music':	return _music;
@@ -147,7 +184,7 @@ class Reg {
 	}
 	
 	/**
-	 * Persist the preference change
+	 * Save the option preference
 	 */
 	public static function setPreference(id:String, value:Bool):Void {
 		switch (id) {
@@ -161,5 +198,4 @@ class Reg {
 				_store.flush();
 		}
 	}
-
 }

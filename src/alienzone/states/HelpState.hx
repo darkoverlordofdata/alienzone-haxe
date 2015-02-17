@@ -91,7 +91,6 @@ with Google Play Games.
 	 */
 	override public function destroy() {
 		super.destroy();
-        factory.onclick.removeAll();
 	}
 
 	/**

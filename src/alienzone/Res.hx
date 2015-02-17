@@ -21,8 +21,8 @@ package alienzone;
  */
 class Res {
 
-	public static var VOLUME_ON  = 0.05;
-	public static var VOLUME_OFF = 0.00;
+	public static var VOLUME_ON  = 0.5;
+	public static var VOLUME_OFF = 0.0;
 	public static var SFX_COUNT:Int = 19;			// sound effects
 	public static var GEMSIZE:Int = 48;          	// Gem size constant in pixels
 	public static var GEMTYPES:Array<String> = [    // All gem types:

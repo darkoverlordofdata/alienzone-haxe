@@ -1,5 +1,6 @@
 package alienzone.systems;
 
+import alienzone.states.PlayState;
 import alienzone.match3.Piece;
 import alienzone.components.Display;
 import alienzone.components.Transform;
@@ -10,6 +11,7 @@ import ash.core.Entity;
 import ash.core.Engine;
 import ash.core.NodeList;
 import ash.core.System;
+import flixel.FlxG;
 import flixel.group.FlxGroup;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
@@ -64,7 +66,6 @@ class PuzzleSystem extends System {
         this.container = container;
         board = 0;
         gems = new Map();
-        Reg.puzzle = new Grid(6, 7, 'down');
     }
     
     override public function addToEngine(engine:Engine):Void {
@@ -73,10 +74,9 @@ class PuzzleSystem extends System {
     }
     
     override public function removeFromEngine(engine:Engine):Void {
+        Reg.dropGem.removeAll();
         gemNodes = null;
         gems = null;
-        Reg.dropGem.remove(dropped);
-        
     }
 
     override public function update(time:Float):Void {
@@ -90,7 +90,6 @@ class PuzzleSystem extends System {
      * @return none
      */
     private function dropped(gems:Array<Entity>) {
-
         var dropped:Int = 0;
         for (row in [1,0]) {
             for (gem in gems) {
@@ -205,6 +204,7 @@ class PuzzleSystem extends System {
             /**
              * Level Up...
              */
+                FlxG.switchState(new PlayState(Reg.type, Reg.score));
             }
 
             

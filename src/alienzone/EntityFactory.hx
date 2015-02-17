@@ -1,5 +1,6 @@
 package alienzone;
 
+import flixel.util.FlxDestroyUtil;
 import flixel.util.FlxSignal.FlxTypedSignal;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
@@ -44,6 +45,9 @@ class EntityFactory {
 
     }
 
+    public function dispose():Void {
+        onclick = FlxDestroyUtil.destroy(onclick);
+    }
     /**
      * bitmapText helper
      *
