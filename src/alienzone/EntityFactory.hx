@@ -154,7 +154,7 @@ class EntityFactory {
         engine.addEntity(entity);
         return entity;
     }
-    
+
     public function timer(x:Int, y:Int, scale:Float=1.0, color:Int=0, sec:Int = 0):Entity {
 
         var txt:FlxBitmapTextField = bitmapText("fonts/opendyslexic");
