@@ -26,6 +26,7 @@ import alienzone.components.Opacity;
 import alienzone.components.Option;
 import alienzone.components.Player;
 import alienzone.components.Text;
+import alienzone.components.Time;
 import alienzone.components.Transform;
 
 
@@ -152,6 +153,23 @@ class EntityFactory {
         .add(new Transform(x, y));
         engine.addEntity(entity);
         return entity;
+    }
+    
+    public function timer(x:Int, y:Int, scale:Float=1.0, color:Int=0, sec:Int = 0):Entity {
+
+        var txt:FlxBitmapTextField = bitmapText("fonts/opendyslexic");
+        txt.color = color;
+        txt.fontScale = scale;
+        txt.text = '00:00';
+
+        var entity:Entity = new Entity()
+        .add(new Time(sec))
+        .add(new Display(txt))
+        .add(new Transform(x, y));
+        engine.addEntity(entity);
+        return entity;
+
+
     }
     /**
      * Help text

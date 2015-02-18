@@ -1,5 +1,6 @@
 package alienzone.systems;
 
+import alienzone.states.PlayState.GameType;
 import flixel.util.FlxTimer;
 import alienzone.match3.Piece;
 import alienzone.match3.Grid;
@@ -51,8 +52,8 @@ class InputPanelSystem extends System {
     private var gems:Array<Entity>;             //  gem entities
     private var rot:Int;                        //  rotate frame (0-3)
     private var pos:Int;                        //  horizontal cursor (0-4)
-    private var weight:Int = 0;
     private var dropping:Bool;                  //  crystals being dropped?
+    private var weight:Int = 0;
     private var flourish:Bool = false;
     private var flip:Bool = false;
     private var cursors:Array<Array<Array<Array<Int>>>> = [    //  crystal rotation maps:
@@ -99,6 +100,9 @@ class InputPanelSystem extends System {
         Reg.scored.add(function(points:Int){
             flourish = true;
         });
+        if (Reg.type == GameType.FTL) {
+            Reg.timer.add(drop);
+        }
     }
 
     override public function update(time:Float):Void {
@@ -197,11 +201,16 @@ class InputPanelSystem extends System {
         dropping = false;
         rot = 0;
         updateGems();
+        var times = 0;
         if (flourish) {
             var dir:Direction = (Reg.rnd.nextBool()) ? Direction.Left : Direction.Right;
             new FlxTimer(0.1, function(Timer:FlxTimer):Void {
                     rotate(dir);
+                    times++;
+                    if (times == 4) Reg.reset.dispatch();
                 }, 4);
+        } else {
+            Reg.reset.dispatch();
         }
         flourish = false;
     }

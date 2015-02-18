@@ -17,13 +17,14 @@ package alienzone.states;
 
 import alienzone.match3.Grid;
 import alienzone.components.Player;
-import alienzone.systems.PuzzleSystem;
 import alienzone.systems.InputPanelSystem;
-import alienzone.systems.RenderGemSystem;
 import alienzone.systems.LegendSystem;
+import alienzone.systems.PuzzleSystem;
+import alienzone.systems.RenderGemSystem;
 import alienzone.systems.RenderSystem;
 import alienzone.systems.ScoreSystem;
 import alienzone.systems.SystemPriorities;
+import alienzone.systems.TimerSystem;
 import ash.core.Engine;
 import ash.core.Entity;
 import flash.display.StageQuality;
@@ -52,7 +53,7 @@ class PlayState extends FlxState {
     }
 
 	/**
-	 * Function that is called up when to state is created to set it up. 
+	 * Create the game engine
 	 */
 	override public function create():Void {
         FlxG.camera.fade(FlxColor.BLACK, .33, true);
@@ -69,15 +70,21 @@ class PlayState extends FlxState {
         /**
          *  Initialize the entities
          */
-        var label:String = (Reg.type == GameType.Infinity) ? 'InfinitY' : 'FTL';
-        var player:Player = factory.player();
-        
         Reg.puzzle = new Grid(6, 7, 'down');
-        //Reg.initEvents();
+        var player:Player = factory.player();
 
-        factory.fps(0, 0);
+        switch (Reg.type) {
+        
+            case GameType.Infinity:
+                factory.text(0, 0, 'InfinitY', 1.4, FlxColor.YELLOW);
+            
+            case GameType.FTL:
+                factory.text(0, 0, 'FTL', 1.4, 0xffff6600);
+                factory.timer(50, 0, 1.0, 0xffff6600, 10);
+        
+        }
+        factory.fps(280, 0);
         factory.image(0, 0, 'slots', 0.2);
-        factory.text(0, 0, label, 1.4, FlxColor.YELLOW);
         factory.score(0, 40, 'Score');
         factory.legend(290, 100, 'legend', 0, 1.0);
         factory.legend(290, 132, 'legend', 1, 1.0);
@@ -94,7 +101,7 @@ class PlayState extends FlxState {
         factory.input(270, 430, "rrot", player);
         factory.button(260, 20, "back");
         factory.onclick.add(function(action) {
-            FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
+            FlxG.camera.fade(FlxColor.BLACK, 0.33, false, function() {
                 FlxG.switchState(new MenuState());
             });
         });
@@ -108,6 +115,9 @@ class PlayState extends FlxState {
         engine.addSystem(new LegendSystem(this, factory), SystemPriorities.animate);
         engine.addSystem(new InputPanelSystem(this, factory), SystemPriorities.move);
         engine.addSystem(new PuzzleSystem(this, factory), SystemPriorities.player);
+        if (Reg.type == GameType.FTL) {
+            engine.addSystem(new TimerSystem(this, factory), SystemPriorities.player);
+        }
     }
 
 

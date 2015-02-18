@@ -18,12 +18,11 @@ package alienzone;
 import alienzone.states.PlayState.GameType;
 import alienzone.match3.Grid;
 import ash.core.Entity;
-import flash.net.SharedObject;
 import flixel.FlxSprite;
 import flixel.util.FlxSave;
 import flixel.util.FlxSignal.FlxTypedSignal;
 import flixel.util.FlxSignal;
-import flixel.util.FlxDestroyUtil;
+
 
 /**
  * Static Blackboard
@@ -44,9 +43,11 @@ class Reg {
 	public static var level(get_level, set_level):Int;
 	public static var music(get_music, never):Bool;
 	public static var rnd(get_rnd, never):Mersenne;
+    public static var reset(get_reset, never):FlxTypedSignal<Void->Void>;
 	public static var score(get_score, never):Int;
 	public static var scored(get_scored, never):FlxTypedSignal<Int->Void>;
 	public static var sfx(get_sfx, never):Bool;
+    public static var timer(get_timer, never):FlxTypedSignal<Void->Void>;
 	public static var type(get_type, never):GameType;
 	public static var upgrade(get_upgrade, never):FlxTypedSignal<Int->Void>;
 	public static var volume(get_volume, never):Float;
@@ -59,6 +60,7 @@ class Reg {
 	private static var _drop:FlxTypedSignal<Array<Entity>->Void> 	= new FlxTypedSignal<Array<Entity>->Void>();
 	private static var _reset:FlxTypedSignal<Void->Void> 	= new FlxTypedSignal<Void->Void>();
 	private static var _scored:FlxTypedSignal<Int->Void> 	= new FlxTypedSignal<Int->Void>();
+    private static var _timer:FlxTypedSignal<Void->Void> 	= new FlxTypedSignal<Void->Void>();
 	private static var _upgrade:FlxTypedSignal<Int->Void> 	= new FlxTypedSignal<Int->Void>();
 
 	private static var _magic:Int = 0xd16a;
@@ -109,11 +111,19 @@ class Reg {
 		return _create;
 	}
 
-	private static function get_rnd():Mersenne {
+    private static function get_reset():FlxTypedSignal<Void->Void> {
+        return _reset;
+    }
+
+    private static function get_rnd():Mersenne {
 		return _rnd;
 	}
 
-	private static function get_level():Int {
+    private static function get_timer():FlxTypedSignal<Void->Void> {
+        return _timer;
+    }
+
+    private static function get_level():Int {
 		return _level;
 	}
 
