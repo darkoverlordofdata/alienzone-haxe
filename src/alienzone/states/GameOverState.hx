@@ -1,6 +1,6 @@
 /**
  *--------------------------------------------------------------------+
- * HelpState.hx
+ * GameOverState.hx
  *--------------------------------------------------------------------+
  * Copyright DarkOverlordOfData (c) 2014
  *--------------------------------------------------------------------+
@@ -15,36 +15,31 @@
  */
 package alienzone.states;
 
-import flixel.util.FlxColor;
-import flash.display.StageQuality;
-
+import alienzone.systems.ScoreSystem;
+import alienzone.states.PlayState.GameType;
+import alienzone.model.LeaderData;
 import alienzone.systems.OptionSystem;
 import alienzone.systems.RenderSystem;
 import alienzone.systems.SystemPriorities;
 import ash.core.Engine;
 import flixel.FlxG;
 import flixel.FlxState;
+import flixel.util.FlxColor;
+import flash.display.StageQuality;
+
 
 /**
- * A FlxState which can be used for the game's menu.
+ * Show the leaderboard
  */
-class HelpState extends FlxState {
+class GameOverState extends FlxState {
 
     private var engine:Engine;
     private var factory:EntityFactory;
-    private var instructions:String = "
-Match 3 or more gems to score.
-Use arrow keys to rotate and
-move your gems, down key to drop.
-Gems do not have to be in a
-a straight line to match.
-
-Timed (FTL) game will auto drop
-your gems when time runs out.
-
-Login to save scores and awards
-with Google Play Games.
-";
+    
+    public function new(gameType:GameType, score:Int=0) {
+        super();
+        Reg.init(gameType, score);
+    }
 
     /**
 	 * Function that is called up when to state is created to set it up. 
@@ -60,6 +55,15 @@ with Google Play Games.
          */
         engine = new Engine();
         factory = new EntityFactory(engine);
+        
+        var update:Bool = false;
+        switch (Reg.type) {
+            case GameType.Infinity:
+                update = Reg.data.leaders[0].score < Reg.score;
+            case GameType.FTL:
+                update = Reg.data.leaders[1].score < Reg.score;
+
+        }
 
         /**
          *  Initialize the entities
@@ -67,15 +71,41 @@ with Google Play Games.
 
         factory.fps(0, 0);
         factory.image(15, 100, 'scores', 0.5);
+        factory.text(0, 130, 'Scores', 1.4, FlxColor.YELLOW);
+        var y:Int = 140;
+        for (i in 0...Reg.data.leaders.length) {
+            var data:Dynamic = Reg.data.leaders[i];
+            var leader:LeaderData = new LeaderData(data.id, data.title, data.image, data.score);
+            factory.leader(40, y+=40, leader, 1.0, FlxColor.YELLOW);
+        }
         factory.image(10, 10, 'logo');
         factory.text(55, 20, "Alien Zone", 1.4, FlxColor.YELLOW);
-        factory.help(0, 130, instructions);
+        factory.score(0, 280, 'Score');
         factory.text(0, 400, '${String.fromCharCode(0xa9)}2014 Dark Overlord of Data', 0.8);
         factory.button(270, 0, 'back');
+        if (update) factory.button(100, 340, 'save');
         factory.onclick.add(function(action) {
-            FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
-                FlxG.switchState(new MenuState());
-            });
+        
+            switch (action) {
+
+                case 'back':
+                    FlxG.camera.fade(FlxColor.BLACK, 0.33, false, function() {
+                        FlxG.switchState(new MenuState());
+                    });
+
+                case 'save':
+                    switch (Reg.type) {
+                        case GameType.Infinity:
+                            Reg.data.leaders[0].score = Reg.score;
+                        case GameType.FTL:
+                            Reg.data.leaders[1].score = Reg.score;
+
+                    }
+                    FlxG.camera.fade(FlxColor.BLACK, 0.33, false, function() {
+                        FlxG.switchState(new LeaderboardState());
+                    });
+
+            }
         });
 
         /**
@@ -83,6 +113,7 @@ with Google Play Games.
          */
         engine.addSystem(new RenderSystem(this, factory), SystemPriorities.render);
         engine.addSystem(new OptionSystem(this, factory), SystemPriorities.animate);
+        engine.addSystem(new ScoreSystem(this, factory), SystemPriorities.animate);
 
     }
 

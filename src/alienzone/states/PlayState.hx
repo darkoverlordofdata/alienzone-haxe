@@ -83,7 +83,7 @@ class PlayState extends FlxState {
                 factory.timer(50, 0, 1.0, 0xffff6600, 10);
         
         }
-        factory.fps(280, 0);
+        factory.fps(280, 20);
         factory.image(0, 0, 'slots', 0.2);
         factory.score(0, 40, 'Score');
         factory.legend(290, 100, 'legend', 0, 1.0);
@@ -99,7 +99,7 @@ class PlayState extends FlxState {
         factory.input(100, 430, "right", player);
         factory.input(220, 430, "lrot", player);
         factory.input(270, 430, "rrot", player);
-        factory.button(260, 20, "back");
+        factory.button(270, 00, "back");
         factory.onclick.add(function(action) {
             FlxG.camera.fade(FlxColor.BLACK, 0.33, false, function() {
                 FlxG.switchState(new MenuState());

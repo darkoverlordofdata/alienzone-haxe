@@ -17,6 +17,8 @@ package alienzone;
 
 import alienzone.states.PlayState.GameType;
 import alienzone.match3.Grid;
+import alienzone.model.AwardData;
+import alienzone.model.LeaderData;
 import ash.core.Entity;
 import flixel.FlxSprite;
 import flixel.util.FlxSave;
@@ -31,14 +33,17 @@ import flixel.util.FlxSignal;
  *
  *
  */
+
+
 class Reg {
 
-	public static var SHOW_FPS:Bool = true;				//	display frames per second?
+    public static var SHOW_FPS:Bool = true;				//	display frames per second?
 	public static var discoveredGems:Array<String>;   	//  all the discovered crystals
 	public static var puzzle:Grid;                     	//  the 7 x 6 puzzle grid
 	public static var difficulty:Int = 0;
 
 	public static var createGems(get_createGems, never):FlxTypedSignal<Void->Void>;
+    public static var data(get_data, never):Dynamic;
 	public static var dropGem(get_dropGem, never):FlxTypedSignal<Array<Entity>->Void>;
 	public static var level(get_level, set_level):Int;
 	public static var music(get_music, never):Bool;
@@ -67,7 +72,7 @@ class Reg {
 	private static var _id:String = "alienzone";
 
 	/**
-	 * data
+	 * model
 	 */
 	private static var _level:Int = 0;
 	private static var _music:Bool = true;
@@ -78,11 +83,32 @@ class Reg {
 	private static var _storeName:String = "alienzone";
 	private static var _type:GameType;
 
+    /**
+     * Template leaderboard model
+     */
+    private static var _leaderboards = [
+    {id: 'CgkI3YOVjfAZEAIQBg', title: 'Infinity', image: 'images/icon.png', score: 0},
+    {id: 'CgkI3YOVjfAZEAIQBw', title: 'FTL', image: 'images/icon.png', score: 0}
+    ];
+
+    /**
+     * Template achievement model
+     */
+    private static var _achievements = [
+    {id: 'CgkI3YOVjfAZEAIQAQ', title: 'Combo', desc: 'Make 2 scores with 1 drop', image: 'images/icon.png', lock: false},
+    {id: 'CgkI3YOVjfAZEAIQAg', title: 'Cascading', desc: 'After your first score, the crystals settle and you make another score', image: 'images/icon.png', lock: false},
+    {id: 'CgkI3YOVjfAZEAIQAw', title: 'Triple', desc: 'Score with 3 of a kind', image: 'images/icon.png', lock: false},
+    {id: 'CgkI3YOVjfAZEAIQBA', title: 'Quad', desc: 'Score with 4 of a kind', image: 'images/icon.png', lock: false},
+    {id: 'CgkI3YOVjfAZEAIQBQ', title: 'Cascading Combo', desc: 'Your combo results in a cascade', image: 'images/icon.png', lock: false}
+    ];
 
 	private static function get_type():GameType {
 		return _type;
 	}
 	
+    private static function get_data():Dynamic {
+        return save().data;
+    }
 	private static function get_volume():Float {
 		return _sfx ? Res.VOLUME_ON : Res.VOLUME_OFF;
 	}
@@ -151,13 +177,21 @@ class Reg {
 			_store.bind(_id);
 
 			/**
-			 * format the data store
+			 * format the model store?
 			 */
 			if (_store.data.format != _magic) {
 				_store.data.format = _magic;
 				_store.data.music = true;
 				_store.data.sfx = true;
 				_store.data.id = _id;
+                _store.data.awards = new Array();
+                for (award in _achievements) {
+                    _store.data.awards.push(new AwardData(award.id, award.title, award.desc, award.image, award.lock));
+                }
+                _store.data.leaders = new Array();
+                for (leader in _leaderboards) {
+                    _store.data.leaders.push(new LeaderData(leader.id, leader.title, leader.image, leader.score));
+                }
 				_store.flush();
 			}
 			

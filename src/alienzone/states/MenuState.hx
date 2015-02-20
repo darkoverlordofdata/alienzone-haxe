@@ -15,19 +15,19 @@
  */
 package alienzone.states;
 
-import flixel.util.FlxSave;
-import flixel.util.FlxColor;
 import alienzone.states.PlayState.GameType;
 import alienzone.systems.OptionSystem;
 import alienzone.systems.RenderSystem;
 import alienzone.systems.SystemPriorities;
 import ash.core.Engine;
-import flixel.FlxG;
 import flash.display.StageQuality;
+import flixel.FlxG;
 import flixel.FlxState;
+import flixel.util.FlxSave;
+import flixel.util.FlxColor;
 
 /**
- * A FlxState which can be used for the game's menu.
+ * AlienZone top level menu
  */
 class MenuState extends FlxState {
 
@@ -35,8 +35,8 @@ class MenuState extends FlxState {
     private var engine:Engine;
     private var factory:EntityFactory;
 
-/**
-	 * Function that is called up when to state is created to set it up. 
+    /**
+	 * Display a menu
 	 */
 	override public function create() {
         FlxG.camera.fade(FlxColor.BLACK, .33, true);
@@ -60,20 +60,43 @@ class MenuState extends FlxState {
         factory.option(250, 400, 'sfx', Reg.getPreference('sfx'));
         factory.button(80, 150, 'infinity');
         factory.button(80, 250, 'ftl');
+        factory.button(50, 320, 'awards', [0, 1, 2]);
+        factory.button(120, 320, 'controller', [0, 1, 2]);
+        factory.button(190, 320, 'leaders', [0, 1, 2]);
         factory.button(105, 410, 'help');
         factory.onclick.add(function(action:String) {
             switch (action) {
-                case 'infinity':	FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
-                                        FlxG.switchState(new PlayState(GameType.Infinity));
-                                    });
+            
+                case 'infinity':	
+                    FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
+                        FlxG.switchState(new PlayState(GameType.Infinity));
+                    });
 
-                case 'ftl':         FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
-                                        FlxG.switchState(new PlayState(GameType.FTL));
-                                    });
+                case 'ftl':         
+                    FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
+                        FlxG.switchState(new PlayState(GameType.FTL));
+                    });
 
-                case 'help':        FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
-                                        FlxG.switchState(new HelpState());
-                                    });
+                case 'awards':      
+                    FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
+                        FlxG.switchState(new AchievementsState());
+                    });
+
+                case 'controller':
+                    FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
+                        //FlxG.switchState(new LoginState());
+                    });
+
+                case 'leaders':
+                    FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
+                        FlxG.switchState(new LeaderboardState());
+                    });
+                
+                case 'help':
+                    FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
+                        FlxG.switchState(new HelpState());
+                    });
+
             }
         });
 

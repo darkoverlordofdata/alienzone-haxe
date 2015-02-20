@@ -1,5 +1,6 @@
 package alienzone.systems;
 
+import alienzone.states.GameOverState;
 import alienzone.states.PlayState.GameType;
 import flixel.util.FlxTimer;
 import alienzone.match3.Piece;
@@ -13,6 +14,7 @@ import ash.core.Entity;
 import ash.core.Engine;
 import ash.core.NodeList;
 import ash.core.System;
+import flixel.FlxG;
 import flixel.group.FlxGroup;
 import flixel.tweens.FlxTween;
 
@@ -294,10 +296,12 @@ class InputPanelSystem extends System {
         dropping = true; // disable dropping until this group completes
 
         var cols:Array<Int> = [0,0,0,0,0,0];
+        var count:Int = 0;
         // check how much room is needed to drop the gems
         for (gem in gems) {
             var match:Match = gem.get(Match);
             cols[match.col] += 1;
+            count += 1;
         }
         // will they fit?
         for (col in 0...6) {
@@ -309,8 +313,10 @@ class InputPanelSystem extends System {
                 }
                 if (k < cols[col]) {
                     dropping = false;
-                    // TODO: check if player lost - i.e., has no valid moves
-                    return;
+                    if (hasMove(count)) return;
+                    // Game Over
+                    FlxG.switchState(new GameOverState(Reg.type, Reg.score));
+
                 }
             }
         }
@@ -322,5 +328,11 @@ class InputPanelSystem extends System {
             gem.add(new Puzzle(match.col, match.row));
         }
         Reg.dropGem.dispatch(gems);
+    }
+
+    private function hasMove(count:Int):Bool {
+
+        // TODO: check if player lost - i.e., has no valid moves
+        return false;
     }
 }

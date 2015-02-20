@@ -1,5 +1,8 @@
 package alienzone;
 
+import alienzone.components.Lock;
+import alienzone.components.Count;
+import alienzone.components.Count;
 import flixel.effects.particles.FlxEmitter;
 import flixel.util.FlxDestroyUtil;
 import flixel.util.FlxSignal.FlxTypedSignal;
@@ -14,6 +17,9 @@ import flixel.FlxSprite;
 
 import ash.core.Entity;
 import ash.core.Engine;
+
+import alienzone.model.AwardData;
+import alienzone.model.LeaderData;
 
 import alienzone.components.Bounce;
 import alienzone.components.Display;
@@ -35,11 +41,12 @@ import alienzone.graphics.FPS;
 
 class EntityFactory {
 
-    private static var INTMAX:Int = 2147483647;
+//    private static var INTMAX:Int = 2147483647;
 
     public var onclick:FlxTypedSignal<String->Void>;
 
     private var engine:Engine;
+    private static var SPACES = '                                        ';
 
     public function new(engine:Engine) {
         onclick = new FlxTypedSignal<String->Void>();
@@ -107,11 +114,20 @@ class EntityFactory {
      * @param callback
      * @return opacity
      */
-    public function image(x:Int, y:Int, key:String, opacity:Float=1.0):Entity {
+    public function image(x:Int, y:Int, key:String, opacity:Float=1.0, frames:Array<Int>=null, index=0):Entity {
     
-        var sprite:FlxSprite = new FlxSprite(0, 0, Res.sprite[key].path);
+        var sprite:FlxSprite = new FlxSprite(0, 0);
+
+        if (frames == null) {
+            sprite.loadGraphic(Res.sprite[key].path);
+        } else {
+            sprite.loadGraphic(Res.sprite[key].path, true, Res.sprite[key].height, Res.sprite[key].width);
+            sprite.animation.add(key, frames);
+            sprite.animation.frameIndex = index;
+        }
         sprite.alpha = opacity;
         sprite.antialiasing = true;
+
         
         var image:Entity = new Entity()
         .add(new Display(sprite))
@@ -160,7 +176,7 @@ class EntityFactory {
         var txt:FlxBitmapTextField = bitmapText("fonts/opendyslexic");
         txt.color = color;
         txt.fontScale = scale;
-        txt.text = '00:00';
+        txt.text = '0:0';
 
         var entity:Entity = new Entity()
         .add(new Time(sec))
@@ -248,12 +264,18 @@ class EntityFactory {
      * @param callback
      * @return entity
      */
-    public function button(x:Int, y:Int, action:String):Entity {
+    public function button(x:Int, y:Int, action:String, frames:Array<Int> = null):Entity {
     
         var btn:FlxButton = new FlxButton(0, 0, "", function() {
             onclick.dispatch(action);
         });
-        btn.loadGraphic(Res.sprite[action].path);
+        if (frames == null) {
+            btn.loadGraphic(Res.sprite[action].path);
+        } else {
+            btn.loadGraphic(Res.sprite[action].path, true, Res.sprite[action].height, Res.sprite[action].width);
+            btn.animation.add(action, frames);
+            btn.animation.frameIndex = 0;
+        }
         btn.antialiasing = true;
         
         var button:Entity = new Entity()
@@ -389,5 +411,45 @@ class EntityFactory {
         return setting;
     }
 
+    public function award(x:Int, y:Int, award:AwardData, scale:Float=1.0, color:Int=0):Entity {
 
+        var lock:Bool = false;
+        try {
+            lock = Reg.save().data.lock;
+        } catch (e:String) {}
+        
+        var txt = bitmapText("fonts/opendyslexic");
+        txt.color = color;
+        txt.fontScale = scale;
+        txt.text = award.title;
+        txt.alignment = PxTextAlign.LEFT;
+
+        var entity:Entity = new Entity()
+        .add(new Display(txt))
+        .add(new Transform(x, y))
+        .add(new Lock(lock));
+        engine.addEntity(entity);
+        return entity;
+    }
+
+    public function leader(x:Int, y:Int, leader:LeaderData, scale:Float=1.0, color:Int=0):Entity {
+
+        var score:Int = 0;
+        try {
+            score = Reg.save().data.score;
+        } catch (e:String) {}
+
+        var txt = bitmapText("fonts/opendyslexic");
+        txt.color = color;
+        txt.fontScale = scale;
+        txt.text = leader.title + SPACES.substr(0,30-leader.title.length) + '${leader.score}';
+        txt.alignment = PxTextAlign.LEFT;
+
+        var entity:Entity = new Entity()
+        .add(new Display(txt))
+        .add(new Transform(x, y))
+        .add(new Count(score));
+        engine.addEntity(entity);
+        return entity;
+    }
 }

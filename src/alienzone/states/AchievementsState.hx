@@ -1,6 +1,6 @@
 /**
  *--------------------------------------------------------------------+
- * HelpState.hx
+ * AchievementsState.hx
  *--------------------------------------------------------------------+
  * Copyright DarkOverlordOfData (c) 2014
  *--------------------------------------------------------------------+
@@ -15,36 +15,24 @@
  */
 package alienzone.states;
 
-import flixel.util.FlxColor;
-import flash.display.StageQuality;
-
+import alienzone.model.AwardData;
 import alienzone.systems.OptionSystem;
 import alienzone.systems.RenderSystem;
 import alienzone.systems.SystemPriorities;
 import ash.core.Engine;
 import flixel.FlxG;
 import flixel.FlxState;
+import flixel.util.FlxColor;
+import flash.display.StageQuality;
+
 
 /**
- * A FlxState which can be used for the game's menu.
+ * Show my Achievements
  */
-class HelpState extends FlxState {
+class AchievementsState extends FlxState {
 
     private var engine:Engine;
     private var factory:EntityFactory;
-    private var instructions:String = "
-Match 3 or more gems to score.
-Use arrow keys to rotate and
-move your gems, down key to drop.
-Gems do not have to be in a
-a straight line to match.
-
-Timed (FTL) game will auto drop
-your gems when time runs out.
-
-Login to save scores and awards
-with Google Play Games.
-";
 
     /**
 	 * Function that is called up when to state is created to set it up. 
@@ -67,13 +55,22 @@ with Google Play Games.
 
         factory.fps(0, 0);
         factory.image(15, 100, 'scores', 0.5);
+        factory.text(0, 130, 'Achievements', 1.4, FlxColor.YELLOW);
+        
+        var y:Int = 180;
+        for (i in 0...Reg.data.awards.length) {
+            var data:Dynamic = Reg.data.awards[i];
+            var award:AwardData = new AwardData(data.id, data.title, data.desc, data.image, data.lock);
+            factory.award(40, y, award, 1.0, FlxColor.YELLOW);
+            factory.image(250, y, 'achievement', 1.0, [0, 1, 2], data.lock ? 0 : 1);
+            y += 40;
+        }
         factory.image(10, 10, 'logo');
         factory.text(55, 20, "Alien Zone", 1.4, FlxColor.YELLOW);
-        factory.help(0, 130, instructions);
         factory.text(0, 400, '${String.fromCharCode(0xa9)}2014 Dark Overlord of Data', 0.8);
         factory.button(270, 0, 'back');
         factory.onclick.add(function(action) {
-            FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
+            FlxG.camera.fade(FlxColor.BLACK, 0.33, false, function() {
                 FlxG.switchState(new MenuState());
             });
         });

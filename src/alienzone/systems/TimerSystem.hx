@@ -1,10 +1,9 @@
 package alienzone.systems;
 
-import flixel.text.FlxBitmapTextField;
-import flixel.text.FlxBitmapTextField;
-import flixel.group.FlxGroup;
 import alienzone.nodes.TimerNode;
 import ash.tools.ListIteratingSystem;
+import flixel.text.FlxBitmapTextField;
+import flixel.group.FlxGroup;
 
 
 class TimerSystem extends ListIteratingSystem<TimerNode> {
