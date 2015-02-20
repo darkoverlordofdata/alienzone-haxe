@@ -16,7 +16,7 @@ one more time. with four-part harmony. and feelin'
 
 # GPLv3 License
 
-Copyright (c) 2014 Bruce Davidson <darkoverlordofdata@gmail.com>
+Copyright (c) 2014-2015 Bruce Davidson <darkoverlordofdata@gmail.com>
 
 This file is part of AlienZone.
 
