@@ -5457,7 +5457,7 @@ alienzone.states.LoginState.prototype = $extend(flixel.FlxState.prototype,{
 				});
 				break;
 			case "googleplay":
-				window.location.href = "https://play.google.com/store/apps/details?id=com.darkoverlordofdata.alienzone";
+				window.open(alienzone.Reg.GOOGLE_PLAY,"_blank");
 				break;
 			}
 		});
@@ -26957,6 +26957,7 @@ alienzone.Mersenne.M = 397;
 alienzone.Mersenne.MATRIX_A = -1727483681;
 alienzone.Mersenne.UPPER_MASK = -2147483648;
 alienzone.Mersenne.LOWER_MASK = 2147483647;
+alienzone.Reg.GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=com.darkoverlordofdata.alienzone";
 alienzone.Reg.SHOW_FPS = true;
 alienzone.Reg.difficulty = 0;
 alienzone.Reg._action = new flixel.util._FlxSignal.FlxSignal2();
