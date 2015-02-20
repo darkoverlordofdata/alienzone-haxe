@@ -84,7 +84,7 @@ class MenuState extends FlxState {
 
                 case 'controller':
                     FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
-                        //FlxG.switchState(new LoginState());
+                        FlxG.switchState(new LoginState());
                     });
 
                 case 'leaders':

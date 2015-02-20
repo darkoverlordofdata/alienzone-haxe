@@ -38,6 +38,7 @@ class Res {
 	public static var sprite = [
 
         'achievement' => {path: "images/achievement.png", 	    width: 32,	height: 32},
+        'googleplay' => {path: "images/googleplay.png", 	    width: 32,	height: 32},
 		'title' =>		{path: "images/title.png", 			    width: 300,	height: 100},
 		'infinity' =>	{path: "images/infinity.png", 		    width: 150, height: 60},
 		'ftl' =>		{path: "images/ftl.png", 			    width: 150, height: 60},
