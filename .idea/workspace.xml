@@ -2,36 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33e74dff-cbda-447e-a773-699092e19a24" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/states/AchievementsState.hx" afterPath="$PROJECT_DIR$/src/alienzone/states/AchievementsState.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/components/Action.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Action.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/AssetPaths.hx" afterPath="$PROJECT_DIR$/src/alienzone/AssetPaths.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/components/Bonus.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Bonus.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/components/Count.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Count.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/graphics/FPS.hx" afterPath="$PROJECT_DIR$/src/alienzone/graphics/FPS.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/states/GameOverState.hx" afterPath="$PROJECT_DIR$/src/alienzone/states/GameOverState.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/match3/Grid.hx" afterPath="$PROJECT_DIR$/src/alienzone/match3/Grid.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/components/Group.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Group.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/states/HelpState.hx" afterPath="$PROJECT_DIR$/src/alienzone/states/HelpState.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/states/LeaderboardState.hx" afterPath="$PROJECT_DIR$/src/alienzone/states/LeaderboardState.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/components/Level.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Level.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/components/Lock.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Lock.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/states/LoginState.hx" afterPath="$PROJECT_DIR$/src/alienzone/states/LoginState.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/Main.hx" afterPath="$PROJECT_DIR$/src/alienzone/Main.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/match3/MatchObject.hx" afterPath="$PROJECT_DIR$/src/alienzone/match3/MatchObject.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/states/MenuState.hx" afterPath="$PROJECT_DIR$/src/alienzone/states/MenuState.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/Mersenne.hx" afterPath="$PROJECT_DIR$/src/alienzone/Mersenne.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/components/Number.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Number.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/components/Opacity.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Opacity.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/components/Option.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Option.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/match3/Piece.hx" afterPath="$PROJECT_DIR$/src/alienzone/match3/Piece.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/states/PlayState.hx" afterPath="$PROJECT_DIR$/src/alienzone/states/PlayState.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/components/Player.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Player.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/match3/Point.hx" afterPath="$PROJECT_DIR$/src/alienzone/match3/Point.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/Reg.hx" afterPath="$PROJECT_DIR$/src/alienzone/Reg.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/Res.hx" afterPath="$PROJECT_DIR$/src/alienzone/Res.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/components/State.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/State.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/components/Text.hx" afterPath="$PROJECT_DIR$/src/alienzone/components/Text.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/license.md" afterPath="$PROJECT_DIR$/license.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -94,11 +64,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AssetPaths.hx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/alienzone/AssetPaths.hx">
+      <file leaf-file-name="readme.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme.md">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1904762">
-              <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.6704871">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -192,9 +165,9 @@
         <option value="$PROJECT_DIR$/src/alienzone/Res.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/states/LoginState.hx" />
         <option value="$PROJECT_DIR$/publish.sh" />
-        <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/license.md" />
         <option value="$PROJECT_DIR$/src/alienzone/AssetPaths.hx" />
+        <option value="$PROJECT_DIR$/readme.md" />
       </list>
     </option>
   </component>
@@ -639,7 +612,13 @@
       <option name="project" value="LOCAL" />
       <updated>1424409198830</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="daily">
+      <created>1424409292196</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1424409292196</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1055,17 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5955882">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/license.md">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
@@ -1085,6 +1053,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/AssetPaths.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1904762">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/alienzone/Main.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1093,10 +1069,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/AssetPaths.hx">
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1904762">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.6704871">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>

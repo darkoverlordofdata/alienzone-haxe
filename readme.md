@@ -10,6 +10,9 @@
 # Alien Zone - Space Crystal Match Game
 one more time. with four-part harmony. and feelin'
 
+[![Get it on Google Play](assets/en_generic_rgb_wo_45.png)] (https://play.google.com/store/apps/details?id=com.darkoverlordofdata.alienzone)
+
+
 ### Free and Open Source Game using:
 * HaxeFlixel
 * Ash
