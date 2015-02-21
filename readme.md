@@ -17,6 +17,20 @@ one more time. with four-part harmony. and feelin'
 * HaxeFlixel
 * Ash
 
+### Build
+
+#### testing
+    lime test neko
+
+#### android
+    lime build android
+    lime build android -Drelease-sign
+
+#### html5
+    lime build html5
+    cp bin/html5/bin build/web
+    publish.sh
+
 # GPLv3 License
 
 Copyright (c) 2014-2015 Bruce Davidson <darkoverlordofdata@gmail.com>

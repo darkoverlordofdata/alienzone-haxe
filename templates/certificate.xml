@@ -2,10 +2,10 @@
 <project>
 
     <!------------------------------ANDROID SIGNING---------------------------->
-    
-    <certificate if="release-sign"
-             alias="AlienZone2"
-             path="/home/bruce/apk/alienzone2.jks"
-             password=""
+
+    <certificate    path="/home/bruce/apk/alienzone.jks"
+                    alias="alienzed"
+                    password="d16a-alienzed"
+                    if="release-sign"
         />
 </project>

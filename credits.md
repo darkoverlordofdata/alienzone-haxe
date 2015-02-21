@@ -13,7 +13,7 @@ Sound Effects:
 Gems:
     http://opengameart.org/content/gem-tiles
     
-Bucky Balls and other Outer Space Stuff
+Bucky Balls and other Outer Space Stuff:
     http://www.nasa.gov
     
 

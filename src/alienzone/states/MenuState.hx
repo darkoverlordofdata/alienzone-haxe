@@ -115,7 +115,11 @@ class MenuState extends FlxState {
 	 */
 	override public function destroy() {
 		super.destroy();
-        factory.onclick.removeAll();
+        factory.destroy();
+        factory = null;
+        engine.removeAllEntities();
+        engine.removeAllSystems();
+        engine = null;
 	}
 
 	/**

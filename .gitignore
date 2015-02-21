@@ -7,4 +7,3 @@ bin
 templates/certificate.xml
 
 build/gh-pages
-build/web/bin

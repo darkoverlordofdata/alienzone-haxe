@@ -89,6 +89,11 @@ class AchievementsState extends FlxState {
 	 */
 	override public function destroy() {
 		super.destroy();
+        factory.destroy();
+        factory = null;
+        engine.removeAllEntities();
+        engine.removeAllSystems();
+        engine = null;
 	}
 
 	/**

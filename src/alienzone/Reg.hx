@@ -38,7 +38,7 @@ import flixel.util.FlxSignal;
 class Reg {
 
 	public static var GOOGLE_PLAY = 'https://play.google.com/store/apps/details?id=com.darkoverlordofdata.alienzone';
-    public static var SHOW_FPS:Bool = true;				//	display frames per second?
+    public static var SHOW_FPS:Bool = false;				//	display frames per second?
 	public static var discoveredGems:Array<String>;   	//  all the discovered crystals
 	public static var puzzle:Grid;                     	//  the 7 x 6 puzzle grid
 	public static var difficulty:Int = 0;

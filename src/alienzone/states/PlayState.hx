@@ -127,7 +127,7 @@ class PlayState extends FlxState {
 	 */
 	override public function destroy():Void {
 		super.destroy();
-        factory.dispose();
+        factory.destroy();
         factory = null;
         engine.removeAllEntities();
         engine.removeAllSystems();

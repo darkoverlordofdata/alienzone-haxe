@@ -41,8 +41,6 @@ import alienzone.graphics.FPS;
 
 class EntityFactory {
 
-//    private static var INTMAX:Int = 2147483647;
-
     public var onclick:FlxTypedSignal<String->Void>;
 
     private var engine:Engine;
@@ -54,7 +52,7 @@ class EntityFactory {
 
     }
 
-    public function dispose():Void {
+    public function destroy():Void {
         onclick = FlxDestroyUtil.destroy(onclick);
     }
     /**

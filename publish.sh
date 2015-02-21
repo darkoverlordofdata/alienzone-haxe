@@ -12,3 +12,6 @@ cd ../web
 git add . --all
 git commit -m publish
 git push origin gh-pages
+rm -fr ./.git
+cd ..
+rm -fr ./gh-pages

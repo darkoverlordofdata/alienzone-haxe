@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
     <meta title="AlienZone2"
-          package="com.darkoverlordofdata.alienzone2"
-          version="0.0.1"
+          package="com.darkoverlordofdata.alienzone"
+          version="0.1.0"
           company="Dark Overlord of Data"
             />
 
@@ -47,7 +47,6 @@
 
     <assets path="res/images" rename="images" include="*" exclude="icon.png" />
     <assets path="res/fonts" rename="fonts" />
-    <assets path="res/config" rename="config" />
     <assets path="res/sounds/sfx">
         <sound path="Powerup.ogg" id="bonus1" />
         <sound path="Powerup2.ogg" id="bonus2" />
@@ -88,6 +87,6 @@
 
     <template path="templates/AndroidManifest.xml" rename="AndroidManifest.xml" if="android"/>
     <template path="templates/res/values/ids.xml" rename="ids.xml" if="android"/>
-    <inclue path="templates/certificate.xml" />
+    <include path="templates/certificate.xml" />
 
 </project>
