@@ -41,8 +41,10 @@
 
     (function($) {
         try {
-            screen.lockOrientation('portrait');
-        } catch(e) {}
+            window.screen.lockOrientation('portrait');
+        } catch(e) {
+            console.log(e);
+        }
     }(document.querySelector.bind(document)));
 
 </script>
