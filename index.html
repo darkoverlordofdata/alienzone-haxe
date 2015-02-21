@@ -41,7 +41,7 @@
             }(document.querySelector.bind(document)));
 
 			try {
-				window.screen.lockOrientation('portrait');
+				window.screen.orientation.lock('portrait');
 			} catch(e) {
 			    console.log(e);
 			}
