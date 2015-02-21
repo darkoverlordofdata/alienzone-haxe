@@ -17,6 +17,8 @@ package alienzone;
 
 /**
  * Resources
+ * 
+ *
  */
 class Res {
 

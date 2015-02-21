@@ -5,3 +5,6 @@ export
 bin
 # Android signing credentials
 templates/certificate.xml
+
+build/gh-pages
+build/web/bin

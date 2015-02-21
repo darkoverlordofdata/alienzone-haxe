@@ -78,7 +78,7 @@ class LoginState extends FlxState {
                 
                 #if html5
                 case 'googleplay':
-                    js.Browser.window.location.href = 'https://play.google.com/store/apps/details?id=com.darkoverlordofdata.alienzone';
+                    js.Browser.window.open(Reg.GOOGLE_PLAY, '_blank');
                 #end
             }   
         });
