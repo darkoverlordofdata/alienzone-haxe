@@ -52,12 +52,12 @@ class PlayState extends FlxState {
         Reg.init(gameType, score);
     }
 
-	/**
-	 * Create the game engine
-	 */
-	override public function create():Void {
+    /**
+     * Create the game engine
+     */
+    override public function create():Void {
         FlxG.camera.fade(FlxColor.BLACK, .33, true);
-		super.create();
+    	super.create();
         FlxG.stage.quality = StageQuality.BEST;
         FlxG.camera.antialiasing = true;
 
@@ -122,23 +122,23 @@ class PlayState extends FlxState {
 
 
     /**
-	 * Function that is called when this state is destroyed - you might want to 
-	 * consider setting all objects this state uses to null to help garbage collection.
-	 */
-	override public function destroy():Void {
-		super.destroy();
+     * Function that is called when this state is destroyed - you might want to
+     * consider setting all objects this state uses to null to help garbage collection.
+     */
+    override public function destroy():Void {
+    	super.destroy();
         factory.destroy();
         factory = null;
         engine.removeAllEntities();
         engine.removeAllSystems();
         engine = null;
-	}
+    }
 
-	/**
-	 * Function that is called once every frame.
-	 */
-	override public function update():Void {
-		super.update();
+    /**
+     * Function that is called once every frame.
+     */
+    override public function update():Void {
+    	super.update();
         engine.update(FlxG.elapsed);
-	}
+    }
 }
