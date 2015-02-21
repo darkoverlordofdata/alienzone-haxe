@@ -38,7 +38,13 @@
     $('iframe').style.height = h+'px';
 
     }(document.querySelector.bind(document)));
-    
+
+    (function($) {
+        try {
+            screen.lockOrientation('portrait');
+        } catch(e) {}
+    }(document.querySelector.bind(document)));
+
 </script>
 </body>
 </html><!--

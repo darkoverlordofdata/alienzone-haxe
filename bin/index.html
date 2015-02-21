@@ -7,11 +7,18 @@
 	<meta name='apple-mobile-web-app-capable' content='yes' />
 	<meta name='viewport' content='initial-scale=1.0, maximum-scale=1.0, user-scalable=0, width=device-width, height=device-height' />
 	<meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
-	<link rel="manifest" href="../manifest.json">
-	<title>AlienZone2</title>
+	<title>AlienZone</title>
 </head>
 <body style="padding: 0; margin: 0; background-color: #000000;">
 	<script>function winParameters () { return {}; }</script>
 	<script type="text/javascript" src="./AlienZone.js"></script>
+	<script>
+		(function($) {
+			try {
+				screen.lockOrientation('portrait');
+			} catch(e) {}
+		}(document.querySelector.bind(document)));
+
+	</script>
 	</body>
 </html>
