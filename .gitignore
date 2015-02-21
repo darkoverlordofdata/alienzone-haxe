@@ -2,8 +2,12 @@
 
 # Build and Release Folders
 export
-bin
+
 # Android signing credentials
 templates/certificate.xml
 
-build/gh-pages
+
+bin/android
+bin/html5
+bin/linux64
+bin/.build

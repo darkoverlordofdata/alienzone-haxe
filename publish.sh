@@ -2,7 +2,7 @@
 #
 #   Publish gh-pages
 #
-cd ./build/
+cd ./html5/
 git clone git@github.com:darkoverlordofdata/alienzone-haxe.git gh-pages
 cd ./gh-pages/
 git checkout gh-pages
