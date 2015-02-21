@@ -83,14 +83,6 @@ ApplicationMain.preload = function() {
 	ApplicationMain.loadBinary("fonts/outlined.fnt");
 	ApplicationMain.loadFile("fonts/outlined_1.png");
 	ApplicationMain.loadFile("fonts/outlined_0.png");
-	ApplicationMain.loadBinary("config/levels.yaml");
-	ApplicationMain.loadBinary("config/sprites.yaml");
-	ApplicationMain.loadBinary("config/extra.yaml");
-	ApplicationMain.loadBinary("config/arrays.yaml");
-	ApplicationMain.loadBinary("config/config.yaml");
-	ApplicationMain.loadBinary("config/strings.yaml");
-	ApplicationMain.loadBinary("config/audio.yaml");
-	ApplicationMain.loadBinary("config/images.yaml");
 	ApplicationMain.loadSound("res/sounds/sfx/Powerup.ogg");
 	ApplicationMain.loadSound("res/sounds/sfx/Powerup2.ogg");
 	ApplicationMain.loadSound("res/sounds/sfx/Powerup3.ogg");
@@ -981,14 +973,6 @@ var DefaultAssetLibrary = function() {
 	this.add("fonts/outlined.fnt",openfl.AssetType.TEXT);
 	this.add("fonts/outlined_1.png",openfl.AssetType.IMAGE);
 	this.add("fonts/outlined_0.png",openfl.AssetType.IMAGE);
-	this.add("config/levels.yaml",openfl.AssetType.TEXT);
-	this.add("config/sprites.yaml",openfl.AssetType.TEXT);
-	this.add("config/extra.yaml",openfl.AssetType.TEXT);
-	this.add("config/arrays.yaml",openfl.AssetType.TEXT);
-	this.add("config/config.yaml",openfl.AssetType.TEXT);
-	this.add("config/strings.yaml",openfl.AssetType.TEXT);
-	this.add("config/audio.yaml",openfl.AssetType.TEXT);
-	this.add("config/images.yaml",openfl.AssetType.TEXT);
 	this.add("bonus1",openfl.AssetType.SOUND,"res/sounds/sfx/Powerup.ogg");
 	this.add("bonus2",openfl.AssetType.SOUND,"res/sounds/sfx/Powerup2.ogg");
 	this.add("bonus3",openfl.AssetType.SOUND,"res/sounds/sfx/Powerup3.ogg");
@@ -1720,7 +1704,7 @@ alienzone.EntityFactory.__name__ = ["alienzone","EntityFactory"];
 alienzone.EntityFactory.prototype = {
 	onclick: null
 	,engine: null
-	,dispose: function() {
+	,destroy: function() {
 		this.onclick = flixel.util.FlxDestroyUtil.destroy(this.onclick);
 	}
 	,bitmapText: function(fontName,fontScale) {
@@ -5243,6 +5227,11 @@ alienzone.states.AchievementsState.prototype = $extend(flixel.FlxState.prototype
 	}
 	,destroy: function() {
 		flixel.FlxState.prototype.destroy.call(this);
+		this.factory.destroy();
+		this.factory = null;
+		this.engine.removeAllEntities();
+		this.engine.removeAllSystems();
+		this.engine = null;
 	}
 	,update: function() {
 		flixel.FlxState.prototype.update.call(this);
@@ -5262,7 +5251,7 @@ alienzone.states.GameOverState.prototype = $extend(flixel.FlxState.prototype,{
 	engine: null
 	,factory: null
 	,create: function() {
-		flixel.FlxG.camera.fade(-16777216,.33,true);
+		flixel.FlxG.camera.fade(-16777216,0.33,true);
 		flixel.FlxState.prototype.create.call(this);
 		flash.Lib.get_current().get_stage().quality = "best";
 		flixel.FlxG.camera.set_antialiasing(true);
@@ -5325,6 +5314,11 @@ alienzone.states.GameOverState.prototype = $extend(flixel.FlxState.prototype,{
 	}
 	,destroy: function() {
 		flixel.FlxState.prototype.destroy.call(this);
+		this.factory.destroy();
+		this.factory = null;
+		this.engine.removeAllEntities();
+		this.engine.removeAllSystems();
+		this.engine = null;
 	}
 	,update: function() {
 		flixel.FlxState.prototype.update.call(this);
@@ -5367,6 +5361,11 @@ alienzone.states.HelpState.prototype = $extend(flixel.FlxState.prototype,{
 	}
 	,destroy: function() {
 		flixel.FlxState.prototype.destroy.call(this);
+		this.factory.destroy();
+		this.factory = null;
+		this.engine.removeAllEntities();
+		this.engine.removeAllSystems();
+		this.engine = null;
 	}
 	,update: function() {
 		flixel.FlxState.prototype.update.call(this);
@@ -5416,6 +5415,11 @@ alienzone.states.LeaderboardState.prototype = $extend(flixel.FlxState.prototype,
 	}
 	,destroy: function() {
 		flixel.FlxState.prototype.destroy.call(this);
+		this.factory.destroy();
+		this.factory = null;
+		this.engine.removeAllEntities();
+		this.engine.removeAllSystems();
+		this.engine = null;
 	}
 	,update: function() {
 		flixel.FlxState.prototype.update.call(this);
@@ -5466,6 +5470,11 @@ alienzone.states.LoginState.prototype = $extend(flixel.FlxState.prototype,{
 	}
 	,destroy: function() {
 		flixel.FlxState.prototype.destroy.call(this);
+		this.factory.destroy();
+		this.factory = null;
+		this.engine.removeAllEntities();
+		this.engine.removeAllSystems();
+		this.engine = null;
 	}
 	,update: function() {
 		flixel.FlxState.prototype.update.call(this);
@@ -5540,7 +5549,11 @@ alienzone.states.MenuState.prototype = $extend(flixel.FlxState.prototype,{
 	}
 	,destroy: function() {
 		flixel.FlxState.prototype.destroy.call(this);
-		this.factory.onclick.removeAll();
+		this.factory.destroy();
+		this.factory = null;
+		this.engine.removeAllEntities();
+		this.engine.removeAllSystems();
+		this.engine = null;
 	}
 	,update: function() {
 		flixel.FlxState.prototype.update.call(this);
@@ -5617,7 +5630,7 @@ alienzone.states.PlayState.prototype = $extend(flixel.FlxState.prototype,{
 	}
 	,destroy: function() {
 		flixel.FlxState.prototype.destroy.call(this);
-		this.factory.dispose();
+		this.factory.destroy();
 		this.factory = null;
 		this.engine.removeAllEntities();
 		this.engine.removeAllSystems();
@@ -26958,7 +26971,7 @@ alienzone.Mersenne.MATRIX_A = -1727483681;
 alienzone.Mersenne.UPPER_MASK = -2147483648;
 alienzone.Mersenne.LOWER_MASK = 2147483647;
 alienzone.Reg.GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=com.darkoverlordofdata.alienzone";
-alienzone.Reg.SHOW_FPS = true;
+alienzone.Reg.SHOW_FPS = false;
 alienzone.Reg.difficulty = 0;
 alienzone.Reg._action = new flixel.util._FlxSignal.FlxSignal2();
 alienzone.Reg._create = new flixel.util._FlxSignal.FlxSignal0();
