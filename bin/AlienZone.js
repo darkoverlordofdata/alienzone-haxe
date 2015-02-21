@@ -5500,8 +5500,10 @@ alienzone.states.MenuState.prototype = $extend(flixel.FlxState.prototype,{
 		alienzone.Reg.save();
 		var ua = window.navigator.userAgent;
 		haxe.Log.trace("" + ua,{ fileName : "MenuState.hx", lineNumber : 49, className : "alienzone.states.MenuState", methodName : "create"});
-		if(new EReg("Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile","i").match(ua)) haxe.Log.trace("MOBILE",{ fileName : "MenuState.hx", lineNumber : 51, className : "alienzone.states.MenuState", methodName : "create"}); else haxe.Log.trace("NOT MOBILE",{ fileName : "MenuState.hx", lineNumber : 53, className : "alienzone.states.MenuState", methodName : "create"});
-		flixel.FlxG.mouse.set_visible(false);
+		if(new EReg("Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile","i").match(ua)) {
+			haxe.Log.trace("MOBILE",{ fileName : "MenuState.hx", lineNumber : 51, className : "alienzone.states.MenuState", methodName : "create"});
+			flixel.FlxG.mouse.set_visible(false);
+		} else haxe.Log.trace("NOT MOBILE",{ fileName : "MenuState.hx", lineNumber : 54, className : "alienzone.states.MenuState", methodName : "create"});
 		this.engine = new ash.core.Engine();
 		this.factory = new alienzone.EntityFactory(this.engine);
 		this.factory.fps(0,0);
