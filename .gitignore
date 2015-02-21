@@ -7,7 +7,4 @@ export
 templates/certificate.xml
 
 
-bin/android
-bin/html5
-bin/linux64
-bin/.build
+bin
