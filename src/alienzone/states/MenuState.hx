@@ -44,6 +44,13 @@ class MenuState extends FlxState {
         FlxG.stage.quality = StageQuality.BEST;
         FlxG.camera.antialiasing = true;
         Reg.save();
+        #if html5
+        /** set the mouse cursor invisible on mobile browswer */
+        var ua = js.Browser.navigator.userAgent;
+        if ((~/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile/i).match(ua)) {
+            FlxG.mouse.visible = false;
+        } 
+        #end
 
         /**
          *  Create the engine

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33e74dff-cbda-447e-a773-699092e19a24" name="Default" comment="daily">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+    <list default="true" id="33e74dff-cbda-447e-a773-699092e19a24" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alienzone/states/MenuState.hx" afterPath="$PROJECT_DIR$/src/alienzone/states/MenuState.hx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Project.xml" afterPath="$PROJECT_DIR$/Project.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html5/web/index.html" afterPath="$PROJECT_DIR$/html5/web/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -29,17 +30,27 @@
         <entry file="file://$PROJECT_DIR$/src/alienzone/states/GameOverState.hx">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+              <caret line="65" column="9" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="publish.sh" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/publish.sh">
+      <file leaf-file-name="MenuState.hx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/alienzone/states/MenuState.hx">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61904764">
-              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.515873">
+              <caret line="50" column="39" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html5/web/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.7407408">
+              <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -66,8 +77,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/alienzone/systems/LegendSystem.hx" />
-        <option value="$PROJECT_DIR$/src/alienzone/systems/OptionSystem.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/systems/PlayerSystem.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/systems/RenderSystem.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/systems/RenderGemSystem.hx" />
@@ -102,7 +111,6 @@
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/templates/ant.properties" />
         <option value="$PROJECT_DIR$/templates/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/Project.xml" />
         <option value="$PROJECT_DIR$/src/alienzone/Reg.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/EntityFactory.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/states/PlayState.hx" />
@@ -110,13 +118,16 @@
         <option value="$PROJECT_DIR$/src/alienzone/states/HelpState.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/states/LeaderboardState.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/states/LoginState.hx" />
-        <option value="$PROJECT_DIR$/src/alienzone/states/MenuState.hx" />
         <option value="$PROJECT_DIR$/src/alienzone/states/GameOverState.hx" />
         <option value="$PROJECT_DIR$/templates/certificate.xml" />
         <option value="$PROJECT_DIR$/build/web/index.html" />
         <option value="$PROJECT_DIR$/publish.sh" />
-        <option value="$PROJECT_DIR$/html5/web/index.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/html5/web/manifest.json" />
+        <option value="$PROJECT_DIR$/Project.xml" />
+        <option value="$PROJECT_DIR$/html5/web/bin/index.html" />
+        <option value="$PROJECT_DIR$/html5/web/index.html" />
+        <option value="$PROJECT_DIR$/src/alienzone/states/MenuState.hx" />
       </list>
     </option>
   </component>
@@ -181,20 +192,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AlienZone3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="alienzone-haxe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="html5" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -227,11 +224,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/html5/web/bin" />
       <recent name="$PROJECT_DIR$/html5/web" />
       <recent name="$PROJECT_DIR$/build/web" />
       <recent name="$PROJECT_DIR$/build" />
       <recent name="$PROJECT_DIR$/bin/html5/bin" />
-      <recent name="$PROJECT_DIR$/src/alienzone/states" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/build/web" />
@@ -637,7 +634,13 @@
       <option name="project" value="LOCAL" />
       <updated>1424504557941</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="daily">
+      <created>1424505379394</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1424505379394</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -859,13 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/html5/bin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/images/d16a.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -919,14 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Project.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37172773">
-          <caret line="78" column="29" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/alienzone/Res.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.28795812">
@@ -963,14 +951,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.68586385">
           <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/states/MenuState.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65445024">
-          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1026,14 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/alienzone/states/GameOverState.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42857143">
@@ -1042,18 +1014,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html5/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36263737">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/publish.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.61904764">
           <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/html5/bin/AlienZone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.726277">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.5473685">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/html5/bin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45892352">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/states/GameOverState.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="9" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html5/web/bin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.592068">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html5/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.7407408">
+          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alienzone/states/MenuState.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.515873">
+          <caret line="50" column="39" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
           <folding />
         </state>
       </provider>

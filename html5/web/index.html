@@ -26,19 +26,29 @@
 </head>
 <body>
 <iframe frameborder="0" src="bin/index.html"></iframe>
-<script>//  scale to the screen
-    (function($) {
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+        (function($) {
 
-    var w = window.innerWidth;
-    var h = window.innerHeight;
+            // scale to the screen dimensions
+            var w = window.innerWidth;
+            var h = window.innerHeight;
 
-    w = Math.min(w, h/1.5);
+            w = Math.min(w, h/1.5);
 
-    $('iframe').style.width = w+'px';
-    $('iframe').style.height = h+'px';
+            $('iframe').style.width = w+'px';
+            $('iframe').style.height = h+'px';
 
-    }(document.querySelector.bind(document)));
-    
+        }(document.querySelector.bind(document)));
+
+        // lock in portrait mode
+        try {
+            window.screen.orientation.lock('portrait');
+        } catch(e) {
+            console.log(e);
+        }
+    }, false);
+
 </script>
 </body>
 </html><!--
