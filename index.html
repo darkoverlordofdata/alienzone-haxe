@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="shortcut icon" href="favicon.png" />
     <style type="text/css">
         body {
@@ -44,9 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // lock in portrait mode
         try {
             window.screen.orientation.lock('portrait');
-        } catch(e) {
-            console.log(e);
-        }
+        } catch(e) {}
     }, false);
 
 </script>

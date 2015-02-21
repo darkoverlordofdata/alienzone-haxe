@@ -1,0 +1,9 @@
+{
+  "name": "Alien Zone",
+  "description": "Space Crystal Match Game",
+  "launch_path": "/",
+  "icons": {
+    "128": "icon128.png"
+  },
+  "fullscreen": true
+}
