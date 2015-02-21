@@ -13,13 +13,15 @@
 	<script>function winParameters () { return {}; }</script>
 	<script type="text/javascript" src="./AlienZone.js"></script>
 	<script>
-		(function($) {
+
+		function init() {
 			try {
 				window.screen.lockOrientation('portrait');
 			} catch(e) {
 			    console.log(e);
 			}
-		}(document.querySelector.bind(document)));
+		}
+		document.addEventListener('DOMContentLoaded', init, false);
 
 	</script>
 	</body>
