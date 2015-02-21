@@ -27,10 +27,17 @@
 <body>
 <iframe frameborder="0" src="bin/index.html"></iframe>
 <script>
-    (function() {
+    (function($) {
 
-    alert('!');
-    }());
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+
+    w = Math.min(w, h/1.5);
+
+    $('iframe').style.width = w+'px';
+    $('iframe').style.height = h+'px';
+
+    }(document.querySelector.bind(document)));
     
 </script>
 </body>
