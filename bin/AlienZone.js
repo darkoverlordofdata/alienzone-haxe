@@ -1299,11 +1299,11 @@ NMEPreloader.prototype = $extend(flash.display.Sprite.prototype,{
 		return 0;
 	}
 	,getHeight: function() {
-		var height = 480;
+		var height = 0;
 		if(height > 0) return height; else return flash.Lib.get_current().get_stage().get_stageHeight();
 	}
 	,getWidth: function() {
-		var width = 320;
+		var width = 0;
 		if(width > 0) return width; else return flash.Lib.get_current().get_stage().get_stageWidth();
 	}
 	,onInit: function() {
@@ -26964,7 +26964,7 @@ flixel.system.debug._Window.GraphicCloseButton.preload();
 flixel.tile.GraphicAuto.preload();
 flixel.tile.GraphicAutoAlt.preload();
 flixel.ui._FlxTypedButton.GraphicButton.preload();
-ApplicationMain.config = { antialiasing : 0, background : 0, borderless : false, depthBuffer : false, fps : 60, fullscreen : false, height : 480, orientation : "portrait", resizable : true, stencilBuffer : false, title : "AlienZone", vsync : false, width : 320};
+ApplicationMain.config = { antialiasing : 0, background : 0, borderless : false, depthBuffer : false, fps : 60, fullscreen : false, height : 0, orientation : "portrait", resizable : true, stencilBuffer : false, title : "AlienZone", vsync : false, width : 0};
 ApplicationMain.embeds = 0;
 alienzone.EntityFactory.SPACES = "                                        ";
 alienzone.Mersenne.N = 624;
