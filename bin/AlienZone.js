@@ -5499,11 +5499,7 @@ alienzone.states.MenuState.prototype = $extend(flixel.FlxState.prototype,{
 		flixel.FlxG.camera.set_antialiasing(true);
 		alienzone.Reg.save();
 		var ua = window.navigator.userAgent;
-		haxe.Log.trace("" + ua,{ fileName : "MenuState.hx", lineNumber : 49, className : "alienzone.states.MenuState", methodName : "create"});
-		if(new EReg("Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile","i").match(ua)) {
-			haxe.Log.trace("MOBILE",{ fileName : "MenuState.hx", lineNumber : 51, className : "alienzone.states.MenuState", methodName : "create"});
-			flixel.FlxG.mouse.set_visible(false);
-		} else haxe.Log.trace("NOT MOBILE",{ fileName : "MenuState.hx", lineNumber : 54, className : "alienzone.states.MenuState", methodName : "create"});
+		if(new EReg("Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile","i").match(ua)) flixel.FlxG.mouse.set_visible(false);
 		this.engine = new ash.core.Engine();
 		this.factory = new alienzone.EntityFactory(this.engine);
 		this.factory.fps(0,0);
@@ -26968,7 +26964,7 @@ flixel.system.debug._Window.GraphicCloseButton.preload();
 flixel.tile.GraphicAuto.preload();
 flixel.tile.GraphicAutoAlt.preload();
 flixel.ui._FlxTypedButton.GraphicButton.preload();
-ApplicationMain.config = { antialiasing : 0, background : 0, borderless : false, depthBuffer : false, fps : 60, fullscreen : false, height : 480, orientation : "portrait", resizable : true, stencilBuffer : false, title : "AlienZone2", vsync : false, width : 320};
+ApplicationMain.config = { antialiasing : 0, background : 0, borderless : false, depthBuffer : false, fps : 60, fullscreen : false, height : 480, orientation : "portrait", resizable : true, stencilBuffer : false, title : "AlienZone", vsync : false, width : 320};
 ApplicationMain.embeds = 0;
 alienzone.EntityFactory.SPACES = "                                        ";
 alienzone.Mersenne.N = 624;
