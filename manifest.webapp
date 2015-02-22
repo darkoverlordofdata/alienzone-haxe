@@ -1,9 +1,16 @@
 {
   "name": "Alien Zone",
   "description": "Space Crystal Match Game",
-  "launch_path": "/",
+  "launch_path": "/bin/index.html",
   "icons": {
     "128": "/icons/icon128.png"
   },
-  "fullscreen": true
+  "developer": {
+    "name": "darkoverlordofdata",
+    "url": "http://darkoverlordofdata.com"
+  },
+  "default_locale": "en",
+  "type": "web",
+  "fullscreen": true,
+  "orientation": "portrait"
 }
