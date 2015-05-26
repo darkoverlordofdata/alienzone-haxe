@@ -33,17 +33,24 @@ class LoginState extends FlxState {
     private var engine:Engine;
     private var factory:EntityFactory;
     private var instructions:String = "
-  To Login, for
-  leaderboard and achievements,
-  please install Alien Zone
-  from Google play
+  Login and share your score
+  Install Alien Zone from
+  Google Play
+
+  
+  Add to your browser homescreen
+  for fullscreen mode
+  
+  
+  Alien Zone v0.1.0
+  build 37
 ";
 
     /**
      * Function that is called up when to state is created to set it up.
      */
     override public function create() {
-        FlxG.camera.fade(FlxColor.BLACK, .33, true);
+        FlxG.camera.fade(FlxColor.BLACK, 0.33, true);
     	super.create();
         FlxG.stage.quality = StageQuality.BEST;
         FlxG.camera.antialiasing = true;

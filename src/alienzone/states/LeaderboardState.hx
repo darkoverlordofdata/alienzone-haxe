@@ -38,7 +38,7 @@ class LeaderboardState extends FlxState {
      * Function that is called up when to state is created to set it up.
      */
     override public function create() {
-        FlxG.camera.fade(FlxColor.BLACK, .33, true);
+        FlxG.camera.fade(FlxColor.BLACK, 0.33, true);
     	super.create();
         FlxG.stage.quality = StageQuality.BEST;
         FlxG.camera.antialiasing = true;

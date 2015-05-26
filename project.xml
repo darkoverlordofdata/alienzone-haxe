@@ -22,12 +22,12 @@
 
 	<app path="bin" file="AlienZone" main="alienzone.Main"  />
 	<app preloader="flixel.system.FlxPreloader" />
-	
+
 	<!--------------------------------WINDOW SETTINGS------------------------------->
     <window orientation="portrait" fps="60" background="#000000" />
     <window if="cpp" orientation="landscape" fullscreen="true" width="0" height="0" antialiasing="4" />
     <window width="320" height="480" if="desktop" />
-    <window width="320" height="480" if="html5" />
+    <window width="0" height="0" if="html5" />
     <window hardware="true" allow-shaders="true" require-shaders="true" if="cpp"/>
     <window vsync="true" antialiasing="4" if="cpp" />
 
@@ -82,9 +82,11 @@
 	
 	<!--Enable this for Nape release builds for a serious peformance improvement-->
 	<haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
-	
-    <!------------------------------ANDROID SETTINGS---------------------------->
 
+    <!------------------------------HTML5 SETTINGS---------------------------->
+    <template path="templates/index.html" rename="index.html" if="html5"/>
+
+    <!------------------------------ANDROID SETTINGS---------------------------->
     <template path="templates/AndroidManifest.xml" rename="AndroidManifest.xml" if="android"/>
     <template path="templates/res/values/ids.xml" rename="ids.xml" if="android"/>
     <include path="templates/certificate.xml" />

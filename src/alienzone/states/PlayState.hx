@@ -56,7 +56,7 @@ class PlayState extends FlxState {
      * Create the game engine
      */
     override public function create():Void {
-        FlxG.camera.fade(FlxColor.BLACK, .33, true);
+        FlxG.camera.fade(FlxColor.BLACK, 0.33, true);
     	super.create();
         FlxG.stage.quality = StageQuality.BEST;
         FlxG.camera.antialiasing = true;

@@ -2,6 +2,8 @@
 #
 #   Publish gh-pages
 #
+
+cp -fr ./bin/html5/bin ./html5/
 cd ./html5/
 git clone git@github.com:darkoverlordofdata/alienzone-haxe.git gh-pages
 cd ./gh-pages/
